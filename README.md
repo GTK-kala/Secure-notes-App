@@ -2,7 +2,7 @@
 <h1 align="center">
   <img src="https://cdn-icons-png.flaticon.com/512/2920/2920341.png" width="70px" />
   <br />
-  📝 <span style="color:#4db8ff;">Secure Notes App</span>
+  📝 <span style="color:#4db8ff;">NoteVault</span>
 </h1>
 
 <h3 align="center">🔐 Secure. Simple. Smart.</h3>
@@ -28,10 +28,6 @@
 
 **NoteVault** is a modern, secure, and beautifully designed **Notes App** where users can **register, log in, and manage personal notes**.  
 Built using the **MERN stack (React, Express, Node.js, and MySQL)** — with authentication powered by **JWT** — it focuses on simplicity, speed, and security.
-
-<p align="center">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHBmYXpoZG1jdjM5ZmV0c2xjM3YzZ2xqZ3U2amFwaDdpYnJvMWFseiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/du3J3cXyzhj75IOgvA/giphy.gif" width="400" alt="animated" />
-</p>
 
 ---
 
