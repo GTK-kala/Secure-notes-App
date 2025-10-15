@@ -1,59 +1,74 @@
-<h1 align="center">📝 NoteVault</h1>
+<!-- HEADER -->
+<h1 align="center">
+  <img src="https://cdn-icons-png.flaticon.com/512/2920/2920341.png" width="70px" />
+  <br />
+  📝 <span style="color:#4db8ff;">Secure Notes App</span>
+</h1>
+
+<h3 align="center">🔐 Secure. Simple. Smart.</h3>
 
 <p align="center">
-  <em>A modern, secure notes app built with <b>React</b>, <b>Node.js</b>, <b>Express</b>, and <b>MySQL</b>.</em>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License" />
-  <img src="https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge" alt="Build" />
-  <img src="https://img.shields.io/badge/Stack-MERN-blue?style=for-the-badge" alt="Stack" />
-  <img src="https://img.shields.io/badge/Database-MySQL-orange?style=for-the-badge" alt="Database" />
-  <img src="https://img.shields.io/badge/Auth-JWT-yellow?style=for-the-badge" alt="Auth" />
-</p>
-
----
-
-## ✨ Overview
-
-**NoteVault** is a **secure note-taking web app** that lets users register, log in, and manage personal notes safely.  
-Built with the **MERN Stack (MySQL instead of MongoDB)**, it features **JWT authentication**, **CRUD operations**, and a **clean, responsive UI**.
-
-<p align="center">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGdnZDJyNzRxa3Jnd3h3NnZldWdwOGtnN2p6czZ6eWNwcGducmVuciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/JIX9t2j0ZTN9S/giphy.gif" width="450" />
+  <em>Store your thoughts safely — a full-stack, authentication-based notes app.</em>
 </p>
 
 ---
 
-## 🚀 Features
-
-🎯 **Authentication System** – Register, Login, Logout using JWT  
-🗒️ **CRUD Notes** – Create, Edit, Delete notes easily  
-📌 **Pin & Unpin Notes** – Highlight important ones  
-🔍 **Search Notes** – Quick filtering by keyword  
-🌓 **Dark / Light Theme** – Save user preference  
-💾 **MySQL Database** – Secure and relational data storage  
-📱 **Responsive Design** – Works perfectly on any device  
-
----
-
-## 🧠 Tech Stack
-
-| Layer | Tech Used |
-|-------|------------|
-| 🎨 **Frontend** | React, Context API, React Router, CSS3 |
-| ⚙️ **Backend** | Node.js, Express.js |
-| 🗄️ **Database** | MySQL (with mysql2 or Sequelize ORM) |
-| 🔑 **Auth** | JSON Web Token (JWT), bcrypt.js |
-| 🚀 **Deployment** | Render (Backend) + Vercel (Frontend) |
+<!-- BADGES -->
+<p align="center">
+  <img src="https://img.shields.io/badge/License-MIT-success?style=for-the-badge&logo=readme&color=23d160" />
+  <img src="https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge&logo=githubactions&color=00C851" />
+  <img src="https://img.shields.io/badge/Stack-MERN%20(MySQL)-blueviolet?style=for-the-badge&logo=javascript" />
+  <img src="https://img.shields.io/badge/Auth-JWT-yellow?style=for-the-badge&logo=jsonwebtokens" />
+  <img src="https://img.shields.io/badge/UI-Responsive-ff69b4?style=for-the-badge&logo=css3" />
+</p>
 
 ---
 
-## 🧩 Folder Structure
+## 🌟 Overview
+
+**NoteVault** is a modern, secure, and beautifully designed **Notes App** where users can **register, log in, and manage personal notes**.  
+Built using the **MERN stack (React, Express, Node.js, and MySQL)** — with authentication powered by **JWT** — it focuses on simplicity, speed, and security.
+
+<p align="center">
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHBmYXpoZG1jdjM5ZmV0c2xjM3YzZ2xqZ3U2amFwaDdpYnJvMWFseiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/du3J3cXyzhj75IOgvA/giphy.gif" width="400" alt="animated" />
+</p>
+
+---
+
+## ⚡ Key Features
+
+| 🚀 Feature | 💡 Description |
+|------------|----------------|
+| 🔐 **User Authentication** | Secure login & registration using JWT + bcrypt |
+| 🗒️ **Create, Edit, Delete Notes** | Manage personal notes effortlessly |
+| 📌 **Pin Notes** | Highlight important notes |
+| 🔍 **Search & Filter** | Quickly find your saved notes |
+| 🌓 **Dark/Light Mode** | Saves theme preferences |
+| 💾 **MySQL Database** | Secure relational storage |
+| 📱 **Fully Responsive UI** | Works seamlessly on mobile and desktop |
+
+---
+
+## 🛠️ Tech Stack
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=react,nodejs,express,mysql,css,html,git" />
+</p>
+
+| Layer | Technologies |
+|-------|---------------|
+| 🎨 Frontend | React, React Router, Context API, CSS3 |
+| ⚙️ Backend | Node.js, Express.js |
+| 🗄️ Database | MySQL (mysql2 ORM) |
+| 🔑 Authentication | JWT, bcrypt.js |
+| ☁️ Deployment | Vercel (frontend), Render/Railway (backend) |
+
+---
+
+## 📂 Folder Structure
 
 ```bash
 notevault/
-│
 ├── backend/
 │   ├── src/
 │   │   ├── config/db.js
@@ -67,10 +82,9 @@ notevault/
 │
 ├── frontend/
 │   ├── src/
-│   │   ├── api/
 │   │   ├── components/
-│   │   ├── pages/
 │   │   ├── context/
+│   │   ├── pages/
 │   │   └── App.jsx
 │   ├── package.json
 │   └── .env
