@@ -61,28 +61,33 @@ Built using the **MERN stack (React, Express, Node.js, and MySQL)** — with aut
 
 ---
 
-## 📂 Folder Structure
+🎨 UI Preview
 
-```bash
-notevault/
-├── backend/
-│   ├── src/
-│   │   ├── config/db.js
-│   │   ├── controllers/
-│   │   ├── routes/
-│   │   ├── middleware/
-│   │   ├── app.js
-│   │   └── server.js
-│   ├── package.json
-│   └── .env
-│
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── context/
-│   │   ├── pages/
-│   │   └── App.jsx
-│   ├── package.json
-│   └── .env
-│
-└── README.md
+<p align="center"> <img src="https://via.placeholder.com/900x450?text=NoteVault+App+Dashboard+Preview" width="85%" /> </p> <p align="center"> <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnVqYWNoenl4a2EwYTF6cWFzbDdvbWlqdmE4OGQ2MXQ0ZGl3cG1mbyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/QX15WJd2j8fTzwrhDT/giphy.gif" width="500" /> </p>
+
+---
+
+🛡️ Security Highlights
+
+🔑 JWT Authentication for all protected routes
+🧂 Bcrypt Password Hashing
+🧩 Middleware-based Access Control
+⚙️ Clean Error Handling & Validation
+
+---
+
+👨‍💻 Author
+
+<p align="center"> <img src="https://avatars.githubusercontent.com/u/12345678?v=4" width="100px" style="border-radius:50%;" /> </p> <h3 align="center">👋 Hi, I'm <a href="https://github.com/GTK-kala">Khalid</a></h3> <p align="center">💻 Software Developer • Web Development Enthusiast</p> <p align="center"> <a href="https://github.com/GTK-kala"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/></a> <a href="#"><img src="https://img.shields.io/badge/Portfolio-4DB8FF?style=for-the-badge&logo=vercel&logoColor=white"/></a> <a href="#"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a> </p>
+
+---
+
+⭐ Support
+
+If you like this project, please give it a star 🌟 — it really motivates me!
+
+<p align="center"> <img src="https://media.giphy.com/media/l0MYC0LajbaPoEADu/giphy.gif" width="300px" /> </p>
+
+---
+
+<h3 align="center">✨ Built with ❤️ by <a href="https://github.com/GTK-kala">Khalid Daniel</a> ✨</h3> <h4 align="center">"Write. Save. Secure." — NoteVault</h4> ```
