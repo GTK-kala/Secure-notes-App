@@ -63,4 +63,4 @@
 
 ---
 
-<h3 align="center">✨ Built by <a href="https://github.com/GTK-kala">Khalid Daniel</a> ✨</h3> <h4 align="center">"Write. Save. Secure." — NoteVault</h4> ```
+<h3 align="center">✨ Built by <a href="https://github.com/GTK-kala">Khalid Daniel</a> ✨</h3> <h4 align="center">"Write. Save. Secure." — NoteVault</h4>
