@@ -54,7 +54,7 @@
 
 ---
 
-<p>🛡️ Security Highlights</p>
+## 🛡️ Security Highlights
 
 <p>🔑 JWT Authentication for all protected routes</p>
 <p>🧂 Bcrypt Password Hashing</p>
