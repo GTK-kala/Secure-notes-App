@@ -1,9 +1,9 @@
 import connection from '../../config/db.js'
 
-// GET USERS DATA
+// GET ALL USERS DATA
 
 export const GetUsers = (req , res) =>{
-   const sql = "SELECT * FROM users"
+   const sql = "SELECT * FROM users";
    connection.query(sql , (err, result) =>{
       if(err){
         return res.status(500).json({

@@ -1,5 +1,6 @@
 import connection from "../../config/db.js";
 
+// ADD USERS INFO INTO DATABASE
 export const AddUsers = (req, res) => {
   const { username, email, password } = req.body;
 
