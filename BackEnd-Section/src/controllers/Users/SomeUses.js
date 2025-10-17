@@ -3,7 +3,6 @@ import connection from "../../config/db.js";
 // GET SOME USERS INFO
 export const SomeUsers = (req, res) => {
   const limit = parseInt(req.query.limit);
-
   if (!limit) {
     return res.status(400).json({
       message: "ADD LIMIT VALUE !!!",
