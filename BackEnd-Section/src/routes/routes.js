@@ -7,19 +7,37 @@ import { GetUsers } from "../controllers/Users/GetUsers.js";
 import { AddUsers } from "../controllers/Users/AddUsers.js";
 import { SomeUsers } from "../controllers/Users/SomeUses.js";
 import { UpDateUser } from "../controllers/Users/UpDateUser.js";
+import { DeleteUser } from "../controllers/Users/DeleteUser.js";
+
 
 // NOTES
 
+
+
 const route = express.Router();
 
-// USER ROUTESs
-route.get('/auth/register' , GetUsers);
-route.get('/auth/register/:id' , GetUser);
+
+// CRUD ACTION ON USER ROUTES
+
+// GET ALL USERS
+route.get('/auth/register/all' , GetUsers);
+
+// GET ONE USER WITH IT'S ID
+route.get('/auth/register/all/:id' , GetUser);
+
+// GET SOME USERS
 route.get('/auth/register/some' , SomeUsers);
+
+// ADD USERS
 route.post('/auth/register' , AddUsers);
-route.put('/auth/register/:id' , UpDateUser)
+
+// UPDATE USER
+route.put('/auth/register/:id' , UpDateUser);
+
+// DELETE USER WITH IT'S ID 
+route.delete('/auth/register/:id' , DeleteUser);
 
 
-// NOTES ROUTES
+// CRUD ACTION ON NOTES ROUTES
 
 export default route;

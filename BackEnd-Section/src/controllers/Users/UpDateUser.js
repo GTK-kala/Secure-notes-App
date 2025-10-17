@@ -2,7 +2,7 @@ import connection from "../../config/db.js";
 
 // UPDATE USER INFO
 export const UpDateUser = (req, res) => {
-  const {username , email , password} = req.body;
+  const { username, email, password } = req.body;
   const id = parseInt(req.params.id);
 
   let fields = [];
@@ -11,17 +11,17 @@ export const UpDateUser = (req, res) => {
   if (username) {
     fields.push("username = ?");
     values.push(username);
-  };
+  }
 
   if (email) {
     fields.push("email = ?");
     values.push(email);
-  };
+  }
 
   if (password) {
     fields.push("password = ?");
     values.push(password);
-  };
+  }
   values.push(id);
 
   if (!id && !username && !email && !password) {
@@ -35,7 +35,7 @@ export const UpDateUser = (req, res) => {
   connection.query(sql, values, (err, result) => {
     if (err) {
       return res.status(500).json({
-        message: err
+        message: err,
       });
     }
     res.status(200).json({
