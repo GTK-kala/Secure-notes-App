@@ -11,7 +11,7 @@ export const GetUsers = (req , res) =>{
         });
       }
       res.status(200).json({
-        message : "USERS DATA",
+        message : "ALL USERS DATA",
         result : result
       })
    })

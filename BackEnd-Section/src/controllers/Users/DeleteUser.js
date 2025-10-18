@@ -18,7 +18,7 @@ export const DeleteUser = (req, res) => {
       });
     }
     res.status(200).json({
-      message: `USER WITH ${id} IS DELETED FROM DATABASE !!!`,
+      message: `USER WITH ${id} ID IS DELETED FROM DATABASE !!!`,
       result: result,
     });
   });
