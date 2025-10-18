@@ -13,6 +13,7 @@ import { DeleteUser } from "../controllers/Users/DeleteUser.js";
 // NOTES
 import { AddNotes } from "../controllers/Notes/AddNotes.js";
 import { GetNotes } from "../controllers/Notes/GetNotes.js";
+import { GetNote } from "../controllers/Notes/GetNote.js";
 
 
 
@@ -46,5 +47,7 @@ route.delete('/auth/register/:id' , DeleteUser);
 route.post('/notes/add' , AddNotes);
 // GET ALL NOTES
 route.get('/notes/all' , GetNotes);
+// GET NOTE BY ID
+route.get('/notes/all/:id' , GetNote);
 
 export default route;
