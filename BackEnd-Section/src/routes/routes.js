@@ -15,6 +15,7 @@ import { AddNotes } from "../controllers/Notes/AddNotes.js";
 import { GetNotes } from "../controllers/Notes/GetNotes.js";
 import { GetNote } from "../controllers/Notes/GetNote.js";
 import { SomeNotes } from "../controllers/Notes/SomeNotes.js"
+import { UpDateNote } from "../controllers/Notes/UpDateNote.js"
 import { DeleteNote } from "../controllers/Notes/DeleteNote.js"
 
 
@@ -51,6 +52,8 @@ route.get('/notes/all' , GetNotes);
 route.post('/notes/add' , AddNotes);
 // GET NOTE BY ID
 route.get('/notes/all/:id' , GetNote);
+// UPDATE NOTES
+route.put('/notes/all/:id' , UpDateNote)
 //GET SOME NOTES
 route.get('/notes/some' , SomeNotes)
 // DELETE NOTE BY ID
