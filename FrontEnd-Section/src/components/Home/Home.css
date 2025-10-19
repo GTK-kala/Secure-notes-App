@@ -1,40 +1,48 @@
-.home-container {
-  padding: 100px 2rem 2rem;
+.home-page {
+  padding: 2rem;
+  margin-top: 5px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #1e1f29, #2b2d3a);
   color: #fff;
-  background: linear-gradient(135deg, #1e1f29 0%, #2b2d3a 100%);
-  min-height: 100vh;
-  font-family: "Poppins", sans-serif;
+  min-height: calc(100vh - 60px);
+  transition: margin-left 0.4s ease;
+}
+
+.sidebar.collapsed ~ .home-page {
+  margin-left: 75px;
 }
 
 /* Hero Section */
-.hero {
+.hero-section {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 2rem;
-  margin-bottom: 3rem;
+  gap: 3rem;
+  padding: 2rem 0;
 }
 
 .hero-text {
   flex: 1;
-  min-width: 320px;
-  animation: fadeInLeft 1s ease;
+  min-width: 300px;
 }
 
 .hero-text h1 {
   font-size: 2.8rem;
+  line-height: 1.2;
+  color: #fff;
   font-weight: 700;
 }
 
-.hero-text h1 span {
+.hero-text span {
   color: #58a6ff;
 }
 
 .hero-text p {
   color: #cfd2dc;
-  margin: 1rem 0;
+  margin: 1rem 0 2rem;
   font-size: 1.1rem;
+  max-width: 550px;
   line-height: 1.6;
 }
 
@@ -43,11 +51,12 @@
   border: none;
   color: white;
   padding: 12px 28px;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 1rem;
   cursor: pointer;
   font-weight: 600;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(88, 166, 255, 0.3);
 }
 
 .cta-btn:hover {
@@ -55,38 +64,39 @@
   transform: scale(1.05);
 }
 
-.hero-image {
+/* Image Section */
+.hero-illustration {
   flex: 1;
   display: flex;
   justify-content: center;
 }
 
-.hero-image img {
-  width: 90%;
-  max-width: 450px;
+.hero-illustration img {
+  width: 100%;
+  max-width: 400px;
   border-radius: 20px;
-  animation: fadeInRight 1s ease;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
 }
 
-/* Features Section */
-.features {
+/* Features */
+.features-section {
   text-align: center;
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 
-.features h2 {
+.features-section h2 {
   font-size: 2rem;
-  font-weight: 600;
   margin-bottom: 2rem;
+  font-weight: 600;
 }
 
-.features h2 span {
+.features-section span {
   color: #58a6ff;
 }
 
-.feature-grid {
+.features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 2rem;
 }
 
@@ -94,13 +104,14 @@
   background: rgba(255, 255, 255, 0.07);
   border-radius: 14px;
   padding: 1.5rem;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
 }
 
 .feature-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-10px) scale(1.02);
   background: rgba(255, 255, 255, 0.15);
 }
 
@@ -111,32 +122,75 @@
 }
 
 /* Animations */
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s forwards;
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(30px);
+  animation: fadeRight 1s forwards;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 1s forwards;
+}
+
+.delay-1 { animation-delay: 0.3s; }
+.delay-2 { animation-delay: 0.6s; }
+.delay-3 { animation-delay: 0.9s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+@keyframes fadeRight {
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
+@keyframes fadeIn {
   to {
     opacity: 1;
-    transform: translateX(0);
+  }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 /* Responsive */
+@media screen and (max-width: 992px) {
+  .home-page {
+    margin-left: 75px;
+  }
+}
+
 @media screen and (max-width: 768px) {
-  .hero {
-    flex-direction: column;
+  .home-page {
+    margin-left: 0;
+    padding: 1.5rem;
+  }
+
+  .hero-section {
+    flex-direction: column-reverse;
     text-align: center;
   }
 
@@ -144,11 +198,7 @@
     font-size: 2.2rem;
   }
 
-  .hero-image img {
-    width: 100%;
-  }
-
-  .home-container {
-    padding-top: 120px;
+  .hero-illustration img {
+    width: 85%;
   }
 }
