@@ -1,19 +1,23 @@
 /* Sidebar General */
 .sidebar {
   position: fixed;
+  top: 84px; /* 👈 Push down below navbar height */
   left: 0;
-  top: 0;
-  height: 100vh;
+  height: calc(100vh - 60px); /* 👈 Adjust height to fit under navbar */
   width: 240px;
   background: linear-gradient(180deg, #1e1f29, #2b2d3a);
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: flex-start ;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  margin-left: 0px;
   transition: all 0.4s ease;
   box-shadow: 4px 0 12px rgba(0, 0, 0, 0.25);
-  z-index: 1000;
+  z-index: 900; /* 👈 Lower than navbar */
 }
+
 
 .sidebar.collapsed {
   width: 75px;
@@ -43,6 +47,7 @@
 .sidebar-menu li {
   display: flex;
   align-items: center;
+  align-self: stretch;
   gap: 14px;
   padding: 14px 20px;
   cursor: pointer;
@@ -101,12 +106,12 @@
 .sidebar-toggle {
   display: none;
   position: fixed;
-  top: 20px;
-  left: 20px;
+  top: 24px;
+  left: 25px;
   font-size: 1.5rem;
   color: white;
-  background: #1e1f29;
-  padding: 10px;
+  background: #393b46;
+  padding: 7px 7px 4px 7px;
   border-radius: 10px;
   z-index: 1100;
   cursor: pointer;
@@ -115,6 +120,7 @@
 
 .sidebar-toggle:hover {
   background: #292b3a;
+  transform: scale(1.05);
 }
 
 /* Animation */
