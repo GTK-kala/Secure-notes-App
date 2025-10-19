@@ -1,6 +1,6 @@
 :root {
-  --light-bg: rgba(255, 255, 255, 0.7);
-  --dark-bg: rgba(25, 25, 25, 0.6);
+  --light-bg: rgba(190, 190, 190, 0.7);
+  --dark-bg: rgba(10, 10, 10, 0.6);
   --backdrop: blur(12px);
   --border-radius: 20px;
 }

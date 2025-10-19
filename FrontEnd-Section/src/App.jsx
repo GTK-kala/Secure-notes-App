@@ -1,9 +1,11 @@
-import Home from "./pages/Home"
+import NavBar from "./components/NavBar/NavBar"
+import SideBar from "./components/SideBar/SideBar"
 
 const App = () => {
   return (
     <>
-      <Home />
+      <NavBar />
+      <SideBar />
     </>
   )
 }
