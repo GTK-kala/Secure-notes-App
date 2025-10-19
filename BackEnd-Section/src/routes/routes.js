@@ -14,6 +14,8 @@ import { DeleteUser } from "../controllers/Users/DeleteUser.js";
 import { AddNotes } from "../controllers/Notes/AddNotes.js";
 import { GetNotes } from "../controllers/Notes/GetNotes.js";
 import { GetNote } from "../controllers/Notes/GetNote.js";
+import { SomeNotes } from "../controllers/Notes/SomeNotes.js"
+import { DeleteNote } from "../controllers/Notes/DeleteNote.js"
 
 
 
@@ -43,11 +45,15 @@ route.delete('/auth/register/:id' , DeleteUser);
 
 // CRUD ACTION ON NOTES ROUTES
 
-// ADD NOTES
-route.post('/notes/add' , AddNotes);
 // GET ALL NOTES
 route.get('/notes/all' , GetNotes);
+// ADD NOTES
+route.post('/notes/add' , AddNotes);
 // GET NOTE BY ID
 route.get('/notes/all/:id' , GetNote);
+//GET SOME NOTES
+route.get('/notes/some' , SomeNotes)
+// DELETE NOTE BY ID
+route.delete('/notes/all/:id' , DeleteNote)
 
 export default route;
