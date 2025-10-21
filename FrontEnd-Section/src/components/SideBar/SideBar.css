@@ -142,7 +142,7 @@
 @media screen and (max-width: 768px) {
   .sidebar {
     margin-left: 3px;
-    width: 150px;
+    width: 190px;
   }
 
   .sidebar.open {
@@ -155,5 +155,11 @@
 
   .sidebar-toggle {
     display: block;
+  }
+  .sidebar-menu{
+    width: 90%;
+  }
+  .sidebar-footer{
+    width: 80%;
   }
 }

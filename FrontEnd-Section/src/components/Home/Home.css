@@ -8,7 +8,7 @@
   transition: margin-left 0.4s ease;
 }
 
-.sidebar.collapsed ~ .home-page {
+.sidebar.open ~ .home-page {
   margin-left: 75px;
 }
 
