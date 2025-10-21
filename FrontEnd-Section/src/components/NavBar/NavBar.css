@@ -1,6 +1,6 @@
 :root {
-  --light-bg: rgba(190, 190, 190, 0.7);
-  --dark-bg: rgba(10, 10, 10, 0.6);
+  --light-bg: rgb(223, 222, 222);
+  --dark-bg: rgba(11, 9, 9, 0.6);
   --backdrop: blur(12px);
   --border-radius: 20px;
 }
@@ -22,12 +22,12 @@
 /* 🌞 Light & 🌙 Dark */
 .navbar.light {
   background: var(--light-bg);
-  color: #222;
+  color: #111;
 }
 
 .navbar.dark {
-  background: var(--dark-bg);
-  color: #f5f5f5;
+  background: linear-gradient(180deg, #1e1f29, #2b2d3a);
+  color: #fff;
 }
 
 /* 💎 Branding */
@@ -130,6 +130,7 @@
   display: none;
   font-size: 1.6rem;
   cursor: pointer;
+  transition: all 0.5 ease-in-out;
 }
 
 /* 📱 Mobile Menu */
@@ -150,25 +151,31 @@
 
 .mobile-menu.light {
   background: rgba(255, 255, 255, 0.85);
-  color: #222;
+  color: #111;
 }
 
 .mobile-menu.dark {
   background: rgba(20, 20, 20, 0.85);
-  color: #f5f5f5;
+  color: #fff;
 }
 
 .mobile-menu a {
   text-decoration: none;
+  color: #111;
   font-size: 1.1rem;
   font-weight: 600;
   transition: color 0.3s ease;
 }
-
-.mobile-menu a:hover {
-  color: #ff4d4d;
+.mobile-menu.dark a{
+  color: #fff;
 }
 
+.mobile-menu.dark a:hover {
+  color: #8a8989;
+}
+.mobile-menu.light a:hover{
+  color: #9d9c9c;
+}
 /* 🧩 Responsive Design */
 @media (max-width: 1024px) {
   .nav-links {

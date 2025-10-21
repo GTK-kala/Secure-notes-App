@@ -1,4 +1,5 @@
 import { FaStickyNote, FaCloudUploadAlt, FaLock, FaSyncAlt } from "react-icons/fa";
+import { Image } from "../../assets/Data";
 import { useEffect } from "react";
 import "./Home.css";
 
@@ -25,7 +26,7 @@ const Homes = () => {
         </div>
         <div className="hero-illustration fade-in-right">
           <img
-            src="../../assets/note.png"
+            src={Image.NewNote}
             alt="Notes Illustration"
           />
         </div>

@@ -3,7 +3,7 @@ import { FaHome, FaStickyNote, FaUser, FaCog, FaSignOutAlt, FaBars } from "react
 import "./SideBar.css";
 
 const SideBar = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>

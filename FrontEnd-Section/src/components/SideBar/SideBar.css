@@ -9,7 +9,7 @@
   color: white;
   display: flex;
   flex-direction: column;
-  align-items: flex-start ;
+  align-items: flex-start;
   justify-content: space-evenly;
   border-radius: 10px;
   margin-left: 0px;
@@ -18,9 +18,8 @@
   z-index: 900; /* 👈 Lower than navbar */
 }
 
-
 .sidebar.collapsed {
-  width: 75px;
+  display: none;
 }
 
 /* Sidebar Header */
@@ -46,8 +45,6 @@
 
 .sidebar-menu li {
   display: flex;
-  align-items: center;
-  align-self: stretch;
   gap: 14px;
   padding: 14px 20px;
   cursor: pointer;
@@ -144,12 +141,16 @@
 
 @media screen and (max-width: 768px) {
   .sidebar {
-    position: fixed;
-    transform: translateX(-100%);
+    margin-left: 3px;
+    width: 150px;
   }
 
   .sidebar.open {
+    margin-top: 2px;
     transform: translateX(0);
+  }
+  .sidebar.collapsed {
+    display: none;
   }
 
   .sidebar-toggle {
