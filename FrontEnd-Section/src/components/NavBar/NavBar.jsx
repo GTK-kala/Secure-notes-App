@@ -9,6 +9,7 @@ import {
   FaTimes,
 } from "react-icons/fa";
 import { ThemeContext } from "../../context/ThemeContext";
+import { Link } from "react-router-dom"
 import "./NavBar.css";
 
 const NavBar = ({ user, onLogout }) => {
@@ -35,10 +36,10 @@ const NavBar = ({ user, onLogout }) => {
 
       {/* Desktop Links */}
       <div className="nav-links">
-        <a href="/">Home</a>
-        <a href="/dashboard">Dashboard</a>
-        <a href="/create">Create Note</a>
-        <a href="/about">About</a>
+        <Link to="/">Home</Link>
+        <Link to="/dashboard">Dashboard</Link>
+        <Link to="/create">Create Note</Link>
+        <Link to="/about">About</Link>
       </div>
 
       {/* Right Section */}

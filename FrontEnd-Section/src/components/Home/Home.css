@@ -183,7 +183,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .home-page {
     margin-left: 0;
     padding: 1.5rem;

@@ -17,6 +17,15 @@
   backdrop-filter: var(--backdrop);
   border-radius: var(--border-radius);
   transition: all 0.4s ease;
+  animation: FadInNav 0.7s ease-in-out;
+}
+@keyframes FadInNav {
+  0% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 /* 🌞 Light & 🌙 Dark */
@@ -166,14 +175,14 @@
   font-weight: 600;
   transition: color 0.3s ease;
 }
-.mobile-menu.dark a{
+.mobile-menu.dark a {
   color: #fff;
 }
 
 .mobile-menu.dark a:hover {
   color: #8a8989;
 }
-.mobile-menu.light a:hover{
+.mobile-menu.light a:hover {
   color: #9d9c9c;
 }
 /* 🧩 Responsive Design */
