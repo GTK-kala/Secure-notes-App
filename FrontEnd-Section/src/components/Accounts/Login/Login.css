@@ -1,6 +1,6 @@
 /* === AUTH PAGE CONTAINER === */
 .auth-container {
-  min-height: 100vh;
+  height: 450px;
   background: linear-gradient(135deg, #0f172a, #1e293b);
   display: flex;
   align-items: center;
@@ -8,13 +8,13 @@
   padding: 2rem;
   overflow: hidden;
   margin-top: 5px;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 /* === AUTH CARD === */
 .auth-card {
   position: relative;
-  top: -70px;
+  top: -10px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   border-radius: 20px;

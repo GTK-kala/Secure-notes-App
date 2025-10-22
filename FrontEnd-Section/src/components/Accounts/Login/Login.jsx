@@ -4,7 +4,7 @@ import "./Login.css";
 
 const LOGIN = () => {
   return (
-    <div className="auth-container">
+    <div className="auth-container login">
       <div className="auth-card">
         <h2 className="auth-title">Welcome Back 👋</h2>
         <p className="auth-subtitle">Login to continue to NoteVault</p>

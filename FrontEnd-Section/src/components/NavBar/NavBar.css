@@ -164,6 +164,8 @@
 }
 
 .mobile-menu.dark {
+  margin-top: 8px;
+  border-radius: 20px;
   background: rgba(20, 20, 20, 0.85);
   color: #fff;
 }

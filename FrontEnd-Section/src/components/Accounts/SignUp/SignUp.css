@@ -1,21 +1,26 @@
 /* === AUTH PAGE CONTAINER === */
-.auth-container {
-  min-height: 100vh;
+.auth-containers {
   background: linear-gradient(135deg, #0f172a, #1e293b);
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 3px;
+  height: 430px;
+  border-radius: 20px;
   padding: 2rem;
   overflow: hidden;
 }
 
 /* === AUTH CARD === */
-.auth-card {
+.auth-cards {
+  position: relative;
+  top: 0px;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   border-radius: 20px;
   padding: 2.5rem 2rem;
   width: 100%;
+  height: 380px;
   max-width: 420px;
   text-align: center;
   color: #fff;
@@ -33,7 +38,9 @@
 }
 
 /* === TITLE & SUBTITLE === */
-.auth-title {
+.auth-titles {
+ position: relative;
+  top: -35px;
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
@@ -43,19 +50,27 @@
   -webkit-text-fill-color: transparent;
 }
 
-.auth-subtitle {
+.auth-subtitles {
+   position: relative;
+  top: -35px;
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 2rem;
 }
+.auth-forms{
+  position: relative;
+  top: -35px;
+  left: -5px;
+  width: 90%;
+}
 
 /* === INPUT GROUP === */
-.input-group {
+.input-groups {
   position: relative;
   margin-bottom: 1.4rem;
 }
 
-.input-group .icon {
+.input-groups .icons {
   position: absolute;
   left: 15px;
   top: 50%;
@@ -64,7 +79,7 @@
   font-size: 1.1rem;
 }
 
-.input-group input {
+.input-groups input {
   width: 100%;
   padding: 0.8rem 0.8rem 0.8rem 2.5rem;
   border: none;
@@ -76,13 +91,13 @@
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.input-group input:focus {
+.input-groups input:focus {
   background: rgba(255, 255, 255, 0.25);
   transform: scale(1.02);
 }
 
 /* === BUTTON === */
-.auth-btn {
+.auth-btns {
   width: 100%;
   padding: 0.9rem;
   border: none;
@@ -96,40 +111,43 @@
   margin-top: 0.5rem;
 }
 
-.auth-btn:hover {
+.auth-btns:hover {
   background: linear-gradient(90deg, #1d4ed8, #0ea5e9);
   transform: translateY(-3px);
   box-shadow: 0 5px 20px rgba(56, 189, 248, 0.3);
 }
 
 /* === FOOTER === */
-.auth-footer {
+.auth-footers {
+  position: relative;
+  top: -35px;
+  width: 90%;
   margin-top: 1.5rem;
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.8);
 }
 
-.auth-link {
+.auth-links {
   color: #60a5fa;
   text-decoration: none;
   font-weight: 600;
 }
 
-.auth-link:hover {
+.auth-links:hover {
   text-decoration: underline;
 }
 
 /* === RESPONSIVE === */
 @media (max-width: 480px) {
-  .auth-card {
+  .auth-cards {
     padding: 2rem 1.5rem;
   }
 
-  .auth-title {
+  .auth-titles {
     font-size: 1.7rem;
   }
 
-  .auth-btn {
+  .auth-btns {
     font-size: 0.95rem;
   }
 }
