@@ -40,7 +40,7 @@
 /* === TITLE & SUBTITLE === */
 .auth-titles {
  position: relative;
-  top: -35px;
+  top: -45px;
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
@@ -52,14 +52,14 @@
 
 .auth-subtitles {
    position: relative;
-  top: -35px;
+  top: -45px;
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 2rem;
 }
 .auth-forms{
   position: relative;
-  top: -35px;
+  top: -45px;
   left: -5px;
   width: 90%;
 }
@@ -120,7 +120,7 @@
 /* === FOOTER === */
 .auth-footers {
   position: relative;
-  top: -35px;
+  top: -45px;
   width: 90%;
   margin-top: 1.5rem;
   font-size: 0.9rem;

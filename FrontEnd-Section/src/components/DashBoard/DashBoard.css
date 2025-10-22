@@ -1,0 +1,104 @@
+.dashboard-container {
+  padding: 2rem;
+  min-height: calc(100vh - 80px);
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #fff;
+  transition: all 0.3s ease;
+  overflow-x: hidden;
+}
+
+/* TITLE & SUBTITLE */
+.dashboard-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #60a5fa, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-subtitle {
+  text-align: center;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2rem;
+}
+
+/* GRID LAYOUT */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* CARDS */
+.dashboard-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 1.8rem;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.dashboard-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.card-icon {
+  font-size: 2.3rem;
+  margin-bottom: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.dashboard-card:hover .card-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.dashboard-card h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #cbd5e1;
+}
+
+.dashboard-card p {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* FOOTER */
+.dashboard-footer {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .dashboard-title {
+    font-size: 1.8rem;
+  }
+
+  .dashboard-card {
+    padding: 1.3rem;
+  }
+
+  .dashboard-card p {
+    font-size: 1.4rem;
+  }
+}
