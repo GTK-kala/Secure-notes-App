@@ -1,0 +1,151 @@
+.create-note-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 20px;
+  padding-bottom: 10px;
+  margin-top: 5px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  min-height: 100vh;
+  transition: all 0.4s ease;
+}
+
+.create-note-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 40px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  animation: fadeUp 0.7s ease;
+  color: #fff;
+}
+
+@keyframes fadeUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.page-title {
+  position: relative;
+  top: -30px;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #00d4ff;
+}
+
+.icon {
+  color: #00d4ff;
+}
+
+.note-form {
+  position: relative;
+  top: -30px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #c5c6c7;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.01);
+}
+
+textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+.pinned-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pin-icon {
+  margin-right: 6px;
+  color: #888;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.pin-icon.active {
+  color: #ffce00;
+  transform: rotate(-20deg) scale(1.2);
+}
+
+.save-btn {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.save-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 15px #00d4ff;
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .create-note-card {
+    padding: 25px;
+    width: 90%;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .save-btn {
+    font-size: 0.95rem;
+  }
+}
