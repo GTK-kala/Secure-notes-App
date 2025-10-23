@@ -14,11 +14,20 @@ const CreateNote = () => {
     const { name, value } = e.target;
     setNote({ ...note, [name]: value });
   };
-
+// TODO: send to backend
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("New Note Created:", note);
-    // TODO: send to backend
+    try {
+      const url = "http://localhost:3001/api/notes/add"
+      const res = fetch( url , {
+        method : "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(note),
+      })
+    } catch (error) {
+      console.log(error)
+    };
+    setNote({});
   };
 
   return (

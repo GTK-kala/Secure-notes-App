@@ -32,7 +32,6 @@ const DashBoard = () => {
       alert("No Notes on Database");
     }
     setNotes(Data);
-    console.log(notes)
   };
 
   useEffect(() => {
