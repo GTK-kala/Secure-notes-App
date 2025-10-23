@@ -6,7 +6,7 @@ const Signup = () => {
   return (
     <>
       <SignUp /> 
-      <ToastContainer position='top-right' autoClose={300}/>
+      <ToastContainer position='top-right' autoClose={1000}/>
     </>
   )
 }

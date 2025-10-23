@@ -1,5 +1,6 @@
 import { FaEnvelope, FaLock } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import "./Login.css";
 
 const LOGIN = () => {

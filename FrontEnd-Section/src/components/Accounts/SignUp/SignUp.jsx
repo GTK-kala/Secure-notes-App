@@ -9,8 +9,9 @@ const SignUp = () => {
   const [email , setEmail] = useState("");
   const [password , setPassword] = useState("");
 
-   const HandelSubmit = async () => {
-     const url = "http://localhost:3001/api/auth/register/all";
+   const HandelSubmit = async (e) => {
+      e.preventDefault();
+     const url = "http://localhost:3001/api/auth/register";
      const value = {
       name , email , password
      }
@@ -26,6 +27,7 @@ const SignUp = () => {
      } catch (error) {
        toast.error("failed to create account !!!")
      }
+     console.log(value)
      setEmail("");
      setName("");
      setPassword("");
@@ -39,17 +41,17 @@ const SignUp = () => {
         <form className="auth-forms" onSubmit={(e) =>HandelSubmit(e)}>
           <div className="input-groups">
             <FaUser className="icons" />
-            <input type="text" placeholder="Full Name" required onChange={(e) => setName(e.target.value)} />
+            <input type="text" placeholder="Full Name" required value={name} onChange={(e) => setName(e.target.value)} />
           </div>
 
           <div className="input-groups">
             <FaEnvelope className="icons" />
-            <input type="email" placeholder="Email" required onChange={(e) => setEmail(e.target.value)}/>
+            <input type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)}/>
           </div>
 
           <div className="input-groups">
             <FaLock className="icons" />
-            <input type="password" placeholder="Password" required onChange={(e) => setPassword(e.target.value)}/>
+            <input type="password" placeholder="Password" required value={password} onChange={(e) => setPassword(e.target.value)}/>
           </div>
 
           <button type="submit" className="auth-btn">Sign Up</button>
