@@ -5,7 +5,7 @@ import { useState } from "react";
 import "./SignUp.css";
 
 const SignUp = () => {
-  const [name , setName] = useState("");
+  const [username , setName] = useState("");
   const [email , setEmail] = useState("");
   const [password , setPassword] = useState("");
 
@@ -13,7 +13,7 @@ const SignUp = () => {
       e.preventDefault();
      const url = "http://localhost:3001/api/auth/register";
      const value = {
-      name , email , password
+      username , email , password
      }
      try {
        const res = await fetch(url , {
@@ -41,7 +41,7 @@ const SignUp = () => {
         <form className="auth-forms" onSubmit={(e) =>HandelSubmit(e)}>
           <div className="input-groups">
             <FaUser className="icons" />
-            <input type="text" placeholder="Full Name" required value={name} onChange={(e) => setName(e.target.value)} />
+            <input type="text" placeholder="Full Name" required value={username} onChange={(e) => setName(e.target.value)} />
           </div>
 
           <div className="input-groups">

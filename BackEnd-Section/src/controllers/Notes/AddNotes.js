@@ -3,7 +3,8 @@ import connection from "../../config/db.js";
 // ADD NOTES TO DATABASE
 export const AddNotes = (req, res) => {
   try {
-    const { user_id, title, body, pinned, tags } = req.body;
+    const user_id  = parseInt(req.body.user_id)
+    const { title, body, pinned, tags } = req.body;
     if (!user_id || !title) {
       return res
         .status(400)

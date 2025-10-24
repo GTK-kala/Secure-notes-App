@@ -1,33 +1,38 @@
-import { useState } from "react";
 import { FaStickyNote, FaTag, FaSave, FaThumbtack } from "react-icons/fa";
+import { toast } from "react-toastify";
+import { useState } from "react";
 import "./CreateNote.css";
 
 const CreateNote = () => {
-  const [note, setNote] = useState({
-    title: "",
-    body: "",
-    tags: "",
-    pinned: false,
-  });
+  const [id, setId] = useState("");
+  const [body, setBody] = useState("");
+  const [tags, setTags] = useState("");
+  const [title, setTitle] = useState("");
+  const [pinned, setPinned] = useState("");
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setNote({ ...note, [name]: value });
-  };
-// TODO: send to backend
+  // TODO: send to backend
   const handleSubmit = (e) => {
+
     e.preventDefault();
+    const value = { id, body, tags, title, pinned };
+    
     try {
-      const url = "http://localhost:3001/api/notes/add"
-      const res = fetch( url , {
-        method : "POST",
+      const url = "http://localhost:3001/api/notes/add";
+      const res = fetch( url, {
+        method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(note),
-      })
+        body: JSON.stringify(value),
+      });
+      toast.success("Note is created !!!");
     } catch (error) {
-      console.log(error)
-    };
-    setNote({});
+      toast.error("ERROR !!!");
+      console.log(error);
+    }
+    setId("");
+    setBody("");
+    setTags("");
+    setTitle("");
+    setPinned("");
   };
 
   return (
@@ -45,8 +50,20 @@ const CreateNote = () => {
               type="text"
               name="title"
               placeholder="Enter note title"
-              value={note.title}
-              onChange={handleChange}
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              required
+            />
+          </div>
+          {/* id */}
+          <div className="form-group">
+            <label>ID</label>
+            <input
+              type="number"
+              name="id"
+              placeholder="Enter id..."
+              value={id}
+              onChange={(e) => setId(e.target.value)}
               required
             />
           </div>
@@ -57,8 +74,8 @@ const CreateNote = () => {
             <textarea
               name="body"
               placeholder="Write your note..."
-              value={note.body}
-              onChange={handleChange}
+              value={body}
+              onChange={(e) => setBody(e.target.value)}
               required
             ></textarea>
           </div>
@@ -72,8 +89,8 @@ const CreateNote = () => {
               type="text"
               name="tags"
               placeholder="e.g. work, ideas"
-              value={note.tags}
-              onChange={handleChange}
+              value={tags}
+              onChange={(e) => setTags(e.target.value)}
             />
           </div>
 
@@ -82,14 +99,14 @@ const CreateNote = () => {
             <input
               type="checkbox"
               id="pinned"
-              checked={note.pinned}
+              checked={pinned}
               onChange={(e) =>
-                setNote({ ...note, pinned: e.target.checked })
+                setPinned({ ...pinned, pinned: e.target.checked })
               }
             />
             <label htmlFor="pinned">
-              <FaThumbtack className={`pin-icon ${note.pinned ? "active" : ""}`} />
-              {note.pinned ? "Pinned" : "Not Pinned"}
+              <FaThumbtack className={`pin-icon ${pinned ? "active" : ""}`} />
+              {pinned ? "Pinned" : "Not Pinned"}
             </label>
           </div>
 

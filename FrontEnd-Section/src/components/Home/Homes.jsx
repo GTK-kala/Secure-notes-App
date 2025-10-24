@@ -1,9 +1,11 @@
 import { FaStickyNote, FaCloudUploadAlt, FaLock, FaSyncAlt } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import { Image } from "../../assets/Data";
 import { useEffect } from "react";
 import "./Home.css";
 
 const Homes = () => {
+  const navigate = useNavigate();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -20,7 +22,7 @@ const Homes = () => {
             <br />
             Experience simplicity and speed with our cloud-based note system.
           </p>
-          <button className="cta-btn fade-in-up delay-2">
+          <button className="cta-btn fade-in-up delay-2" onClick={() => navigate('/create')}>
             + Create Your First Note
           </button>
         </div>
