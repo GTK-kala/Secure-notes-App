@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaDatabase, FaUserAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
 import "./About.css";
 
 const About = () => {
@@ -54,7 +54,7 @@ const About = () => {
           >
             <FaUserAlt className="about-icon user" />
             <h3>Developer</h3>
-            <p>Created by <strong>Khalid</strong> — a passionate full-stack web developer.</p>
+            <p>Created by <strong>Khalid</strong> a passionate full-stack web developer.</p>
           </motion.div>
         </div>
       </motion.div>

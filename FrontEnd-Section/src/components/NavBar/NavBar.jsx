@@ -1,5 +1,9 @@
-import { useState, useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import { useState, useContext } from "react";
+import { Link } from "react-router-dom"
+import "./NavBar.css";
 import {
   FaRegStickyNote,
   FaUserCircle,
@@ -8,13 +12,11 @@ import {
   FaBars,
   FaTimes,
 } from "react-icons/fa";
-import { ThemeContext } from "../../context/ThemeContext";
-import { Link } from "react-router-dom"
-import "./NavBar.css";
 
 const NavBar = ({ user, onLogout }) => {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const menuVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -29,7 +31,7 @@ const NavBar = ({ user, onLogout }) => {
   return (
     <nav className={`navbar ${theme}`}>
       {/* Left Section */}
-      <div className="nav-left">
+      <div className="nav-left" onClick={() => navigate('/')}>
         <FaRegStickyNote className="logo" />
         <h2 className="nav-title">NoteVault</h2>
       </div>
@@ -48,12 +50,12 @@ const NavBar = ({ user, onLogout }) => {
           {theme === "light" ? <FaMoon /> : <FaSun />}
         </button>
 
-        <div className="user-box">
+        <div className="user-box" onClick={() => navigate('/signup')}>
           <FaUserCircle className="user-icon" />
           <span>{user?.name || "Guest"}</span>
         </div>
 
-        <button className="logout" onClick={onLogout}>
+        <button className="logout" onClick={() =>{ onLogout , navigate('/login')}}>
           Logout
         </button>
 
@@ -72,10 +74,10 @@ const NavBar = ({ user, onLogout }) => {
             exit="exit"
             variants={menuVariants}
           >
-            <a href="/" onClick={() => setMenuOpen(false)}>Home</a>
-            <a href="/dashboard" onClick={() => setMenuOpen(false)}>Dashboard</a>
-            <a href="/create" onClick={() => setMenuOpen(false)}>Create Note</a>
-            <a href="/about" onClick={() => setMenuOpen(false)}>About</a>
+            <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+            <Link to="/dashboard" onClick={() => setMenuOpen(false)}>Dashboard</Link>
+            <Link to="/create" onClick={() => setMenuOpen(false)}>Create Note</Link>
+            <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
           </motion.div>
         )}
       </AnimatePresence>

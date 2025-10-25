@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import "./DashBoard.css";
 import {
   FaStickyNote,
   FaTasks,
@@ -7,7 +8,6 @@ import {
   FaUser,
   FaTachometerAlt,
 } from "react-icons/fa";
-import "./DashBoard.css";
 
 const DashBoard = () => {
   const [notes, setNotes] = useState([]);

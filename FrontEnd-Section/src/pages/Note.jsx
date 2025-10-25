@@ -1,5 +1,5 @@
-import CreateNote from "../components/Notes/CreateNote"
-import { ToastContainer } from "react-toastify"
+import CreateNote from "../components/Notes/CreateNote";
+import { ToastContainer } from "react-toastify";
 
 const Note = () => {
   return (

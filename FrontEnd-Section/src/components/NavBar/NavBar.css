@@ -41,6 +41,7 @@
 
 /* 💎 Branding */
 .nav-left {
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -97,6 +98,7 @@
 }
 
 .user-box {
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 0.4rem;

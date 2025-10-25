@@ -1,12 +1,12 @@
-import NavBar from "./components/NavBar/NavBar"
-import SideBar from "./components/SideBar/SideBar"
-import {Routes , Route} from "react-router-dom"
-import Home from "./pages/Home"
-import Signup from "./pages/Signup"
-import Login from "./pages/Login"
-import Dashboard from "./pages/Dashboard"
-import Note from "./pages/Note"
-import Abouts from "./pages/Abouts"
+import SideBar from "./components/SideBar/SideBar";
+import NavBar from "./components/NavBar/NavBar";
+import { Routes , Route } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import Abouts from "./pages/Abouts";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
+import Home from "./pages/Home";
+import Note from "./pages/Note";
 
 const App = () => {
   return (

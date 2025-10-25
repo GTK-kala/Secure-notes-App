@@ -1,4 +1,4 @@
-import DashBoard from "../components/DashBoard/DashBoard"
+import DashBoard from "../components/DashBoard/DashBoard";
 
 const Dashboard = () => {
   return (

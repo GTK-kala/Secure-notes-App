@@ -1,4 +1,5 @@
-import Homes from "../components/Home/Homes"
+import Homes from "../components/Home/Homes";
+
 const Home = () => {
   return (
     <>

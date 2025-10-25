@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { FaHome, FaStickyNote, FaUser, FaCog, FaSignOutAlt, FaBars } from "react-icons/fa";
+import { useState } from "react";
 import "./SideBar.css";
 
 const SideBar = () => {

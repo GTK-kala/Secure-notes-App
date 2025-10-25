@@ -1,5 +1,5 @@
-import LOGIN from "../components/Accounts/Login/LOGIN"
-import { ToastContainer } from "react-toastify"
+import LOGIN from "../components/Accounts/Login/LOGIN";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {

@@ -1,6 +1,6 @@
-import SignUp from '../components/Accounts/SignUp/SignUp'
-import { ToastContainer } from 'react-toastify'
-import "react-toastify/dist/ReactToastify.css"
+import SignUp from '../components/Accounts/SignUp/SignUp';
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 const Signup = () => {
   return (
