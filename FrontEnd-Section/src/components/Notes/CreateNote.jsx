@@ -4,26 +4,26 @@ import { useState } from "react";
 import "./CreateNote.css";
 
 const CreateNote = () => {
-  const [id, setId] = useState("");
+  const [user_id, setId] = useState("");
   const [body, setBody] = useState("");
   const [tags, setTags] = useState("");
   const [title, setTitle] = useState("");
   const [pinned, setPinned] = useState("");
 
   // TODO: send to backend
-  const handleSubmit = (e) => {
-
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const value = { id, body, tags, title, pinned };
+    const url = "http://localhost:3001/api/notes/add";
+    const value = { user_id, body, tags, title, pinned };
     
     try {
-      const url = "http://localhost:3001/api/notes/add";
-      const res = fetch( url, {
+      const res = await fetch(url, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "content-Type": "application/json" },
         body: JSON.stringify(value),
       });
       toast.success("Note is created !!!");
+      console.log(value);
     } catch (error) {
       toast.error("ERROR !!!");
       console.log(error);
@@ -62,7 +62,7 @@ const CreateNote = () => {
               type="number"
               name="id"
               placeholder="Enter id..."
-              value={id}
+              value={user_id}
               onChange={(e) => setId(e.target.value)}
               required
             />
