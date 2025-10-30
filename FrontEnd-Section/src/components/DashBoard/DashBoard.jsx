@@ -12,7 +12,7 @@ import {
 const DashBoard = () => {
   const [notes, setNotes] = useState([]);
   const [users, setUsers] = useState([]);
-  const [countActive , setCountActive] = useState(0);
+  const [countActive, setCountActive] = useState(0);
   const [countPinned, setCountPinned] = useState(0);
 
   const FetchNotesData = async () => {
@@ -24,7 +24,10 @@ const DashBoard = () => {
       alert("No Notes on Database");
     }
     setNotes(Data);
-    console.log(Data);
+    const value1 = Data.filter((note) => note.pinned === 1).length;
+    const value2 = Data.filter((note) => note.pinned === 0).length;
+    setCountActive(value1);
+    setCountPinned(value2);
   };
   const FetchUsersData = async () => {
     const url = "http://localhost:3001/api/auth/register/all";
@@ -35,7 +38,6 @@ const DashBoard = () => {
       alert("No Notes on Database");
     }
     setUsers(Data);
-    console.log(Data);
   };
 
   const cards = [
@@ -45,39 +47,29 @@ const DashBoard = () => {
       count: notes.length,
       color: "#38bdf8",
     },
-    { icon: <FaTasks />, title: "Active Tasks", count: countActive, color: "#22c55e" },
+    {
+      icon: <FaTasks />,
+      title: "Active Tasks",
+      count: countActive,
+      color: "#22c55e",
+    },
     {
       icon: <FaClock />,
       title: "Pending",
       count: countPinned,
       color: "#facc15",
     },
-    { icon: <FaUser />, title: "Profile Views", count: users.length, color: "#a855f7" },
+    {
+      icon: <FaUser />,
+      title: "Profile Views",
+      count: users.length,
+      color: "#a855f7",
+    },
   ];
-
-  const CountFun = () => {
-    const value1 = 0;
-    const value2 = 0; 
-    notes.map((note) =>{
-      if(note.pinned === "false"){
-        value1++;
-      }
-      if(note.pinned === "true"){
-        value2++;
-      }
-    })
-    setCountPinned(value1);
-    setCountActive(value2);
-    console.log(value1);
-    console.log(value2);
-  }
 
   useEffect(() => {
     FetchNotesData();
     FetchUsersData();
-    setTimeout(() =>{
-      CountFun();
-    } , 300) 
   }, []);
 
   return (

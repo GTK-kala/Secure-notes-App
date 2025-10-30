@@ -3,7 +3,7 @@
   border-radius: 20px;
   padding: 2rem;
   min-height: calc(100vh - 80px);
-  background: linear-gradient(135deg, #070b13, #0e131a);
+  background: linear-gradient(135deg, #1e1f29, #2b2d3a);
   color: #fff;
   transition: all 0.3s ease;
   overflow-x: hidden;
@@ -52,6 +52,7 @@
   padding: 1.8rem;
   text-align: center;
   transition: transform 0.3s ease, background 0.3s ease;
+  cursor: pointer;
 }
 
 .dashboard-card:hover {
