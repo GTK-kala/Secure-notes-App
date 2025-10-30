@@ -11,19 +11,11 @@ import {
 
 const DashBoard = () => {
   const [notes, setNotes] = useState([]);
-  const cards = [
-    {
-      icon: <FaStickyNote />,
-      title: "Total Notes",
-      count: 24,
-      color: "#38bdf8",
-    },
-    { icon: <FaTasks />, title: "Active Tasks", count: 8, color: "#22c55e" },
-    { icon: <FaClock />, title: "Pending", count: 4, color: "#facc15" },
-    { icon: <FaUser />, title: "Profile Views", count: 132, color: "#a855f7" },
-  ];
+  const [users, setUsers] = useState([]);
+  const [countActive , setCountActive] = useState(0);
+  const [countPinned, setCountPinned] = useState(0);
 
-  const FetchData = async () => {
+  const FetchNotesData = async () => {
     const url = "http://localhost:3001/api/notes/all";
     const response = await fetch(url);
     const data = await response.json();
@@ -32,11 +24,62 @@ const DashBoard = () => {
       alert("No Notes on Database");
     }
     setNotes(Data);
+    console.log(Data);
+  };
+  const FetchUsersData = async () => {
+    const url = "http://localhost:3001/api/auth/register/all";
+    const response = await fetch(url);
+    const data = await response.json();
+    const Data = data.result;
+    if (!Data) {
+      alert("No Notes on Database");
+    }
+    setUsers(Data);
+    console.log(Data);
   };
 
+  const cards = [
+    {
+      icon: <FaStickyNote />,
+      title: "Total Notes",
+      count: notes.length,
+      color: "#38bdf8",
+    },
+    { icon: <FaTasks />, title: "Active Tasks", count: countActive, color: "#22c55e" },
+    {
+      icon: <FaClock />,
+      title: "Pending",
+      count: countPinned,
+      color: "#facc15",
+    },
+    { icon: <FaUser />, title: "Profile Views", count: users.length, color: "#a855f7" },
+  ];
+
+  const CountFun = () => {
+    const value1 = 0;
+    const value2 = 0; 
+    notes.map((note) =>{
+      if(note.pinned === "false"){
+        value1++;
+      }
+      if(note.pinned === "true"){
+        value2++;
+      }
+    })
+    setCountPinned(value1);
+    setCountActive(value2);
+    console.log(value1);
+    console.log(value2);
+  }
+
   useEffect(() => {
-    FetchData();
+    FetchNotesData();
+    FetchUsersData();
+    setTimeout(() =>{
+      CountFun();
+    } , 300) 
   }, []);
+
   return (
     <motion.div
       className="dashboard-container"
