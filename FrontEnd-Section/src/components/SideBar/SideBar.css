@@ -1,8 +1,8 @@
 /* Sidebar General */
 .sidebar {
   position: fixed;
-  top: 84px; /* 👈 Push down below navbar height */
-  left: 0;
+  top: 100px; /* 👈 Push down below navbar height */
+  left: 5px;
   height: calc(100vh - 60px); /* 👈 Adjust height to fit under navbar */
   width: 240px;
   background: linear-gradient(180deg, #1e1f29, #2b2d3a);

@@ -14,7 +14,7 @@ import {
 } from "react-icons/fa";
 
 const NavBar = ({ user, onLogout }) => {
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const { theme, toggleTheme , HandleToggleFun } = useContext(ThemeContext);
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -31,7 +31,7 @@ const NavBar = ({ user, onLogout }) => {
   return (
     <nav className={`navbar ${theme}`}>
       {/* Left Section */}
-      <div className="nav-left" onClick={() => navigate('/')}>
+      <div className="nav-left" onClick={() => {navigate('/'), HandleToggleFun()}}>
         <FaRegStickyNote className="logo" />
         <h2 className="nav-title">NoteVault</h2>
       </div>

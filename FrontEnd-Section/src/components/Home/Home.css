@@ -8,9 +8,9 @@
   transition: margin-left 0.4s ease;
 }
 
-.sidebar.open ~ .home-page {
+/* .sidebar.open ~ .home-page {
   margin-left: 75px;
-}
+} */
 
 /* Hero Section */
 .hero-section {

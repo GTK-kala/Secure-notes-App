@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./DashBoard.css";
 import {
@@ -11,7 +10,6 @@ import {
 } from "react-icons/fa";
 
 const DashBoard = () => {
-  const navigate = useNavigate();
   const [notes, setNotes] = useState([]);
   const [users, setUsers] = useState([]);
   const [countActive, setCountActive] = useState(0);
@@ -47,10 +45,7 @@ const DashBoard = () => {
       icon: <FaStickyNote />,
       title: "Total Notes",
       count: notes.length,
-      color: "#38bdf8",
-      function : () =>{
-        const onClick = navigate('/notes')
-      }
+      color: "#38bdf8"
     },
     {
       icon: <FaTasks />,
@@ -62,21 +57,16 @@ const DashBoard = () => {
       icon: <FaClock />,
       title: "Pending",
       count: countPinned,
-      color: "#facc15",
+      color: "#facc15"
     },
     {
       icon: <FaUser />,
       title: "Profile Views",
       count: users.length,
-      color: "#a855f7",
+      color: "#a855f7"
     },
   ];
-
-  const element = document.querySelector('.dashboard-grid').addEventListener('click' , () =>{
-     alert('hello');
-   })
-   
-
+ 
   useEffect(() => {
     FetchNotesData();
     FetchUsersData();
