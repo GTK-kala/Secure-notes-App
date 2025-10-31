@@ -4,6 +4,7 @@ import { Routes , Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Abouts from "./pages/Abouts";
 import Signup from "./pages/Signup";
+import Notes from "./pages/Notes";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Note from "./pages/Note";
@@ -20,6 +21,7 @@ const App = () => {
         <Route  path="/dashboard" element ={<Dashboard />}/>
         <Route path="/create" element = {<Note />} />
         <Route path="/about" element = {<Abouts />} />
+        <Route path="/notes" element = {<Notes />} />
       </Routes>
     </>
   )

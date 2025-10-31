@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./DashBoard.css";
 import {
@@ -10,6 +11,7 @@ import {
 } from "react-icons/fa";
 
 const DashBoard = () => {
+  const navigate = useNavigate();
   const [notes, setNotes] = useState([]);
   const [users, setUsers] = useState([]);
   const [countActive, setCountActive] = useState(0);
