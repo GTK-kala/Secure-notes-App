@@ -1,0 +1,149 @@
+.notes-page {
+  flex: 1;
+  padding: 2rem;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  min-height: 100vh;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.notes-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+  animation: fadeDown 0.8s ease;
+}
+
+.notes-header .icon {
+  color: #60a5fa;
+  font-size: 1.8rem;
+}
+
+.notes-header h2 {
+  font-size: 1.8rem;
+  background: linear-gradient(90deg, #60a5fa, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* === GRID === */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  animation: fadeUp 1s ease;
+}
+
+/* === CARD === */
+.note-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 1.5rem;
+  backdrop-filter: blur(12px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.note-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.3);
+}
+
+.note-card.pinned {
+  border: 1px solid #38bdf8;
+  background: rgba(56, 189, 248, 0.15);
+}
+
+/* === HEADER === */
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.pin-icon {
+  color: #38bdf8;
+  font-size: 1.2rem;
+  animation: bounce 1s infinite alternate;
+}
+
+/* === BODY === */
+.note-body {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.4;
+}
+
+/* === TAGS === */
+.note-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 0.8rem;
+}
+
+.tag {
+  background: rgba(96, 165, 250, 0.2);
+  border-radius: 8px;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.8rem;
+  color: #60a5fa;
+  transition: all 0.3s ease;
+}
+
+.tag:hover {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+/* === FOOTER === */
+.note-footer {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* === NO NOTES === */
+.no-notes {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-3px); }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .notes-page {
+    padding: 1.5rem;
+  }
+}
