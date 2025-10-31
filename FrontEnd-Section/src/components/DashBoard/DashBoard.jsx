@@ -48,6 +48,9 @@ const DashBoard = () => {
       title: "Total Notes",
       count: notes.length,
       color: "#38bdf8",
+      function : () =>{
+        const onClick = navigate('/notes')
+      }
     },
     {
       icon: <FaTasks />,
@@ -68,6 +71,11 @@ const DashBoard = () => {
       color: "#a855f7",
     },
   ];
+
+  const element = document.querySelector('.dashboard-grid').addEventListener('click' , () =>{
+     alert('hello');
+   })
+   
 
   useEffect(() => {
     FetchNotesData();

@@ -1,14 +1,19 @@
 .notes-page {
+  margin-top: 5px;
   flex: 1;
   padding: 2rem;
   background: linear-gradient(135deg, #0f172a, #1e293b);
   min-height: 100vh;
   color: #fff;
+  border-radius: 20px;
   transition: all 0.3s ease;
 }
 
 .notes-header {
+  position: relative;
+  top: -20px;
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 10px;
   margin-bottom: 1.5rem;
@@ -29,6 +34,8 @@
 
 /* === GRID === */
 .notes-grid {
+  position: relative;
+  top: -20px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
@@ -44,6 +51,7 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .note-card:hover {
@@ -137,8 +145,12 @@
 }
 
 @keyframes bounce {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-3px); }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-3px);
+  }
 }
 
 /* === RESPONSIVE === */
