@@ -38,10 +38,10 @@ const NavBar = ({ user, onLogout }) => {
 
       {/* Desktop Links */}
       <div className="nav-links">
-        <Link to="/">Home</Link>
-        <Link to="/dashboard">Dashboard</Link>
-        <Link to="/create">Create Note</Link>
-        <Link to="/about">About</Link>
+        <Link to="/" onClick={() => HandleToggleFun(false)}>Home</Link>
+        <Link to="/dashboard" onClick={() => HandleToggleFun(false)}>Dashboard</Link>
+        <Link to="/create" onClick={() => HandleToggleFun(false)}>Create Note</Link>
+        <Link to="/about" onClick={() => HandleToggleFun(false)}>About</Link>
       </div>
 
       {/* Right Section */}

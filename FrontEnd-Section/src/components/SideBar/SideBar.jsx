@@ -12,36 +12,36 @@ import "./SideBar.css";
 
 const SideBar = () => {
   const navigate = useNavigate();
-  const { isOpen } = useContext(ThemeContext);
+  const { isOpen , HandleToggleFun } = useContext(ThemeContext);
   return (
     <>
       {/* Sidebar Container */}
       <aside className={`sidebar ${isOpen ? "open" : "collapsed"}`}>
-        <div className="sidebar-header">
+        {/* <div className="sidebar-header">
           <h2 className="logo">{isOpen ? "NoteVault" : "NV"}</h2>
-        </div>
+        </div> */}
 
         <ul className="sidebar-menu">
-          <li onClick={() => navigate('/')}>
+          <li onClick={() => {navigate('/'), HandleToggleFun()}}>
             <FaHome className="icon" />
             <span>Home</span>
           </li>
-          <li onClick={() => navigate('/notes')}>
+          <li onClick={() => {navigate('/notes'), HandleToggleFun()}}>
             <FaStickyNote className="icon" />
             <span>My Notes</span>
           </li>
-          <li>
+          <li onClick={() =>{navigate('/user'), HandleToggleFun()}}>
             <FaUser className="icon" />
             <span>Profile</span>
           </li>
-          <li>
+          <li onClick={() => HandleToggleFun()}>
             <FaCog className="icon" />
             <span>Settings</span>
           </li>
         </ul>
 
         <div className="sidebar-footer">
-          <button className="logout-btn">
+          <button className="logout-btn" onClick={() => HandleToggleFun()}>
             <FaSignOutAlt /> {isOpen && <span>Logout</span>}
           </button>
         </div>

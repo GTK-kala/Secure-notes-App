@@ -1,9 +1,10 @@
 import SideBar from "./components/SideBar/SideBar";
-import NavBar from "./components/NavBar/NavBar";
 import { Routes , Route } from "react-router-dom";
+import NavBar from "./components/NavBar/NavBar";
 import Dashboard from "./pages/Dashboard";
-import Abouts from "./pages/Abouts";
 import Signup from "./pages/Signup";
+import Abouts from "./pages/Abouts";
+import Users from "./pages/Users";
 import Notes from "./pages/Notes";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/create" element = {<Note />} />
         <Route path="/about" element = {<Abouts />} />
         <Route path="/notes" element = {<Notes />} />
+        <Route path="/user" element ={<Users />} />
       </Routes>
     </>
   )
