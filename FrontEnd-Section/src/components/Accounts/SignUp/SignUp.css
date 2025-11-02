@@ -1,6 +1,6 @@
 /* === AUTH PAGE CONTAINER === */
 .auth-containers {
-  background: linear-gradient(135deg, #0f172a, #1e293b);
+  background: linear-gradient(135deg, #1e1f29, #2b2d3a);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,7 +39,7 @@
 
 /* === TITLE & SUBTITLE === */
 .auth-titles {
- position: relative;
+  position: relative;
   top: -45px;
   font-size: 2rem;
   font-weight: 700;
@@ -51,13 +51,13 @@
 }
 
 .auth-subtitles {
-   position: relative;
+  position: relative;
   top: -45px;
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 2rem;
 }
-.auth-forms{
+.auth-forms {
   position: relative;
   top: -45px;
   left: -5px;

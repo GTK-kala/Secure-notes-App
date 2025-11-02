@@ -2,7 +2,7 @@
   margin-top: 5px;
   flex: 1;
   padding: 2rem;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
+  background: linear-gradient(135deg, #1e1f29, #2b2d3a);
   min-height: 100vh;
   color: #fff;
   border-radius: 20px;
@@ -27,7 +27,7 @@
 
 .notes-header h2 {
   font-size: 1.8rem;
-  text-shadow: 7px 7px 20px  #365fa2;
+  text-shadow: 7px 7px 20px #365fa2;
   background: linear-gradient(90deg, #60a5fa, #38bdf8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

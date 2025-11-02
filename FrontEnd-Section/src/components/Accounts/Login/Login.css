@@ -1,7 +1,7 @@
 /* === AUTH PAGE CONTAINER === */
 .auth-container {
   height: 450px;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
+  background: linear-gradient(135deg, #1e1f29, #2b2d3a);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,7 +49,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.auth-form{
+.auth-form {
   position: relative;
   top: -35px;
   left: -5px;
@@ -57,7 +57,7 @@
 }
 
 .auth-subtitle {
-   position: relative;
+  position: relative;
   top: -35px;
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.7);
@@ -138,16 +138,16 @@
 
 /* === RESPONSIVE === */
 
-@media (max-width : 720px) {
-  .auth-form{
+@media (max-width: 720px) {
+  .auth-form {
     position: relative;
     left: -10px;
     width: 90%;
   }
-  .auth-btn{
+  .auth-btn {
     width: 117%;
   }
-} 
+}
 @media (max-width: 480px) {
   .auth-card {
     padding: 2rem 1.5rem;

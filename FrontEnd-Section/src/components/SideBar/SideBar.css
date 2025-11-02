@@ -2,20 +2,20 @@
 .sidebar {
   position: fixed;
   top: 101px; /* 👈 Push down below navbar height */
-  left: 3px;
+  left: 1px;
   height: calc(100vh - 60px); /* 👈 Adjust height to fit under navbar */
   width: 200px;
-  background: linear-gradient(135deg, #141e30, #243b55);
+  background: linear-gradient(135deg, #1e1f29, #2b2d3a);
   color: white;
   display: flex;
   flex-direction: column;
-  /* align-items: flex-start; */
   justify-content: space-around;
   border-radius: 10px;
   margin-left: 0px;
   transition: all 0.4s ease;
   box-shadow: 4px 0 12px rgba(0, 0, 0, 0.25);
   z-index: 900; /* 👈 Lower than navbar */
+  animation: fadeInDown 0.5s ease;
 }
 
 .sidebar.collapsed {
@@ -127,11 +127,11 @@
 @keyframes fadeInDown {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateX(-10px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0px);
   }
 }
 
@@ -159,10 +159,10 @@
   .sidebar-toggle {
     display: block;
   }
-  .sidebar-menu{
+  .sidebar-menu {
     width: 90%;
   }
-  .sidebar-footer{
+  .sidebar-footer {
     width: 80%;
   }
 }
