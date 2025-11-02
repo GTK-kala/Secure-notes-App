@@ -31,17 +31,17 @@ const NavBar = ({ user, onLogout }) => {
   return (
     <nav className={`navbar ${theme}`}>
       {/* Left Section */}
-      <div className="nav-left" onClick={() => {navigate('/'), HandleToggleFun()}}>
+      <div className="nav-left" onClick={() =>  HandleToggleFun()}>
         <FaRegStickyNote className="logo" />
         <h2 className="nav-title">NoteVault</h2>
       </div>
 
       {/* Desktop Links */}
       <div className="nav-links">
-        <Link to="/" onClick={() => HandleToggleFun(false)}>Home</Link>
-        <Link to="/dashboard" onClick={() => HandleToggleFun(false)}>Dashboard</Link>
-        <Link to="/create" onClick={() => HandleToggleFun(false)}>Create Note</Link>
-        <Link to="/about" onClick={() => HandleToggleFun(false)}>About</Link>
+        <Link to="/">Home</Link>
+        <Link to="/dashboard">Dashboard</Link>
+        <Link to="/create">Create Note</Link>
+        <Link to="/about">About</Link>
       </div>
 
       {/* Right Section */}

@@ -33,7 +33,7 @@ const User = () => {
           users.map((user) => (
             <div key={user.id} className="user-card">
               <div className="user-header">
-                <h3>{user.name}</h3>
+                <h3>{user.username}</h3>
               </div>
               <div className="user-body">
                 <p>

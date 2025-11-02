@@ -1,4 +1,6 @@
 .users-page {
+  margin-top: 5px;
+  border-radius: 20px;
   flex: 1;
   padding: 2rem;
   background: linear-gradient(135deg, #0f172a, #1e293b);
@@ -9,7 +11,10 @@
 
 /* === HEADER === */
 .users-header {
+  position: relative;
+  top: -20px;
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 10px;
   margin-bottom: 1.5rem;
@@ -24,12 +29,20 @@
 .users-header h2 {
   font-size: 1.8rem;
   background: linear-gradient(90deg, #60a5fa, #38bdf8);
+  transition: all 0.4s ease-in-out;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.users-header h2:hover{
+  cursor: pointer;
+  text-shadow: 10px 10px 20px rgba(56, 189, 248, 0.3);
+
 }
 
 /* === GRID === */
 .users-grid {
+  position: relative;
+  top: -30px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
@@ -39,6 +52,7 @@
 /* === CARD === */
 .user-card {
   background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
   border-radius: 15px;
   padding: 1.5rem;
   backdrop-filter: blur(12px);

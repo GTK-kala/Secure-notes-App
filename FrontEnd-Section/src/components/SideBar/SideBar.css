@@ -1,11 +1,11 @@
 /* Sidebar General */
 .sidebar {
   position: fixed;
-  top: 102px; /* 👈 Push down below navbar height */
+  top: 101px; /* 👈 Push down below navbar height */
   left: 3px;
   height: calc(100vh - 60px); /* 👈 Adjust height to fit under navbar */
   width: 200px;
- background: linear-gradient(180deg, #1e1f29, #2b2d3a);
+  background: linear-gradient(135deg, #141e30, #243b55);
   color: white;
   display: flex;
   flex-direction: column;
