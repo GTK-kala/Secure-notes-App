@@ -1,7 +1,8 @@
-import SideBar from "./components/SideBar/SideBar";
 import { Routes , Route } from "react-router-dom";
+import SideBar from "./components/SideBar/SideBar";
 import NavBar from "./components/NavBar/NavBar";
 import Dashboard from "./pages/Dashboard";
+import EditUsers from "./pages/EditUsers";
 import Signup from "./pages/Signup";
 import Abouts from "./pages/Abouts";
 import Users from "./pages/Users";
@@ -16,14 +17,15 @@ const App = () => {
       <NavBar />
       <SideBar />
       <Routes>
-        <Route path="/" element ={<Home />} />
-        <Route path="/login" element ={<Login />} />
-        <Route path="/signup" element ={<Signup />} />
         <Route  path="/dashboard" element ={<Dashboard />}/>
-        <Route path="/create" element = {<Note />} />
+         <Route path="/edit-user" element={<EditUsers />} />
+        <Route path="/signup" element ={<Signup />} />
         <Route path="/about" element = {<Abouts />} />
+        <Route path="/create" element = {<Note />} />
         <Route path="/notes" element = {<Notes />} />
+        <Route path="/login" element ={<Login />} />
         <Route path="/user" element ={<Users />} />
+        <Route path="/" element ={<Home />} />
       </Routes>
     </>
   )
