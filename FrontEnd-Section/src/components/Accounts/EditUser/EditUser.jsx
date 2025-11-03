@@ -54,6 +54,7 @@ const EditUser = () => {
         <h2 className="edit-user-title">
           <FaUserEdit className="icon" /> Edit Your Info
         </h2>
+         <p className="auth-subtitles">Join NoteVault and start organizing smartly</p>
 
         <form onSubmit={handleSubmit} className="edit-user-form">
           {/* Name */}
