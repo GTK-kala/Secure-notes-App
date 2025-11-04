@@ -1,111 +1,62 @@
-import { FaUserEdit, FaEnvelope, FaLock, FaSave } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
 import "./EditUser.css";
 
 const EditUser = () => {
-  const [user, setUser] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const userId = 1;
-
-  // Fetch user data
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const res = await fetch(`http://localhost:3001/api/auth/register/${userId}`);
-        const data = await res.json();
-        setUser({
-          name: data.name || "",
-          email: data.email || "",
-          password: "",
-        });
-      } catch (error) {
-        console.error("Error fetching user:", error);
-      }
-    };
-    fetchUser();
-  }, [userId]);
-
-  // Handle form submit
-  const handleSubmit = async (e) => {
+  const handleUpdate = (e) => {
     e.preventDefault();
-    try {
-      const res = await fetch(`http://localhost:3001/api/auth/register/${userId}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(user),
-      });
-      if (res.ok) {
-        alert("User info updated successfully!");
-      } else {
-        alert("Failed to update user info");
-      }
-    } catch (error) {
-      console.error(error);
-    }
+    console.log({ name, email, password });
   };
 
   return (
-    <div className="edit-user-page">
+    <div className="edit-user-container">
       <div className="edit-user-card">
-        <h2 className="edit-user-title">
-          <FaUserEdit className="icon" /> Edit Your Info
-        </h2>
-         <p className="auth-subtitles">Join NoteVault and start organizing smartly</p>
+        <h2 className="edit-user-title">Edit Profile</h2>
+        <p className="edit-user-subtitle">Update your personal information</p>
 
-        <form onSubmit={handleSubmit} className="edit-user-form">
-          {/* Name */}
-          <div className="form-group">
-            <label>Name</label>
-            <div className="input-wrapper">
-              <FaUserEdit className="input-icon" />
-              <input
-                type="text"
-                value={user.name}
-                onChange={(e) => setUser({ ...user, name: e.target.value })}
-                placeholder="Enter your name"
-                required
-              />
-            </div>
+        <form className="edit-user-form" onSubmit={handleUpdate}>
+          <div className="input-group">
+            <FaUser className="icon" />
+            <input
+              type="text"
+              placeholder="Full Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
           </div>
 
-          {/* Email */}
-          <div className="form-group">
-            <label>Email</label>
-            <div className="input-wrapper">
-              <FaEnvelope className="input-icon" />
-              <input
-                type="email"
-                value={user.email}
-                onChange={(e) => setUser({ ...user, email: e.target.value })}
-                placeholder="Enter your email"
-                required
-              />
-            </div>
+          <div className="input-group">
+            <FaEnvelope className="icon" />
+            <input
+              type="email"
+              placeholder="Email Address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
           </div>
 
-          {/* Password */}
-          <div className="form-group">
-            <label>Password</label>
-            <div className="input-wrapper">
-              <FaLock className="input-icon" />
-              <input
-                type="password"
-                value={user.password}
-                onChange={(e) => setUser({ ...user, password: e.target.value })}
-                placeholder="Enter new password (optional)"
-              />
-            </div>
+          <div className="input-group">
+            <FaLock className="icon" />
+            <input
+              type="password"
+              placeholder="New Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </div>
 
-          {/* Submit */}
-          <button type="submit" className="save-btn">
-            <FaSave /> Save Changes
-          </button>
+          <button className="update-btn" type="submit">Update Info</button>
         </form>
+
+        <div className="edit-user-footer">
+          <p>Go back to <a href="/dashboard">Dashboard</a></p>
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
-.edit-user-page {
+/* === EDIT USER PAGE CONTAINER === */
+.edit-user-container {
   background: linear-gradient(135deg, #1e1f29, #2b2d3a);
   display: flex;
   align-items: center;
@@ -10,133 +11,155 @@
   overflow: hidden;
 }
 
+/* === EDIT CARD === */
 .edit-user-card {
   position: relative;
-  top: -80px;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
   border-radius: 20px;
-  padding: 2rem 2.5rem;
+  padding: 2.5rem 2rem;
   width: 100%;
-  height: 380px;
-  max-width: 480px;
-  animation: fadeUp 0.8s ease;
-  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.2);
-  transition: all 0.3s ease;
+  height: 390px;
+  max-width: 440px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transform: translateY(30px);
+  opacity: 0;
+  animation: slideUp 0.8s ease forwards;
 }
 
-.edit-user-card:hover {
-  transform: translateY(-4px);
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
+/* === TITLE === */
 .edit-user-title {
   position: relative;
   top: -35px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  justify-content: center;
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
   background: linear-gradient(90deg, #60a5fa, #38bdf8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.icon {
-  color: #38bdf8;
+.edit-user-subtitle {
+  position: relative;
+  top: -50px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1.5rem;
 }
 
+/* === FORM === */
 .edit-user-form {
   position: relative;
-  width: 95%;
   top: -35px;
-  display: flex;
-  flex-direction: column;
-  gap: 1.3rem;
+  left: -28px;
+  width: 90%;
+  margin: 0 auto;
 }
 
-/* === Input === */
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 6px;
-}
-
-.input-wrapper {
+/* === INPUT GROUPS === */
+.input-group {
   position: relative;
+  margin-bottom: 1.4rem;
 }
 
-.input-icon {
+.input-group .icon {
   position: absolute;
-  left: 10px;
+  left: 15px;
   top: 50%;
   transform: translateY(-50%);
-  color: #38bdf8;
+  color: #60a5fa;
+  font-size: 1.1rem;
 }
 
-input {
+.input-group input {
   width: 100%;
-  padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+  padding: 0.8rem 0.8rem 0.8rem 2.5rem;
   border: none;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   color: #fff;
-  outline: none;
-  transition: background 0.3s ease;
-}
-
-input:focus {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-/* === Button === */
-.save-btn {
-  width: 107%;
-  background: linear-gradient(90deg, #3b82f6, #38bdf8);
-  border: none;
-  border-radius: 10px;
-  color: #fff;
-  padding: 0.8rem;
-  font-weight: bold;
   font-size: 1rem;
+  outline: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.input-group input:focus {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.02);
+}
+
+/* === UPDATE BUTTON === */
+.update-btn {
+  width: 113%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #2563eb, #38bdf8);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
 }
 
-.save-btn:hover {
+.update-btn:hover {
+   background: linear-gradient(90deg, #2359ce, #56c8f9);
   transform: translateY(-3px);
-  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
 }
 
-/* === Animations === */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* === FOOTER === */
+.edit-user-footer {
+  position: relative;
+  top: -30px;
+  width: 90%;
+  margin-top: 1.2rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
 }
 
-/* === Responsive === */
-@media (max-width: 600px) {
+.edit-user-footer a {
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.edit-user-footer a:hover {
+  text-decoration: underline;
+}
+
+/* === RESPONSIVE === */
+@media (max-width : 720px) {
+  .update-btn{
+    width: 118%;
+  }
+  .edit-user-footer{
+    position: relative;
+    right: -30px;
+  }
+}
+@media (max-width: 480px)  {
   .edit-user-card {
-    padding: 1.5rem;
+    padding: 2rem 1.5rem;
+    height: auto;
   }
 
   .edit-user-title {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+  }
+
+  .update-btn {
+    font-size: 0.95rem;
+    width: 110%;
   }
 }
+
