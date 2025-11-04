@@ -1,9 +1,14 @@
 import EditUser from "../components/Accounts/EditUser/EditUser";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
- const EditUsers = () => {
+const EditUsers = () => {
   return (
-    <EditUser />
-  )
-}
+    <>
+      <EditUser />
+      <ToastContainer position="top-right" autoClose={1000}/>
+    </>
+  );
+};
 
-export default EditUsers
+export default EditUsers;
