@@ -5,7 +5,7 @@ import "./EditUser.css";
 
 const EditUser = () => {
   const [username, setUserName] = useState("");
-  const [email, setEmail] = useState("");
+  const [id, setId] = useState("");
   const [password, setPassword] = useState("");
 
   const handleUpdate = async (e) => {
@@ -13,7 +13,7 @@ const EditUser = () => {
     const id = 1;
     const value = {
       username,
-      email,
+      id: Number(id),
       password,
     };
     try {
@@ -23,9 +23,9 @@ const EditUser = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(value)
+        body: JSON.stringify(value),
       });
-      console.log(value)
+      console.log(value);
       toast.success("User information updated successfully!");
     } catch (error) {
       console.log(error);
@@ -51,6 +51,16 @@ const EditUser = () => {
           </div>
 
           <div className="input-group">
+            <FaUser className="icon" />
+            <input
+              type="number"
+              placeholder="User-id"
+              value={id}
+              onChange={(e) => setId(e.target.value)}
+            />
+          </div>
+
+          {/* <div className="input-group">
             <FaEnvelope className="icon" />
             <input
               type="email"
@@ -58,7 +68,7 @@ const EditUser = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-          </div>
+          </div> */}
 
           <div className="input-group">
             <FaLock className="icon" />

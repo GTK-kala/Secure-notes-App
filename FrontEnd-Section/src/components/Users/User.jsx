@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
 import { FaUsers, FaCalendarAlt, FaEnvelope } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import {useNavigate} from "react-router-dom"
 import "./User.css";
 
 const User = () => {
   const [users, setUsers] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -31,7 +33,7 @@ const User = () => {
           <p className="no-users">No users found 👥</p>
         ) : (
           users.map((user) => (
-            <div key={user.id} className="user-card">
+            <div key={user.id} className="user-card" onClick={() => navigate(`/edit-user/${user.id}`)}>
               <div className="user-header">
                 <h3>{user.username}</h3>
               </div>

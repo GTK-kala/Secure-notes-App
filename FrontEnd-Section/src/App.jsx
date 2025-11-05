@@ -3,6 +3,7 @@ import SideBar from "./components/SideBar/SideBar";
 import NavBar from "./components/NavBar/NavBar";
 import Dashboard from "./pages/Dashboard";
 import EditUsers from "./pages/EditUsers";
+import EditNotes from "./pages/EditNotes";
 import Signup from "./pages/Signup";
 import Abouts from "./pages/Abouts";
 import Users from "./pages/Users";
@@ -17,8 +18,9 @@ const App = () => {
       <NavBar />
       <SideBar />
       <Routes>
+        <Route path="/edit-note" element = {<EditNotes />} />
         <Route  path="/dashboard" element ={<Dashboard />}/>
-         <Route path="/edit-user" element={<EditUsers />} />
+        <Route path="/edit-user/:id" element={<EditUsers />} />
         <Route path="/signup" element ={<Signup />} />
         <Route path="/about" element = {<Abouts />} />
         <Route path="/create" element = {<Note />} />

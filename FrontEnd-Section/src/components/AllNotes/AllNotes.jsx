@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
 import { FaStickyNote, FaThumbtack } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import "./AllNotes.css";
 
 const AllNotes = () => {
   const [notes, setNotes] = useState([]);
+  const navigator = useNavigate();
 
   useEffect(() => {
     const fetchNotes = async () => {
@@ -34,6 +36,7 @@ const AllNotes = () => {
             <div
               key={note.note_id}
               className={`note-card ${note.pinned ? "pinned" : ""}`}
+              onClick={() => navigator("/edit-note")}
             >
               <div className="note-header">
                 <h3>{note.title}</h3>
