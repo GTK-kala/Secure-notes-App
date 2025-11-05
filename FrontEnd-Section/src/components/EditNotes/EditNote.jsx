@@ -3,37 +3,37 @@ import "./EditNote.css";
 
 const EditNote = () => {
   return (
-    <div className="auth-containers">
-      <div className="auth-cards">
-        <h2 className="auth-titles">
+    <div className="editnote-container">
+      <div className="editnote-card">
+        <h2 className="editnote-title">
           <FaStickyNote /> Edit Note
         </h2>
-        <p className="auth-subtitles">Update your note details below</p>
+        <p className="editnote-subtitle">Update your note details below</p>
 
-        <form className="auth-forms">
+        <form className="editnote-form">
           {/* Title */}
-          <div className="input-groups">
-            <FaStickyNote className="icons" />
+          <div className="editnote-group">
+            <FaStickyNote className="editnote-icon" />
             <input type="text" name="title" placeholder="Enter new title" />
           </div>
 
           {/* Body */}
-          <div className="input-groups">
+          <div className="editnote-group">
             <textarea
               name="body"
               placeholder="Write your updated note..."
-              className="textarea-field"
+              className="editnote-textarea"
             ></textarea>
           </div>
 
           {/* Tags */}
-          <div className="input-groups">
-            <FaTag className="icons" />
+          <div className="editnote-group">
+            <FaTag className="editnote-icon" />
             <input type="text" name="tags" placeholder="e.g. work, reminder" />
           </div>
 
           {/* Pinned */}
-          <div className="pinned-toggle">
+          <div className="editnote-pinned">
             <input type="checkbox" id="pinned" />
             <label htmlFor="pinned">
               <FaThumbtack className="pin-icon" />
@@ -42,7 +42,7 @@ const EditNote = () => {
           </div>
 
           {/* Submit */}
-          <button type="submit" className="auth-btns">
+          <button type="submit" className="editnote-btn">
             <FaSave /> Update Note
           </button>
         </form>
