@@ -36,7 +36,7 @@ const AllNotes = () => {
             <div
               key={note.note_id}
               className={`note-card ${note.pinned ? "pinned" : ""}`}
-              onClick={() => navigator("/edit-note")}
+              onClick={() => navigator(`/edit-note/${note.note_id}`)}
             >
               <div className="note-header">
                 <h3>{note.title}</h3>

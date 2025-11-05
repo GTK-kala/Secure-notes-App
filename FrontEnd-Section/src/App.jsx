@@ -18,7 +18,7 @@ const App = () => {
       <NavBar />
       <SideBar />
       <Routes>
-        <Route path="/edit-note" element = {<EditNotes />} />
+        <Route path="/edit-note/:id" element = {<EditNotes />} />
         <Route  path="/dashboard" element ={<Dashboard />}/>
         <Route path="/edit-user/:id" element={<EditUsers />} />
         <Route path="/signup" element ={<Signup />} />

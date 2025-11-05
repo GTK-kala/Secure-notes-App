@@ -113,7 +113,7 @@
 }
 
 .update-btn:hover {
-   background: linear-gradient(90deg, #2359ce, #56c8f9);
+  background: linear-gradient(90deg, #2359ce, #56c8f9);
   transform: translateY(-3px);
 }
 
@@ -139,16 +139,16 @@
 }
 
 /* === RESPONSIVE === */
-@media (max-width : 720px) {
-  .update-btn{
+@media (max-width: 720px) {
+  .update-btn {
     width: 118%;
   }
-  .edit-user-footer{
+  .edit-user-footer {
     position: relative;
     right: -30px;
   }
 }
-@media (max-width: 480px)  {
+@media (max-width: 480px) {
   .edit-user-card {
     padding: 2rem 1.5rem;
     height: auto;
@@ -161,4 +161,3 @@
     width: 110%;
   }
 }
-

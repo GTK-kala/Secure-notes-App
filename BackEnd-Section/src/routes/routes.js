@@ -53,10 +53,10 @@ route.post('/notes/add' , AddNotes);
 // GET NOTE BY ID
 route.get('/notes/all/:id' , GetNote);
 // UPDATE NOTES
-route.put('/notes/all/:id' , UpDateNote)
+route.put('/notes/all/:id' , UpDateNote);
 //GET SOME NOTES
-route.get('/notes/some' , SomeNotes)
+route.get('/notes/some' , SomeNotes);
 // DELETE NOTE BY ID
-route.delete('/notes/all/:id' , DeleteNote)
+route.delete('/notes/all/:id' , DeleteNote);
 
 export default route;
