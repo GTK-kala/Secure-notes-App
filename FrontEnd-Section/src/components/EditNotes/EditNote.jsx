@@ -3,37 +3,37 @@ import "./EditNote.css";
 
 const EditNote = () => {
   return (
-    <div className="editnote-container">
-      <div className="editnote-card">
-        <h2 className="editnote-title">
+    <div className="edit_note-container">
+      <div className="edit_note-card">
+        <h2 className="edit_note-title">
           <FaStickyNote /> Edit Note
         </h2>
-        <p className="editnote-subtitle">Update your note details below</p>
+        <p className="edit_note-subtitle">Update your note details below</p>
 
-        <form className="editnote-form">
+        <form className="edit_note-form">
           {/* Title */}
-          <div className="editnote-group">
-            <FaStickyNote className="editnote-icon" />
+          <div className="edit_note-group">
+            <FaStickyNote className="edit_note-icon" />
             <input type="text" name="title" placeholder="Enter new title" />
           </div>
 
           {/* Body */}
-          <div className="editnote-group">
+          <div className="edit_note-group">
             <textarea
               name="body"
               placeholder="Write your updated note..."
-              className="editnote-textarea"
+              className="edit_note-textarea"
             ></textarea>
           </div>
 
           {/* Tags */}
-          <div className="editnote-group">
-            <FaTag className="editnote-icon" />
+          <div className="edit_note-group">
+            <FaTag className="edit_note-icon" />
             <input type="text" name="tags" placeholder="e.g. work, reminder" />
           </div>
 
           {/* Pinned */}
-          <div className="editnote-pinned">
+          <div className="edit_note-pinned">
             <input type="checkbox" id="pinned" />
             <label htmlFor="pinned">
               <FaThumbtack className="pin-icon" />
@@ -42,7 +42,7 @@ const EditNote = () => {
           </div>
 
           {/* Submit */}
-          <button type="submit" className="editnote-btn">
+          <button type="submit" className="edit_note-btn">
             <FaSave /> Update Note
           </button>
         </form>

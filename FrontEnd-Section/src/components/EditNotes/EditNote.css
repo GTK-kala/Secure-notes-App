@@ -1,0 +1,153 @@
+/* === MAIN CONTAINER === */
+.edit_note-container {
+  background: linear-gradient(135deg, #1e1f29, #2b2d3a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3px;
+  height: 430px;
+  border-radius: 20px;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+/* === CARD === */
+.edit_note-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  height: auto;
+  max-width: 420px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transform: translateY(30px);
+  opacity: 0;
+  animation: slideUp 0.8s ease forwards;
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* === TITLES === */
+.edit_note-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  background: linear-gradient(90deg, #60a5fa, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.edit_note-subtitle {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2rem;
+}
+
+/* === FORM === */
+.edit_note-form {
+  width: 100%;
+}
+
+.edit_note-group {
+  position: relative;
+  margin-bottom: 1.4rem;
+}
+
+.edit_note-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #60a5fa;
+  font-size: 1.1rem;
+}
+
+.edit_note-group input,
+.edit_note-textarea {
+  width: 100%;
+  padding: 0.8rem 0.8rem 0.8rem 2.5rem;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.edit_note-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.edit_note-group input:focus,
+.edit_note-textarea:focus {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.02);
+}
+
+/* === PINNED === */
+.edit_note-pinned {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.edit_note-pinned label {
+  color: #fff;
+  cursor: pointer;
+}
+
+.pin-icon {
+  color: #60a5fa;
+  margin-right: 6px;
+}
+
+/* === BUTTON === */
+.edit_note-btn {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #2563eb, #38bdf8);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.edit_note-btn:hover {
+  background: linear-gradient(90deg, #1d4ed8, #0ea5e9);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(56, 189, 248, 0.3);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .edit_note-card {
+    padding: 2rem 1.5rem;
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .edit_note-title {
+    font-size: 1.7rem;
+  }
+  .edit_note-btn {
+    font-size: 0.95rem;
+  }
+}
