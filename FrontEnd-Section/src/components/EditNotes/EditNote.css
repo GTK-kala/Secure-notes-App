@@ -1,7 +1,7 @@
 /* Root -- keep below navbar (assumes navbar height ~ 60px) */
 .edit_note-root {
-    margin-top: 6px;
-    border-radius: 20px;
+  margin-top: 6px;
+  border-radius: 20px;
   min-height: calc(100vh - 60px);
   background: linear-gradient(135deg, #0f172a, #1e293b);
   display: flex;
@@ -15,6 +15,7 @@
   width: 100%;
   max-width: 900px; /* allows larger screens to use some space */
   padding: 24px;
+  padding-top: 10px;
   box-sizing: border-box;
 }
 
@@ -24,6 +25,7 @@
   backdrop-filter: blur(12px);
   border-radius: 16px;
   padding: 28px;
+  padding-top: 5px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
   border: 1px solid rgba(255, 255, 255, 0.04);
   animation: edit_note-entrance 0.6s ease both;
@@ -32,16 +34,15 @@
 /* Header */
 .edit_note-header {
   margin-bottom: 14px;
-  text-align: center;
 }
 
 .edit_note-heading {
   display: flex;
   align-items: center;
-  text-align: center;
+  justify-content: center;
   gap: 10px;
-  font-size: 1.4rem;
-  margin: 0;
+  font-size: 1.7rem;
+  margin-bottom: 5px;
   background: linear-gradient(90deg, #60a5fa, #38bdf8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -49,11 +50,12 @@
 
 .edit_note-heading-icon {
   color: #60a5fa;
-  font-size: 1.2rem;
+  font-size: 1.9rem;
 }
 
 .edit_note-sub {
   margin: 6px 0 0 0;
+  text-align: center;
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.95rem;
 }
@@ -108,7 +110,7 @@
 
 /* Textarea */
 .edit_note-field-textarea {
-     width: 93%;
+  width: 93%;
   margin-top: 8px;
 }
 
@@ -148,6 +150,8 @@
 
 /* pinned control */
 .pinned-control {
+  position: relative;
+  bottom: -13px;
   width: 160px;
   display: flex;
   align-items: center;
@@ -169,6 +173,8 @@
 
 /* pin icon */
 .pin-icon {
+  position: relative;
+  bottom: -5px;
   color: #94a3b8;
   transition: transform 0.18s, color 0.18s;
 }

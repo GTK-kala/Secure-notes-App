@@ -2,26 +2,29 @@ import { FaStickyNote, FaTag, FaThumbtack, FaSave } from "react-icons/fa";
 import { useState } from "react";
 import "./EditNote.css";
 
-const EditNote = ({ initial = {} }) => {
-  // UI-only state (you can replace with props or fetch logic)
-  const [title, setTitle] = useState(initial.title || "");
-  const [body, setBody] = useState(initial.body || "");
-  const [tags, setTags] = useState(initial.tags || "");
-  const [pinned, setPinned] = useState(!!initial.pinned);
+const EditNote = () => {
 
+  const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
+  const [tags, setTags] = useState("");
+  const [pinned, setPinned] = useState(false);
+
+  const HandleChange = async (e) => {
+    e.preventDefault();
+  }
   return (
     <div className="edit_note-root">
       <div className="edit_note-wrapper">
         <div className="edit_note-card">
           <header className="edit_note-header">
             <h1 className="edit_note-heading">
-              <FaStickyNote className="edit_note-heading-icon" />
-              Edit Note
+              <span><FaStickyNote className="edit_note-heading-icon" /></span>
+              <span>Edit Note</span>
             </h1>
             <p className="edit_note-sub">Update title, content, tags or pin status</p>
           </header>
 
-          <form className="edit_note-form" onSubmit={(e) => e.preventDefault()}>
+          <form className="edit_note-form" onSubmit={(e) => HandleChange(e)}>
             {/* Title */}
             <label className="edit_note-label">
               Title
