@@ -1,6 +1,6 @@
 import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { toast } from "react-toastify"
+import toast from "react-hot-toast";
 import { useState } from "react";
 import "./SignUp.css";
 

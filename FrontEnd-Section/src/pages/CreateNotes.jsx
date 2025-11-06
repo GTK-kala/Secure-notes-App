@@ -1,10 +1,10 @@
-import EditNote from "../components/EditNotes/EditNote";
+import CreateNote from "../components/Notes/CreateNote";
 import { Toaster } from "react-hot-toast";
 
-const EditNotes = () => {
+const CreateNotes = () => {
   return (
     <>
-      <EditNote />
+      <CreateNote />
       <Toaster
         position="top-center"
         reverseOrder={false}
@@ -36,4 +36,4 @@ const EditNotes = () => {
   );
 };
 
-export default EditNotes;
+export default CreateNotes;

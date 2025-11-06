@@ -1,7 +1,7 @@
 import { ThemeContext } from "../../../context/ThemeContext";
 import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
 import { useState , useContext } from "react";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 import "./EditUser.css";
 
 const EditUser = () => {
@@ -32,7 +32,7 @@ const EditUser = () => {
       toast.success("User information updated successfully!");
     } catch (error) {
       console.log(error);
-      toast.error("Failed to update user information.");
+      toast.error("Failed to update user information!");
     }
   };
 

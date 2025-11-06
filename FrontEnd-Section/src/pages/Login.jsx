@@ -1,14 +1,39 @@
 import LOGIN from "../components/Accounts/Login/LOGIN";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { Toaster } from "react-hot-toast";
 
 const Login = () => {
   return (
     <>
-       <LOGIN />
-       <ToastContainer position="top-right" autoClose={1000}/>
-    </>
-  )
-}
+      <LOGIN />
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+        gutter={8}
+        containerClassName=""
+        containerStyle={{}}
+        toasterId="default"
+        toastOptions={{
+          // Define default options
+          className: "",
+          duration: 1000,
+          removeDelay: 1000,
+          style: {
+            background: "#363636",
+            color: "#fff",
+          },
 
-export default Login
+          // Default options for specific types
+          success: {
+            duration: 2000,
+            iconTheme: {
+              primary: "green",
+              secondary: "black",
+            },
+          },
+        }}
+      />
+    </>
+  );
+};
+
+export default Login;

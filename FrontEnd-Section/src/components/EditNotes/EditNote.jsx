@@ -2,7 +2,6 @@ import { FaStickyNote, FaTag, FaThumbtack, FaSave } from "react-icons/fa";
 import { ThemeContext } from "../../context/ThemeContext";
 import { useState, useContext } from "react";
 import { toast } from "react-hot-toast";
-// import { toast } from "react-toastify";
 import "./EditNote.css";
 
 const EditNote = () => {
