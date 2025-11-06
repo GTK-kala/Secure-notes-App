@@ -1,7 +1,8 @@
 import { FaStickyNote, FaTag, FaThumbtack, FaSave } from "react-icons/fa";
 import { ThemeContext } from "../../context/ThemeContext";
-import { useState , useContext } from "react";
-import { toast } from "react-toastify";
+import { useState, useContext } from "react";
+import { toast } from "react-hot-toast";
+// import { toast } from "react-toastify";
 import "./EditNote.css";
 
 const EditNote = () => {
@@ -18,32 +19,36 @@ const EditNote = () => {
     const updatedNote = {
       title,
       body,
-      tags: tags.split(",").map(tag => tag.trim()),
-      pinned
+      tags: tags.split(",").map((tag) => tag.trim()),
+      pinned,
     };
     try {
-       const res = await fetch(url , {
-        method: 'PUT',
+      const res = await fetch(url, {
+        method: "PUT",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(updatedNote)
-       })
-       toast.success("Note Updated Successfully!");
+        body: JSON.stringify(updatedNote),
+      });
+      toast.success("Note updated successfully!");
     } catch (error) {
       toast.error("Failed to update note.");
     }
-  }
+  };
   return (
     <div className="edit_note-root">
       <div className="edit_note-wrapper">
         <div className="edit_note-card">
           <header className="edit_note-header">
             <h1 className="edit_note-heading">
-              <span><FaStickyNote className="edit_note-heading-icon" /></span>
+              <span>
+                <FaStickyNote className="edit_note-heading-icon" />
+              </span>
               <span>Edit Note</span>
             </h1>
-            <p className="edit_note-sub">Update title, content, tags or pin status</p>
+            <p className="edit_note-sub">
+              Update title, content, tags or pin status
+            </p>
           </header>
 
           <form className="edit_note-form" onSubmit={(e) => HandleChange(e)}>
@@ -104,7 +109,9 @@ const EditNote = () => {
                     className="edit_note-checkbox"
                   />
                   <label htmlFor="edit_note-pinned" className="pinned-label">
-                    <FaThumbtack className={`pin-icon ${pinned ? "active" : ""}`} />
+                    <FaThumbtack
+                      className={`pin-icon ${pinned ? "active" : ""}`}
+                    />
                     {pinned ? "Pinned" : "Pin"}
                   </label>
                 </span>
