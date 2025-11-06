@@ -1,9 +1,11 @@
 import { FaUsers, FaCalendarAlt, FaEnvelope } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
+import { useEffect, useState , useContext } from "react";
 import {useNavigate} from "react-router-dom"
 import "./User.css";
 
 const User = () => {
+  const { HandleUserId } = useContext(ThemeContext);
   const [users, setUsers] = useState([]);
   const navigate = useNavigate();
 
@@ -33,7 +35,7 @@ const User = () => {
           <p className="no-users">No users found 👥</p>
         ) : (
           users.map((user) => (
-            <div key={user.id} className="user-card" onClick={() => navigate(`/edit-user/${user.id}`)}>
+            <div key={user.id} className="user-card" onClick={() => { HandleUserId(user.id), navigate(`/edit-user/${user.id}`) }}>
               <div className="user-header">
                 <h3>{user.username}</h3>
               </div>

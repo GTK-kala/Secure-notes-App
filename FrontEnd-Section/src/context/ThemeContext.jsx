@@ -4,6 +4,8 @@ export const ThemeContext = createContext(null);
 
 export const ThemeProvider = (props) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [user_id , setUserId] = useState(null);
+  const [note_id , setNoteId] = useState(null);
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
 
@@ -13,6 +15,14 @@ export const ThemeProvider = (props) => {
      }else{
       setIsOpen(true);
      }
+  }
+
+  const HandleUserId = (id) =>{
+    setUserId(id);
+  }
+
+  const HandleNoteId = (id) =>{
+    setNoteId(id);
   }
 
   useEffect(() => {
@@ -29,7 +39,11 @@ export const ThemeProvider = (props) => {
     toggleTheme,
     isOpen,
     setIsOpen,
-    HandleToggleFun
+    HandleToggleFun,
+    user_id,
+    HandleUserId,
+    note_id,
+    HandleNoteId
   };
 
   return (

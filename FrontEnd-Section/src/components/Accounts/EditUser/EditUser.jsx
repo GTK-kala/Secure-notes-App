@@ -1,16 +1,19 @@
+import { ThemeContext } from "../../../context/ThemeContext";
 import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
+import { useState , useContext } from "react";
 import { toast } from "react-toastify";
-import { useState } from "react";
 import "./EditUser.css";
 
 const EditUser = () => {
   const [username, setUserName] = useState("");
-  const [id, setId] = useState("");
   const [password, setPassword] = useState("");
+  // const [email, setEmail] = useState("");
+  const { user_id } = useContext(ThemeContext);
+  const [id, setId] = useState("");
 
   const handleUpdate = async (e) => {
     e.preventDefault();
-    const id = 1;
+    const id = user_id;
     const value = {
       username,
       id: Number(id),
@@ -59,16 +62,6 @@ const EditUser = () => {
               onChange={(e) => setId(e.target.value)}
             />
           </div>
-
-          {/* <div className="input-group">
-            <FaEnvelope className="icon" />
-            <input
-              type="email"
-              placeholder="Email Address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div> */}
 
           <div className="input-group">
             <FaLock className="icon" />

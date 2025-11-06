@@ -1,18 +1,19 @@
 import { FaStickyNote, FaTag, FaThumbtack, FaSave } from "react-icons/fa";
+import { ThemeContext } from "../../context/ThemeContext";
+import { useState , useContext } from "react";
 import { toast } from "react-toastify";
-import { useState } from "react";
 import "./EditNote.css";
 
 const EditNote = () => {
-
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [tags, setTags] = useState("");
   const [pinned, setPinned] = useState(false);
+  const { note_id } = useContext(ThemeContext);
 
   const HandleChange = async (e) => {
     e.preventDefault();
-    const id = 11;
+    const id = note_id;
     const url = `http://localhost:3001/api/notes/all/${id}`; // Replace :id with actual note ID
     const updatedNote = {
       title,
