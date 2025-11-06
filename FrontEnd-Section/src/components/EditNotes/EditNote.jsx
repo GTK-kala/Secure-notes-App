@@ -1,4 +1,5 @@
 import { FaStickyNote, FaTag, FaThumbtack, FaSave } from "react-icons/fa";
+import { toast } from "react-toastify";
 import { useState } from "react";
 import "./EditNote.css";
 
@@ -11,6 +12,26 @@ const EditNote = () => {
 
   const HandleChange = async (e) => {
     e.preventDefault();
+    const id = 11;
+    const url = `http://localhost:3001/api/notes/all/${id}`; // Replace :id with actual note ID
+    const updatedNote = {
+      title,
+      body,
+      tags: tags.split(",").map(tag => tag.trim()),
+      pinned
+    };
+    try {
+       const res = await fetch(url , {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(updatedNote)
+       })
+       toast.success("Note Updated Successfully!");
+    } catch (error) {
+      toast.error("Failed to update note.");
+    }
   }
   return (
     <div className="edit_note-root">
