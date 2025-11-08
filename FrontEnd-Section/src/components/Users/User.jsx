@@ -41,20 +41,18 @@ const User = () => {
           <p className="no-users">No users found 👥</p>
         ) : (
           users.map((user) => (
-            <div
-              key={user.id}
-              className="user-card"
-              onClick={() => {
-                HandleUserId(user.id), navigate(`/edit-user/${user.id}`);
-              }}
-            >
+            <div key={user.id} className="user-card">
               <div className="user-header">
                 <h3 cl>{user.username}</h3>
                 <h3 className="user-icons">
-                  <span>
+                  <span onClick={() => navigate('/some-notes')}>
                     <FaStickyNote className="icon-small note" />
                   </span>
-                  <span>
+                  <span
+                    onClick={() => {
+                      HandleUserId(user.id), navigate(`/edit-user/${user.id}`);
+                    }}
+                  >
                     <FaPen className="icon-small edit" />
                   </span>
                 </h3>

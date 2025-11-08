@@ -3,6 +3,7 @@ import { Routes , Route } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import CreateNotes from "./pages/CreateNotes";
 import Dashboard from "./pages/Dashboard";
+import SomeNotes from "./pages/SomeNotes";
 import EditUsers from "./pages/EditUsers";
 import EditNotes from "./pages/EditNotes";
 import Signup from "./pages/Signup";
@@ -20,6 +21,7 @@ const App = () => {
       <Routes>
         <Route path="/edit-note/:id" element = {<EditNotes />} />
         <Route path="/edit-user/:id" element={<EditUsers />} />
+        <Route path="/some-notes" element ={<SomeNotes />} />
         <Route path="/create" element = {<CreateNotes />} />
         <Route  path="/dashboard" element ={<Dashboard />}/>
         <Route path="/signup" element ={<Signup />} />

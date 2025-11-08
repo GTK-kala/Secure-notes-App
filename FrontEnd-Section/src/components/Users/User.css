@@ -82,13 +82,13 @@
   gap: 15px;
 }
 .user-header .user-icons .icon-small {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #38bdf8;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .user-header .user-icons .edit:hover {
   color: #fbbf24;
-  transform: scale(1.2);
+  transform: scale(1.3);
 }
 .user-header .user-icons .note:hover {
   color: #fbbf24;
