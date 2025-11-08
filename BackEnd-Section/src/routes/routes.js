@@ -11,12 +11,13 @@ import { DeleteUser } from "../controllers/Users/DeleteUser.js";
 
 
 // NOTES
+import { GetNote } from "../controllers/Notes/GetNote.js";
 import { AddNotes } from "../controllers/Notes/AddNotes.js";
 import { GetNotes } from "../controllers/Notes/GetNotes.js";
-import { GetNote } from "../controllers/Notes/GetNote.js";
-import { SomeNotes } from "../controllers/Notes/SomeNotes.js"
-import { UpDateNote } from "../controllers/Notes/UpDateNote.js"
-import { DeleteNote } from "../controllers/Notes/DeleteNote.js"
+import { SomeNotes } from "../controllers/Notes/SomeNotes.js";
+import { UpDateNote } from "../controllers/Notes/UpDateNote.js";
+import { DeleteNote } from "../controllers/Notes/DeleteNote.js";
+import { NotesWithId } from "../controllers/Notes/NotesWithId.js";
 
 
 
@@ -56,6 +57,8 @@ route.get('/notes/all/:id' , GetNote);
 route.put('/notes/all/:id' , UpDateNote);
 //GET SOME NOTES
 route.get('/notes/some' , SomeNotes);
+// GET NOTES WITH USER ID
+route.get('/notes/some/:id' , NotesWithId);
 // DELETE NOTE BY ID
 route.delete('/notes/all/:id' , DeleteNote);
 
