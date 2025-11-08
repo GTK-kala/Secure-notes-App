@@ -43,9 +43,9 @@ const User = () => {
           users.map((user) => (
             <div key={user.id} className="user-card">
               <div className="user-header">
-                <h3 cl>{user.username}</h3>
+                <h3 className="user-name">{user.username}</h3>
                 <h3 className="user-icons">
-                  <span onClick={() => navigate('/some-notes')}>
+                  <span onClick={() => { HandleUserId(user.id), navigate(`/some-notes/${user.id}`) }}>
                     <FaStickyNote className="icon-small note" />
                   </span>
                   <span
