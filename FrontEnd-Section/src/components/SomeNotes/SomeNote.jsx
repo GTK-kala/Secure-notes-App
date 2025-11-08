@@ -1,12 +1,13 @@
 import { FaStickyNote, FaThumbtack } from "react-icons/fa";
 import { ThemeContext } from "../../context/ThemeContext";
-import { useState , useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
 import "./SomeNote.css";
 
 const SomeNote = () => {
    const { note , HandleNoteId } = useContext(ThemeContext);
 
-    console.log(note)
+  const navigator = useNavigate();  
   return (
      <div className="notes-page">
        <div className="notes-header">

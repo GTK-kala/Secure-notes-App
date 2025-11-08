@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import "./User.css";
 
 const User = () => {
-  const { HandleUserId } = useContext(ThemeContext);
+  const { HandleUserId , HandleFetchData } = useContext(ThemeContext);
   const [users, setUsers] = useState([]);
   const navigate = useNavigate();
 
@@ -45,7 +45,7 @@ const User = () => {
               <div className="user-header">
                 <h3 className="user-name">{user.username}</h3>
                 <h3 className="user-icons">
-                  <span onClick={() => { HandleUserId(user.id), navigate(`/some-notes/${user.id}`) }}>
+                  <span onClick={() => { HandleUserId(user.id), navigate(`/some-notes/${user.id}`) , HandleFetchData(user.id)}}>
                     <FaStickyNote className="icon-small note" />
                   </span>
                   <span

@@ -34,8 +34,7 @@ export const ThemeProvider = (props) => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
 
-  const HandleFetchData = async () => {
-    const id = user_id;
+  const HandleFetchData = async (id) => {
     const url = `http://localhost:3001/api/notes/some/${id}`;
     try {
       const response = await fetch(url);
