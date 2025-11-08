@@ -1,7 +1,13 @@
-import { FaUsers, FaCalendarAlt, FaEnvelope } from "react-icons/fa";
+import {
+  FaUsers,
+  FaCalendarAlt,
+  FaEnvelope,
+  FaStickyNote,
+  FaPen,
+} from "react-icons/fa";
 import { ThemeContext } from "../../context/ThemeContext";
-import { useEffect, useState , useContext } from "react";
-import {useNavigate} from "react-router-dom"
+import { useEffect, useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import "./User.css";
 
 const User = () => {
@@ -14,7 +20,7 @@ const User = () => {
       try {
         const res = await fetch("http://localhost:3001/api/auth/register/all");
         const data = await res.json();
-        const Data = data.result
+        const Data = data.result;
         setUsers(Data);
       } catch (error) {
         console.error("Error fetching users:", error);
@@ -35,9 +41,23 @@ const User = () => {
           <p className="no-users">No users found 👥</p>
         ) : (
           users.map((user) => (
-            <div key={user.id} className="user-card" onClick={() => { HandleUserId(user.id), navigate(`/edit-user/${user.id}`) }}>
+            <div
+              key={user.id}
+              className="user-card"
+              onClick={() => {
+                HandleUserId(user.id), navigate(`/edit-user/${user.id}`);
+              }}
+            >
               <div className="user-header">
-                <h3>{user.username}</h3>
+                <h3 cl>{user.username}</h3>
+                <h3 className="user-icons">
+                  <span>
+                    <FaStickyNote className="icon-small note" />
+                  </span>
+                  <span>
+                    <FaPen className="icon-small edit" />
+                  </span>
+                </h3>
               </div>
               <div className="user-body">
                 <p>

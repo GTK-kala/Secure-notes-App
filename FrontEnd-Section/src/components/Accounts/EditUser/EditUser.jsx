@@ -1,5 +1,5 @@
 import { ThemeContext } from "../../../context/ThemeContext";
-import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
+import { FaUser, FaLock , } from "react-icons/fa";
 import { useState , useContext } from "react";
 import toast from "react-hot-toast";
 import "./EditUser.css";
