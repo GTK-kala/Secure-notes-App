@@ -6,6 +6,7 @@ import Dashboard from "./pages/Dashboard";
 import SomeNotes from "./pages/SomeNotes";
 import EditUsers from "./pages/EditUsers";
 import EditNotes from "./pages/EditNotes";
+import NotFound from "./pages/NotFound";
 import Signup from "./pages/Signup";
 import Abouts from "./pages/Abouts";
 import Users from "./pages/Users";
@@ -20,8 +21,8 @@ const App = () => {
       <SideBar />
       <Routes>
         <Route path="/edit-note/:id" element = {<EditNotes />} />
-        <Route path="/edit-user/:id" element={<EditUsers />} />
         <Route path="/some-notes/:id" element ={<SomeNotes />} />
+        <Route path="/edit-user/:id" element={<EditUsers />} />
         <Route path="/create" element = {<CreateNotes />} />
         <Route  path="/dashboard" element ={<Dashboard />}/>
         <Route path="/signup" element ={<Signup />} />
@@ -30,6 +31,9 @@ const App = () => {
         <Route path="/login" element ={<Login />} />
         <Route path="/user" element ={<Users />} />
         <Route path="/" element ={<Home />} />
+      </Routes>
+      <Routes>
+        <Route path="*" element ={<NotFound />} />
       </Routes>
     </>
   )
