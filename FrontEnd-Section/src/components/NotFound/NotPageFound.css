@@ -1,5 +1,144 @@
-.not-found{
-    text-align: center;
-    margin-top: 100px;
-    color: #333;
+/* ===== WRAPPER ===== */
+.nf-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient(circle at top left, #0f172a, #1e293b);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== FLOATING BACKGROUND ===== */
+.nf-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.nf-bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.5;
+  animation: float 10s ease-in-out infinite alternate;
+}
+
+.nf-bg-circle1 {
+  background: #2563eb;
+  width: 350px;
+  height: 350px;
+  top: -100px;
+  left: -100px;
+}
+
+.nf-bg-circle2 {
+  background: #f43f5e;
+  width: 300px;
+  height: 300px;
+  bottom: -80px;
+  right: -60px;
+  animation-delay: 3s;
+}
+
+.nf-bg-circle3 {
+  background: #22d3ee;
+  width: 250px;
+  height: 250px;
+  bottom: 100px;
+  left: 40%;
+  animation-delay: 1.5s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  100% {
+    transform: translateY(-40px) scale(1.05);
+  }
+}
+
+/* ===== CARD ===== */
+.nf-card {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(25px);
+  padding: 3rem 2.5rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+  animation: fadeUp 0.9s ease forwards;
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+@keyframes fadeUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ===== TEXT ===== */
+.nf-code {
+  font-size: 6rem;
+  font-weight: 800;
+  margin: 0;
+  background: linear-gradient(90deg, #60a5fa, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nf-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+.nf-text {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 1rem 0 2rem;
+  font-size: 1rem;
+}
+
+/* ===== BUTTON ===== */
+.nf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(90deg, #2563eb, #38bdf8);
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nf-btn:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(90deg, #1d4ed8, #0ea5e9);
+  box-shadow: 0 5px 20px rgba(56, 189, 248, 0.4);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .nf-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .nf-code {
+    font-size: 4.5rem;
+  }
+
+  .nf-title {
+    font-size: 1.6rem;
+  }
 }
