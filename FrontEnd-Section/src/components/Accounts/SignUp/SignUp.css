@@ -139,8 +139,12 @@
 
 /* === RESPONSIVE === */
 @media (max-width: 480px) {
+  .auth-containers{
+    height: 650px;
+  }
   .auth-cards {
-    padding: 2rem 1.5rem;
+    padding: 2.4rem 1.2rem;
+    width: 100%;
   }
 
   .auth-titles {

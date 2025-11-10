@@ -1,144 +1,109 @@
-/* ===== WRAPPER ===== */
-.nf-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background: radial-gradient(circle at top left, #0f172a, #1e293b);
+/* === CONTAINER === */
+.notfound-container {
+  margin-top: 6px;
+  border-radius: 20px;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  background: linear-gradient(135deg, #1e1f29, #2b2d3a);
   color: #fff;
   font-family: "Poppins", sans-serif;
-}
-
-/* ===== FLOATING BACKGROUND ===== */
-.nf-bg {
-  position: absolute;
-  inset: 0;
   overflow: hidden;
-  z-index: 1;
 }
 
-.nf-bg-circle {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.5;
-  animation: float 10s ease-in-out infinite alternate;
-}
-
-.nf-bg-circle1 {
-  background: #2563eb;
-  width: 350px;
-  height: 350px;
-  top: -100px;
-  left: -100px;
-}
-
-.nf-bg-circle2 {
-  background: #f43f5e;
-  width: 300px;
-  height: 300px;
-  bottom: -80px;
-  right: -60px;
-  animation-delay: 3s;
-}
-
-.nf-bg-circle3 {
-  background: #22d3ee;
-  width: 250px;
-  height: 250px;
-  bottom: 100px;
-  left: 40%;
-  animation-delay: 1.5s;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0px) scale(1);
-  }
-  100% {
-    transform: translateY(-40px) scale(1.05);
-  }
-}
-
-/* ===== CARD ===== */
-.nf-card {
+/* === CARD === */
+.notfound-card {
   position: relative;
-  z-index: 2;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(25px);
-  padding: 3rem 2.5rem;
+  top: -30px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
   border-radius: 20px;
+  padding: 3rem 2.5rem;
+  max-width: 500px;
   text-align: center;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
-  animation: fadeUp 0.9s ease forwards;
-  transform: translateY(30px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transform: translateY(50px);
   opacity: 0;
+  animation: fadeSlideUp 1s ease forwards;
 }
 
-@keyframes fadeUp {
+@keyframes fadeSlideUp {
   to {
     transform: translateY(0);
     opacity: 1;
   }
 }
 
-/* ===== TEXT ===== */
-.nf-code {
-  font-size: 6rem;
-  font-weight: 800;
-  margin: 0;
+/* === ICON === */
+.notfound-icon {
+  font-size: 4rem;
+  color: #facc15;
+  margin-bottom: 1rem;
+  animation: pulseGlow 2s infinite alternate;
+}
+
+@keyframes pulseGlow {
+  from {
+    transform: scale(1);
+    text-shadow: 0 0 5px #facc15;
+  }
+  to {
+    transform: scale(1.15);
+    text-shadow: 0 0 20px #fde68a;
+  }
+}
+
+/* === TEXT === */
+.notfound-title {
+  font-size: 2rem;
+  font-weight: 700;
   background: linear-gradient(90deg, #60a5fa, #38bdf8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
 }
 
-.nf-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-top: 0.5rem;
-}
-
-.nf-text {
-  color: rgba(255, 255, 255, 0.7);
-  margin: 1rem 0 2rem;
+.notfound-message {
+  color: rgba(255, 255, 255, 0.75);
   font-size: 1rem;
+  margin-bottom: 2rem;
 }
 
-/* ===== BUTTON ===== */
-.nf-btn {
+/* === BUTTON === */
+.notfound-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   background: linear-gradient(90deg, #2563eb, #38bdf8);
   border: none;
-  padding: 0.8rem 1.8rem;
-  border-radius: 12px;
   color: #fff;
   font-size: 1rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.nf-btn:hover {
-  transform: translateY(-3px);
+.notfound-btn:hover {
   background: linear-gradient(90deg, #1d4ed8, #0ea5e9);
-  box-shadow: 0 5px 20px rgba(56, 189, 248, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(56, 189, 248, 0.3);
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 600px) {
-  .nf-card {
+/* === RESPONSIVE === */
+@media (max-width: 480px) {
+  .notfound-card {
     padding: 2rem 1.5rem;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
-  .nf-code {
-    font-size: 4.5rem;
+  .notfound-title {
+    font-size: 1.7rem;
   }
 
-  .nf-title {
-    font-size: 1.6rem;
+  .notfound-icon {
+    font-size: 3.2rem;
   }
 }

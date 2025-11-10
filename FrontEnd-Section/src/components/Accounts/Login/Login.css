@@ -149,6 +149,9 @@
   }
 }
 @media (max-width: 480px) {
+  .auth-container{
+    height: 650px;
+  }
   .auth-card {
     padding: 2rem 1.5rem;
   }

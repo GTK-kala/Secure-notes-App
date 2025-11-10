@@ -166,3 +166,9 @@
     width: 80%;
   }
 }
+@media screen and (max-width: 480px) {
+  .sidebar { 
+    top: 85px;
+    width: 160px;
+  }
+}

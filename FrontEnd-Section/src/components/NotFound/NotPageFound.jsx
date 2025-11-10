@@ -1,30 +1,25 @@
+import { FaExclamationTriangle ,FaHome } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { FaHome } from "react-icons/fa";
 import "./NotPageFound.css";
 
 const NotPageFound = () => {
-    const navigate = useNavigate();
-    
-  return (
-    <div className="nf-wrapper">
-      <div className="nf-bg">
-        <div className="nf-bg-circle nf-bg-circle1"></div>
-        <div className="nf-bg-circle nf-bg-circle2"></div>
-        <div className="nf-bg-circle nf-bg-circle3"></div>
-      </div>
+  const navigate = useNavigate();
 
-      <div className="nf-card">
-        <h1 className="nf-code">404</h1>
-        <h2 className="nf-title">Page Not Found</h2>
-        <p className="nf-text">
-          Sorry, the page you’re looking for doesn’t exist or has been moved.
+  return (
+    <div className="notfound-container">
+      <div className="notfound-card">
+        <FaExclamationTriangle className="notfound-icon" />
+        <h1 className="notfound-title">404 - Page Not Found</h1>
+        <p className="notfound-message">
+          Oops! The page you’re looking for doesn’t exist or may have been
+          moved.
         </p>
-        <button className="nf-btn" onClick={() => navigate("/")}>
-          <FaHome /> Go Home
+        <button onClick={() => navigate("/")} className="notfound-btn">
+          <FaHome /> Back to Home
         </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default NotPageFound
+export default NotPageFound;
