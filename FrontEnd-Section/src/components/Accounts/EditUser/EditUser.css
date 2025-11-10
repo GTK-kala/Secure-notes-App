@@ -149,6 +149,9 @@
   }
 }
 @media (max-width: 480px) {
+  .edit-user-container{
+    height: 650px;
+  }
   .edit-user-card {
     padding: 2rem 1.5rem;
     height: auto;
@@ -158,6 +161,6 @@
   }
   .update-btn {
     font-size: 0.95rem;
-    width: 110%;
+    width: 120%;
   }
 }

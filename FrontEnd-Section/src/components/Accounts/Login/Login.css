@@ -155,7 +155,10 @@
   .auth-card {
     padding: 2rem 1.5rem;
   }
-
+  .auth-form{
+    left: 0px;
+    width: 80%;
+  }
   .auth-title {
     font-size: 1.7rem;
   }

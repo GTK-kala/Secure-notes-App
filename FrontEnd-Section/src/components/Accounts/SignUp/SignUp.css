@@ -146,12 +146,18 @@
     padding: 2.4rem 1.2rem;
     width: 100%;
   }
-
+  .auth-forms{
+    left: 0px;
+    width: 80%;
+  }
   .auth-titles {
     font-size: 1.7rem;
   }
 
-  .auth-btns {
+  .auth-btn {
+    position: relative;
+    right: -10px;
+    width: 120%;
     font-size: 0.95rem;
   }
 }
