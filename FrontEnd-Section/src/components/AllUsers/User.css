@@ -61,7 +61,7 @@
 }
 
 .user-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-5px);
   box-shadow: 0 6px 20px rgba(56, 189, 248, 0.3);
 }
 
@@ -92,7 +92,7 @@
 }
 .user-header .user-icons .note:hover {
   color: #fbbf24;
-  transform: rotate(30deg);
+  transform: rotate(-30deg);
 }
 
 .user-body p {

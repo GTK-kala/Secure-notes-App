@@ -1,4 +1,4 @@
-import EditUser from "../components/Accounts/EditUser/EditUser";
+import EditUser from "../components/EditUser/EditUser";
 import { Toaster } from "react-hot-toast";
 
 const EditUsers = () => {

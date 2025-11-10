@@ -1,4 +1,4 @@
-import { ThemeContext } from "../../../context/ThemeContext";
+import { ThemeContext } from "../../context/ThemeContext";
 import { FaUser, FaLock , } from "react-icons/fa";
 import { useState , useContext } from "react";
 import toast from "react-hot-toast";
