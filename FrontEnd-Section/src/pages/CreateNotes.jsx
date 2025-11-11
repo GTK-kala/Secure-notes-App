@@ -1,4 +1,4 @@
-import CreateNote from "../components/Notes/CreateNote";
+import CreateNote from "../components/CreateNotes/CreateNote";
 import { Toaster } from "react-hot-toast";
 
 const CreateNotes = () => {

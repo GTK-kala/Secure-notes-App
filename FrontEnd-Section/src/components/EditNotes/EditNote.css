@@ -21,6 +21,7 @@
 
 /* Card */
 .edit_note-card {
+  margin-top: 10px;
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(12px);
   border-radius: 16px;
@@ -28,7 +29,17 @@
   padding-top: 5px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
   border: 1px solid rgba(255, 255, 255, 0.04);
-  animation: edit_note-entrance 0.6s ease both;
+  animation: edit_note-entrance 0.8s ease both;
+}
+@keyframes edit_note-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Header */
