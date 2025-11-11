@@ -40,7 +40,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
-  animation: fadeUp 1s ease;
 }
 
 /* === CARD === */
@@ -53,6 +52,7 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  animation: fadeUp 0.6s ease-in-out;
 }
 
 .note-card:hover {
