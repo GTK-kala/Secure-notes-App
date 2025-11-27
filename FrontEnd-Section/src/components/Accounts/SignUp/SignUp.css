@@ -138,11 +138,22 @@
 }
 
 /* === RESPONSIVE === */
+@media (max-width: 580px) {
+   .auth-containers {
+    height: 800px;
+   }
+   .auth-cards {
+     position: relative;
+     top: -50px;
+   }
+}
 @media (max-width: 480px) {
-  .auth-containers{
-    height: 650px;
+  .auth-containers {
+    height: 800px;
   }
   .auth-cards {
+    position: relative;
+    top: -50px;
     padding: 2.4rem 1.2rem;
     width: 100%;
   }
@@ -156,7 +167,7 @@
 
   .auth-btn {
     position: relative;
-    right: -10px;
+    right: -2px;
     width: 120%;
     font-size: 0.95rem;
   }

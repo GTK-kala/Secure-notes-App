@@ -148,14 +148,26 @@
     width: 117%;
   }
 }
-@media (max-width: 480px) {
-  .auth-container{
-    height: 650px;
+@media (max-width: 580px) {
+  .auth-container {
+    height: 800px;
   }
   .auth-card {
+    position: relative;
+    top: -50px;
     padding: 2rem 1.5rem;
   }
-  .auth-form{
+}
+@media (max-width: 480px) {
+  .auth-container {
+    height: 800px;
+  }
+  .auth-card {
+    position: relative;
+    top: -50px;
+    padding: 2rem 1.5rem;
+  }
+  .auth-form {
     left: 0px;
     width: 80%;
   }

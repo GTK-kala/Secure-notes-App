@@ -6,7 +6,7 @@
   background: linear-gradient(135deg, #0f172a, #1e293b);
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   color: #fff;
 }
 
@@ -265,6 +265,8 @@
     padding-top: calc(60px + 12px);
   }
   .edit_note-wrapper {
+    position: relative;
+    top: -140px;
     padding: 12px;
   }
   .edit_note-card {
