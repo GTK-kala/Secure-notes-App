@@ -86,19 +86,6 @@
   text-align: center;
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.8);
-  animation: fadeIn 1s ease-in-out;
-}
-
-/* ANIMATION */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* RESPONSIVE DESIGN */
