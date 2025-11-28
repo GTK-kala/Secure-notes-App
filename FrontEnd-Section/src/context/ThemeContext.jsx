@@ -4,6 +4,7 @@ export const ThemeContext = createContext(null);
 
 export const ThemeProvider = (props) => {
   const [note, setNote] = useState([]);
+  const [mood , setMood] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [user_id, setUserId] = useState(null);
   const [note_id, setNoteId] = useState(null);
@@ -34,6 +35,14 @@ export const ThemeProvider = (props) => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
 
+  const HandelMood = () => {
+    if(mood){
+     setMood(true);
+    }else{
+      setMood(false);
+    }
+  }
+
   const HandleFetchData = async (id) => {
     const url = `http://localhost:3001/api/notes/some/${id}`;
     try {
@@ -62,6 +71,8 @@ export const ThemeProvider = (props) => {
     HandleNoteId,
     note,
     HandleFetchData,
+    mood,
+    HandelMood
   };
 
   return (

@@ -120,6 +120,10 @@
   transform: rotate(25deg);
 }
 
+.sun {
+  color: #fff;
+}
+
 .logout {
   border: none;
   background: linear-gradient(45deg, #ff4d4d, #ff8080);

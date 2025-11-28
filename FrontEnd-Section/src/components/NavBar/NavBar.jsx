@@ -47,7 +47,7 @@ const NavBar = ({ user, onLogout }) => {
       {/* Right Section */}
       <div className="nav-right">
         <button className="theme-btn" onClick={toggleTheme}>
-          {theme === "light" ? <FaMoon /> : <FaSun />}
+          {theme === "light" ? <FaMoon /> : <FaSun className="sun"/>}
         </button>
 
         <div className="user-box" onClick={() => navigate('/signup')}>
