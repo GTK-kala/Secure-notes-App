@@ -1,3 +1,11 @@
+html .dark {
+    background: #111;
+}
+
+html .light {
+    background-color: #fff;
+}
+
 .app-container {
   display: flex;
   flex-direction: column;

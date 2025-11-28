@@ -14,7 +14,7 @@ import {
 } from "react-icons/fa";
 
 const NavBar = ({ user, onLogout }) => {
-  const { theme, toggleTheme , HandleToggleFun } = useContext(ThemeContext);
+  const { theme, toggleTheme , HandleToggleFun , HandelMood } = useContext(ThemeContext);
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -46,7 +46,7 @@ const NavBar = ({ user, onLogout }) => {
 
       {/* Right Section */}
       <div className="nav-right">
-        <button className="theme-btn" onClick={toggleTheme}>
+        <button className="theme-btn" onClick={() => {toggleTheme() , HandelMood()}}>
           {theme === "light" ? <FaMoon /> : <FaSun className="sun"/>}
         </button>
 

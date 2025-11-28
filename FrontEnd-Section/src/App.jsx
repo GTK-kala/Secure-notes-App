@@ -1,7 +1,9 @@
+import { ThemeContext } from "./context/ThemeContext";
 import SideBar from "./components/SideBar/SideBar";
 import { Routes , Route } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import CreateNotes from "./pages/CreateNotes";
+import { useState , useContext } from "react";
 import Dashboard from "./pages/Dashboard";
 import SomeNotes from "./pages/SomeNotes";
 import EditUsers from "./pages/EditUsers";
@@ -13,10 +15,12 @@ import Signup from "./pages/Signup";
 import Abouts from "./pages/Abouts";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
+import "./App.css";
 
 const App = () => {
+   const { mood } = useContext(ThemeContext);
   return (
-    <>
+    <div className={mood ? "light" : "dark"}>
       <NavBar />
       <SideBar />
       <Routes>
@@ -33,7 +37,7 @@ const App = () => {
         <Route path="*" element ={<NotFound />} />
         <Route path="/" element ={<Home />} />
       </Routes>
-    </>
+    </div>
   )
 }
 
