@@ -52,7 +52,7 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  animation: fadeUp 0.6s ease;
+  animation: fadeUps 0.6s ease;
 }
 
 .note-card:hover {
@@ -123,7 +123,7 @@
 }
 
 /* === ANIMATIONS === */
-@keyframes fadeUp {
+@keyframes fadeUps {
   from {
     opacity: 0;
     transform: translateY(30px);

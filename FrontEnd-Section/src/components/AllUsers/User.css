@@ -57,7 +57,7 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
-  animation: fadeUp 0.6s ease-in-out;
+  animation: fadeUps 0.6s ease-in-out;
 }
 
 .user-card:hover {
@@ -125,7 +125,7 @@
 }
 
 /* === ANIMATIONS === */
-@keyframes fadeUp {
+@keyframes fadeUps {
   from {
     opacity: 0;
     transform: translateY(60px);

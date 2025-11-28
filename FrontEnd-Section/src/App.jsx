@@ -20,7 +20,7 @@ import "./App.css";
 const App = () => {
    const { mood } = useContext(ThemeContext);
   return (
-    <div className={mood ? "light" : "dark"}>
+    <div className={mood ? "lights" : "darks"}>
       <NavBar />
       <SideBar />
       <Routes>

@@ -1,8 +1,8 @@
-html .dark {
+body .darks {
     background: #111;
 }
 
-html .light {
+body .lights {
     background-color: #fff;
 }
 

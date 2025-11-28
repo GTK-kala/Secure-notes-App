@@ -21,17 +21,15 @@
   width: 100%;
   max-width: 600px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  animation: fadeUp 0.7s ease;
+  animation: fadeUps 0.7s ease-in-out;
   color: #fff;
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(-40px);
+@keyframes fadeUps {
+  0% {
+    transform: translateY(10px);
   }
-  to {
-    opacity: 1;
+  100% {
     transform: translateY(0);
   }
 }
