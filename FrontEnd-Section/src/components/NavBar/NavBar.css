@@ -5,6 +5,14 @@
   --border-radius: 20px;
 }
 
+body.light {
+  background: #fff;
+}
+
+body.dark {
+  background: #111;
+}
+
 /* 🧭 Navbar Base */
 .navbar {
   display: flex;

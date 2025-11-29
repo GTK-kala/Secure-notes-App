@@ -3,7 +3,7 @@ import SideBar from "./components/SideBar/SideBar";
 import { Routes , Route } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import CreateNotes from "./pages/CreateNotes";
-import { useState , useContext } from "react";
+import { useContext } from "react";
 import Dashboard from "./pages/Dashboard";
 import SomeNotes from "./pages/SomeNotes";
 import EditUsers from "./pages/EditUsers";
