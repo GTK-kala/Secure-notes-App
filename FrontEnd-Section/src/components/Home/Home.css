@@ -8,10 +8,12 @@
   transition: margin-left 0.4s ease;
 }
 
-/* .sidebar.open ~ .home-page {
-  margin-left: 75px;
-} */
-
+.sidebar.open ~ .home-page {
+  margin-left: 50px;
+}
+.light {
+  background: #fff;
+}
 /* Hero Section */
 .hero-section {
   display: flex;

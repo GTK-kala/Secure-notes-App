@@ -12,11 +12,11 @@ import "./SideBar.css";
 
 const SideBar = () => {
   const navigate = useNavigate();
-  const { isOpen , HandleToggleFun } = useContext(ThemeContext);
+  const { isOpen , theme , HandleToggleFun } = useContext(ThemeContext);
   return (
     <>
       {/* Sidebar Container */}
-      <aside className={`sidebar ${isOpen ? "open" : "collapsed"}`}>
+      <aside className={`sidebar ${isOpen ? "open" : "collapsed"} ${theme}`}>
         {/* <div className="sidebar-header">
           <h2 className="logo">{isOpen ? "NoteVault" : "NV"}</h2>
         </div> */}

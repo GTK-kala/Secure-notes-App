@@ -1,17 +1,20 @@
 import { FaStickyNote, FaCloudUploadAlt, FaLock, FaSyncAlt } from "react-icons/fa";
+import { ThemeContext } from "../../context/ThemeContext";
 import { useNavigate } from "react-router-dom";
+import { useEffect , useContext } from "react";
 import { Image } from "../../assets/Data";
-import { useEffect } from "react";
 import "./Home.css";
 
 const Homes = () => {
   const navigate = useNavigate();
+  const { theme } = useContext(ThemeContext);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
-    <div className="home-page">
+    <div className={`home-page ${theme}`}>
       <section className="hero-section">
         <div className="hero-text">
           <h1 className="fade-in-up">
