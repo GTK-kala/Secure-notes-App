@@ -1,9 +1,16 @@
 import cors from "cors";
+import path from "path";
+import dotenv from "dotenv";
 import express from "express";
-import route from "./routes/routes.js";
+import { fileURLToPath } from "url";
 import cookieParser from "cookie-parser";
 
-const port = process.env.PORT || 3000;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+dotenv.config({ path: path.join(__dirname, "../.env") });
+
+const port = process.env.PORT || 3001;
 const app = express();
 
 app.use(
@@ -27,5 +34,5 @@ app.listen(port, (err) => {
   }
   console.log(`Server is Running on port ${port}`);
 });
-
+import route from "./routes/routes.js";
 app.use("/api", route);

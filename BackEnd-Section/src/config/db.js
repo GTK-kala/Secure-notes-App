@@ -1,11 +1,7 @@
-import path from "path";
-import mysql2 from "mysql2";
 import dotenv from "dotenv";
-import { fileURLToPath } from "url";
+import mysql2 from "mysql2";
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
-dotenv.config({ path: path.join(__dirname, "../../.env") });
+dotenv.config();
 
 const connection = mysql2.createConnection({
   host: process.env.HOST,
