@@ -1,7 +1,7 @@
 import express from "express";
 
 // USER
-import { Login } from "../controllers/Users/Login.js";
+import { Login } from "../controllers/Users/User/Login.js";
 import { GetUser } from "../controllers/Users/GetUser.js";
 import { GetUsers } from "../controllers/Users/GetUsers.js";
 import { SomeUsers } from "../controllers/Users/SomeUses.js";

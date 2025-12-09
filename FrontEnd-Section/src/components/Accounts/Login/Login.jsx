@@ -9,7 +9,8 @@ const LOGIN = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const HandleSubmit = async () => {
+  const HandleSubmit = async (e) => {
+    e.preventDefault();
     const value = { email, password };
     try {
       const url = "http://localhost:3001/api/auth/login";
@@ -18,18 +19,20 @@ const LOGIN = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        // credentials: true,
         body: JSON.stringify(value),
+        credentials: "include",
       });
-      const data = res.json();
+      const data = await res.json();
       if (!res.ok) {
         toast.error(data.message);
       } else {
         navigate("/dashboard");
       }
     } catch (error) {
-      toast.error(error);
+      toast.error("error");
     }
+    setEmail("");
+    setPassword("");
   };
   return (
     <div className="auth-container login">
@@ -37,7 +40,7 @@ const LOGIN = () => {
         <h2 className="auth-title">Welcome Back 👋</h2>
         <p className="auth-subtitle">Login to continue to NoteVault</p>
 
-        <form className="auth-form" onClick={() => HandleSubmit()}>
+        <form className="auth-form" onSubmit={(e) => HandleSubmit(e)}>
           <div className="input-group">
             <FaEnvelope className="icon" />
             <input
