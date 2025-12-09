@@ -1,10 +1,11 @@
 import express from "express";
 
 // USER
+import { Login } from "../controllers/Users/Login.js";
 import { GetUser } from "../controllers/Users/GetUser.js";
 import { GetUsers } from "../controllers/Users/GetUsers.js";
-import { AddUsers } from "../controllers/Users/AddUsers.js";
 import { SomeUsers } from "../controllers/Users/SomeUses.js";
+import { SigUpUser } from "../controllers/Users/SigUpUser.js";
 import { UpDateUser } from "../controllers/Users/UpDateUser.js";
 import { DeleteUser } from "../controllers/Users/DeleteUser.js";
 
@@ -21,25 +22,29 @@ const route = express.Router();
 
 // CRUD ACTION ON USER ROUTES
 
+// ADMIN ROUTES
+
 // GET ALL USERS
 route.get("/auth/register/all", GetUsers);
-
 // GET ONE USER WITH IT'S ID
 route.get("/auth/register/all/:id", GetUser);
-
 // GET SOME USERS
 route.get("/auth/register/some", SomeUsers);
 
-// ADD USERS
-route.post("/auth/register", AddUsers);
+// USER ROUTES
 
+// LOGIN USERS
+route.post("/auth/login", Login);
+// ADD USERS
+route.post("/auth/register", SigUpUser);
 // UPDATE USER
 route.patch("/auth/register/:id", UpDateUser);
-
 // DELETE USER WITH IT'S ID
 route.delete("/auth/register/:id", DeleteUser);
 
 // CRUD ACTION ON NOTES ROUTES
+
+// ADMIN ROUTES
 
 // GET ALL NOTES
 route.get("/notes/all", GetNotes);

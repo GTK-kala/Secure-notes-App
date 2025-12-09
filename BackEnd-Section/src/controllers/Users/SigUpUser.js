@@ -2,7 +2,7 @@ import bcrypt from "bcryptjs";
 import connection from "../../config/db.js";
 
 // ADD USERS INFO INTO DATABASE
-export const AddUsers = (req, res) => {
+export const SigUpUser = (req, res) => {
   const { username, email, password } = req.body;
 
   const sql1 = "SELECT * FROM users WHERE email = ?";
