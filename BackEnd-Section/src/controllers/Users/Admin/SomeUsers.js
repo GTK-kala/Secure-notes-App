@@ -1,4 +1,4 @@
-import connection from "../../config/db.js";
+import connection from "../../../config/db.js";
 
 // GET SOME USERS INFO
 export const SomeUsers = (req, res) => {
@@ -19,7 +19,7 @@ export const SomeUsers = (req, res) => {
     }
     res.status(200).json({
       message: "SOME USES INFO !!!",
-      result : result.slice(0 , limit)
+      result: result.slice(0, limit),
     });
   });
 };

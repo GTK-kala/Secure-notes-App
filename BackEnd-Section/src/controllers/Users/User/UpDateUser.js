@@ -1,5 +1,5 @@
+import connection from "../../../config/db.js";
 import bcrypt from "bcryptjs";
-import connection from "../../config/db.js";
 
 // UPDATE USER INFO
 export const UpDateUser = (req, res) => {

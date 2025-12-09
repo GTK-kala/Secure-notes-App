@@ -1,4 +1,4 @@
-import connection from "../../config/db.js";
+import connection from "../../../config/db.js";
 
 // DELETE USER FROM DATABASE
 export const DeleteUser = (req, res) => {

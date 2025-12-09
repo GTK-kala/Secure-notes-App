@@ -1,6 +1,6 @@
 import connection from "../../../config/db.js";
-import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import bcrypt from "bcryptjs";
 
 export const Login = (req, res) => {
   const { email, password } = req.body;

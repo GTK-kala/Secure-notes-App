@@ -2,12 +2,12 @@ import express from "express";
 
 // USER
 import { Login } from "../controllers/Users/User/Login.js";
-import { GetUser } from "../controllers/Users/GetUser.js";
-import { GetUsers } from "../controllers/Users/GetUsers.js";
-import { SomeUsers } from "../controllers/Users/SomeUses.js";
-import { SigUpUser } from "../controllers/Users/SigUpUser.js";
-import { UpDateUser } from "../controllers/Users/UpDateUser.js";
-import { DeleteUser } from "../controllers/Users/DeleteUser.js";
+import { GetUser } from "../controllers/Users/Admin/GetUser.js";
+import { GetUsers } from "../controllers/Users/Admin/GetUsers.js";
+import { SomeUsers } from "../controllers/Users/Admin/SomeUsers.js";
+import { SigUpUser } from "../controllers/Users/User/SigUpUser.js";
+import { UpDateUser } from "../controllers/Users/User/UpDateUser.js";
+import { DeleteUser } from "../controllers/Users/User/DeleteUser.js";
 
 // NOTES
 import { GetNote } from "../controllers/Notes/GetNote.js";

@@ -1,4 +1,4 @@
-import connection from "../../config/db.js";
+import connection from "../../../config/db.js";
 
 // GET USER BY ID
 export const GetUser = (req, res) => {
