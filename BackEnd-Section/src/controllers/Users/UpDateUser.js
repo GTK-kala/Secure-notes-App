@@ -1,3 +1,4 @@
+import bcrypt from "bcryptjs";
 import connection from "../../config/db.js";
 
 // UPDATE USER INFO
@@ -20,15 +21,10 @@ export const UpDateUser = (req, res) => {
 
   if (password) {
     fields.push("password = ?");
-    values.push(password);
+    const HashPassword = bcrypt.hashSync(password, 8);
+    values.push(HashPassword);
   }
   values.push(id);
-
-  if (!id && !username && !email && !password) {
-    return res.status(400).json({
-      message: "Fill OUT THE ID !!!",
-    });
-  }
 
   const sql = `UPDATE users SET ${fields.join(", ")} WHERE id = ?`;
 
