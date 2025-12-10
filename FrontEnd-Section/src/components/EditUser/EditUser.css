@@ -9,6 +9,11 @@
   border-radius: 20px;
   padding: 2rem;
   overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+.sidebar.open ~ .edit-user-container {
+  margin-left: 50px;
 }
 
 /* === EDIT CARD === */
@@ -149,7 +154,7 @@
   }
 }
 @media (max-width: 480px) {
-  .edit-user-container{
+  .edit-user-container {
     height: 650px;
   }
   .edit-user-card {

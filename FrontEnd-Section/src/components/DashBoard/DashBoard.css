@@ -8,7 +8,9 @@
   transition: all 0.3s ease;
   overflow-x: hidden;
 }
-
+.sidebar.open ~ .dashboard-container {
+  margin-left: 50px;
+}
 /* TITLE & SUBTITLE */
 .dashboard-title {
   display: flex;

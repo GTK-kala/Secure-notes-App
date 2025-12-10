@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import toast from "react-hot-toast";
 import "./DashBoard.css";
 import {
   FaStickyNote,
@@ -43,7 +44,27 @@ const DashBoard = () => {
     setUsers(Data);
   };
 
-  const IsLogIn = () => {};
+  const IsLogIn = async () => {
+    try {
+      const url = "http://localhost:3001/api/auth/verify";
+      const res = await fetch(url, {
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+        },
+        credentials: "include",
+      });
+      if (!res.ok) {
+        toast.error("Error");
+      } else {
+        const data = await res.json();
+        setLogin(true);
+        console.log(data);
+      }
+    } catch (error) {
+      toast.error("Error");
+    }
+  };
 
   const cards = [
     {

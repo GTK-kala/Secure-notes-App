@@ -11,6 +11,10 @@
   transition: all 0.4s ease;
 }
 
+.sidebar.open ~ .create-note-container {
+  margin-left: 50px;
+}
+
 .create-note-card {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(12px);
@@ -148,10 +152,10 @@ textarea {
   }
 }
 @media (max-width: 500px) {
-  .create-note-container{
+  .create-note-container {
     padding-top: 0px;
   }
-  .create-note-card{
+  .create-note-card {
     position: relative;
     top: -60px;
   }

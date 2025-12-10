@@ -4,10 +4,14 @@ import express from "express";
 import { Login } from "../controllers/Users/User/Login.js";
 import { GetUser } from "../controllers/Users/Admin/GetUser.js";
 import { GetUsers } from "../controllers/Users/Admin/GetUsers.js";
-import { SomeUsers } from "../controllers/Users/Admin/SomeUsers.js";
 import { SigUpUser } from "../controllers/Users/User/SigUpUser.js";
+import { SomeUsers } from "../controllers/Users/Admin/SomeUsers.js";
 import { UpDateUser } from "../controllers/Users/User/UpDateUser.js";
 import { DeleteUser } from "../controllers/Users/User/DeleteUser.js";
+import {
+  VerifyToken,
+  VerifyUser,
+} from "../controllers/Users/User/UserVerify.js";
 
 // NOTES
 import { GetNote } from "../controllers/Notes/GetNote.js";
@@ -41,6 +45,8 @@ route.post("/auth/register", SigUpUser);
 route.patch("/auth/register/:id", UpDateUser);
 // DELETE USER WITH IT'S ID
 route.delete("/auth/register/:id", DeleteUser);
+// VERIFY USER
+route.get("/auth/verify", VerifyToken, VerifyUser);
 
 // CRUD ACTION ON NOTES ROUTES
 

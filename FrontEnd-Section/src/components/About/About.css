@@ -7,6 +7,11 @@
   align-items: center;
   background: linear-gradient(135deg, #1e1f29, #2b2d3a);
   color: #fff;
+  transition: all 0.5s ease-in-out;
+}
+
+.sidebar.open ~ .about-container {
+  margin-left: 50px;
 }
 
 .about-card {
