@@ -88,6 +88,164 @@
   color: rgba(255, 255, 255, 0.8);
 }
 
+.loginPromptContainer {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  background: linear-gradient(135deg, #1e1f29, #2b2d3a);
+  box-shadow: 0 8px 25px rgba(11, 5, 5, 0.15);
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Message section */
+.loginMessage {
+  margin-bottom: 30px;
+}
+
+.warningIcon {
+  display: block;
+  font-size: 48px;
+  margin-bottom: 15px;
+  animation: pulse 2s infinite;
+}
+
+.title {
+  color: #d32f2f;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.description {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0 20px;
+}
+
+/* Action section */
+.actionSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.loginButton {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff4757 100%);
+  color: white;
+  border: none;
+  padding: 14px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  min-width: 200px;
+}
+
+.loginButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+  background: linear-gradient(135deg, #ff5252 0%, #ff2e2e 100%);
+}
+
+.loginButton:active {
+  transform: translateY(1px);
+}
+
+/* Alternative actions */
+.alternativeActions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.signupLink {
+  color: #1890ff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.signupLink:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.separator {
+  color: #ccc;
+}
+
+.forgotLink {
+  color: #666;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.forgotLink:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .loginPromptContainer {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .description {
+    padding: 0;
+  }
+
+  .alternativeActions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .separator {
+    display: none;
+  }
+}
+
 /* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
   .dashboard-title {

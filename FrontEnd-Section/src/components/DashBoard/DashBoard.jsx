@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./DashBoard.css";
 import {
@@ -10,8 +11,10 @@ import {
 } from "react-icons/fa";
 
 const DashBoard = () => {
+  const navigate = useNavigate();
   const [notes, setNotes] = useState([]);
   const [users, setUsers] = useState([]);
+  const [isLogin, setLogin] = useState(false);
   const [countActive, setCountActive] = useState(0);
   const [countPinned, setCountPinned] = useState(0);
 
@@ -40,12 +43,14 @@ const DashBoard = () => {
     setUsers(Data);
   };
 
+  const IsLogIn = () => {};
+
   const cards = [
     {
       icon: <FaStickyNote />,
       title: "Total Notes",
       count: notes.length,
-      color: "#38bdf8"
+      color: "#38bdf8",
     },
     {
       icon: <FaTasks />,
@@ -57,65 +62,97 @@ const DashBoard = () => {
       icon: <FaClock />,
       title: "Pending",
       count: countPinned,
-      color: "#facc15"
+      color: "#facc15",
     },
     {
       icon: <FaUser />,
       title: "Profile Views",
       count: users.length,
-      color: "#a855f7"
+      color: "#a855f7",
     },
   ];
- 
+
   useEffect(() => {
+    IsLogIn();
     FetchNotesData();
     FetchUsersData();
   }, []);
 
   return (
-    <motion.div
-      className="dashboard-container"
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-    >
-      <h1 className="dashboard-title">
-        <FaTachometerAlt className="icon" /> <span>Dashboard Overview</span>{" "}
-      </h1>
-      <p className="dashboard-subtitle">
-        Welcome back! Here’s your quick summary.
-      </p>
+    <>
+      {isLogin ? (
+        <motion.div
+          className="dashboard-container"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <h1 className="dashboard-title">
+            <FaTachometerAlt className="icon" /> <span>Dashboard Overview</span>{" "}
+          </h1>
+          <p className="dashboard-subtitle">
+            Welcome back! Here’s your quick summary.
+          </p>
 
-      <div className="dashboard-grid">
-        {cards.map((card, index) => (
+          <div className="dashboard-grid">
+            {cards.map((card, index) => (
+              <motion.div
+                key={index}
+                className="dashboard-card"
+                style={{
+                  borderTop: `4px solid ${card.color}`,
+                  boxShadow: `0 6px 25px ${card.color}40`,
+                }}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="card-icon" style={{ color: card.color }}>
+                  {card.icon}
+                </div>
+                <h2>{card.title}</h2>
+                <p>{card.count}</p>
+              </motion.div>
+            ))}
+          </div>
+
           <motion.div
-            key={index}
-            className="dashboard-card"
-            style={{
-              borderTop: `4px solid ${card.color}`,
-              boxShadow: `0 6px 25px ${card.color}40`,
-            }}
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
+            className="dashboard-footer"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
           >
-            <div className="card-icon" style={{ color: card.color }}>
-              {card.icon}
-            </div>
-            <h2>{card.title}</h2>
-            <p>{card.count}</p>
+            <p>✨ Keep up the great work — your notes are well organized!</p>
           </motion.div>
-        ))}
-      </div>
+        </motion.div>
+      ) : (
+        <div className="loginPromptContainer">
+          <div className="loginMessage">
+            <span className="warningIcon">⚠️</span>
+            <h2 className="title">Please Login First</h2>
+            <p className="description">
+              You need to be logged in to access this content. Please login or
+              create an account to continue.
+            </p>
+          </div>
 
-      <motion.div
-        className="dashboard-footer"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.6 }}
-      >
-        <p>✨ Keep up the great work — your notes are well organized!</p>
-      </motion.div>
-    </motion.div>
+          <div className="actionSection">
+            <button className="loginButton" onClick={() => navigate("/login")}>
+              Login
+            </button>
+
+            <div className="alternativeActions">
+              <a className="signupLink" onClick={() => navigate("/signup")}>
+                Create Account
+              </a>
+              <span className="separator">|</span>
+              <a href="/forgot-password" className="forgotLink">
+                Forgot Password?
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
