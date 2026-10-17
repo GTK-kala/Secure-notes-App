@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bg text-primary font-sans antialiased;
+    margin: 0;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  ::selection {
+    @apply bg-tertiary text-primary;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f8f6ee;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #d9c9b2;
+    border-radius: 10px;
+    border: 2px solid #f8f6ee;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6b7f5b;
+  }
+}
+
+@layer components {
+  .clay-card {
+    @apply bg-bg rounded-clay shadow-clay border border-white/60;
+  }
+  .clay-btn {
+    @apply rounded-2xl shadow-clay-sm active:shadow-clay-inset transition-all duration-200;
+  }
+  .clay-input {
+    @apply rounded-2xl bg-bg shadow-clay-inset border border-white/40 outline-none text-primary placeholder-primary/40;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.anim-fade-up {
+  animation: fadeInUp 0.7s ease both;
+}
+.anim-fade-right {
+  animation: fadeInRight 0.7s ease both;
+}
+.anim-fade {
+  animation: fadeIn 0.7s ease both;
+}
+.anim-bob {
+  animation: bob 4s ease-in-out infinite;
+}
+
+.delay-1 {
+  animation-delay: 0.15s;
+}
+.delay-2 {
+  animation-delay: 0.3s;
+}
+.delay-3 {
+  animation-delay: 0.45s;
+}
