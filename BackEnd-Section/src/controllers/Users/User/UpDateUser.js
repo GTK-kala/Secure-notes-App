@@ -10,7 +10,7 @@ export const UpDateUser = (req, res) => {
   let values = [];
 
   if (username) {
-    fields.push("username = ?");
+    fields.push("name = ?");
     values.push(username);
   }
 

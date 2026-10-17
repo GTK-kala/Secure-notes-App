@@ -5,7 +5,12 @@ import bcrypt from "bcryptjs";
 export const SigUpUser = (req, res) => {
   const { username, email, password } = req.body;
 
-  const sql1 = "SELECT * FROM users WHERE email = ?";
+  const sql1 = `SELECT
+          *
+      FROM
+          users
+      WHERE
+          email = ?`;
   connection.query(sql1, [email], (err, result) => {
     if (err) {
       return res.status(500).json({
@@ -19,8 +24,10 @@ export const SigUpUser = (req, res) => {
     }
 
     const HashPassword = bcrypt.hashSync(password, 8);
-    const sql2 =
-      "INSERT INTO users (username , email , password) VALUES (? , ? , ?)";
+    const sql2 = `INSERT INTO
+              users (name, email, password)
+          VALUES
+              (?, ?, ?)`;
 
     connection.query(sql2, [username, email, HashPassword], (err, result) => {
       if (err) {

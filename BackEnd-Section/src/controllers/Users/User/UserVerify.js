@@ -21,7 +21,12 @@ export const VerifyToken = (req, res, next) => {
 export const VerifyUser = (req, res) => {
   const userId = req.user.id;
 
-  const sql = "SELECT * FROM users WHERE id = ?";
+  const sql = `SELECT
+          *
+      FROM
+          users
+      WHERE
+          id = ?`;
 
   connection.query(sql, [userId], (err, result) => {
     if (err) {

@@ -5,7 +5,12 @@ import bcrypt from "bcryptjs";
 export const Login = (req, res) => {
   const { email, password } = req.body;
 
-  const sql = "SELECT * FROM users WHERE email = ?";
+  const sql = `SELECT
+          *
+      FROM
+          users
+      WHERE
+          email = ?`;
   connection.query(sql, [email], (err, result) => {
     if (err) {
       return res.status(500).json({
@@ -36,7 +41,7 @@ export const Login = (req, res) => {
         email: user.email,
       },
       process.env.JWT_SECRET,
-      { expiresIn: process.env.JWT_Expire || "1d" }
+      { expiresIn: process.env.JWT_Expire || "1d" },
     );
 
     res.status(200).cookie("token", token, cookie).json({

@@ -9,7 +9,9 @@ export const DeleteUser = (req, res) => {
     });
   }
 
-  const sql = "DELETE FROM users WHERE id = ?";
+  const sql = `DELETE FROM users
+      WHERE
+          id = ?`;
 
   connection.query(sql, [id], (err, result) => {
     if (err) {
