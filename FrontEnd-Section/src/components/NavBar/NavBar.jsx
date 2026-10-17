@@ -2,8 +2,7 @@ import { ThemeContext } from "../../context/ThemeContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useState, useContext } from "react";
-import { Link } from "react-router-dom"
-import "./NavBar.css";
+import { Link } from "react-router-dom";
 import {
   FaRegStickyNote,
   FaUserCircle,
@@ -14,7 +13,8 @@ import {
 } from "react-icons/fa";
 
 const NavBar = ({ user, onLogout }) => {
-  const { theme, toggleTheme , HandleToggleFun , HandelMood } = useContext(ThemeContext);
+  const { theme, toggleTheme, HandleToggleFun, HandelMood } =
+    useContext(ThemeContext);
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -31,7 +31,7 @@ const NavBar = ({ user, onLogout }) => {
   return (
     <nav className={`navbar ${theme}`}>
       {/* Left Section */}
-      <div className="nav-left" onClick={() =>  HandleToggleFun()}>
+      <div className="nav-left" onClick={() => HandleToggleFun()}>
         <FaRegStickyNote className="logo" />
         <h2 className="nav-title">NoteVault</h2>
       </div>
@@ -46,16 +46,26 @@ const NavBar = ({ user, onLogout }) => {
 
       {/* Right Section */}
       <div className="nav-right">
-        <button className="theme-btn" onClick={() => {toggleTheme() , HandelMood()}}>
-          {theme === "light" ? <FaMoon /> : <FaSun className="sun"/>}
+        <button
+          className="theme-btn"
+          onClick={() => {
+            (toggleTheme(), HandelMood());
+          }}
+        >
+          {theme === "light" ? <FaMoon /> : <FaSun className="sun" />}
         </button>
 
-        <div className="user-box" onClick={() => navigate('/signup')}>
+        <div className="user-box" onClick={() => navigate("/signup")}>
           <FaUserCircle className="user-icon" />
           <span>{user?.name || "Guest"}</span>
         </div>
 
-        <button className="logout" onClick={() =>{ onLogout , navigate('/login')}}>
+        <button
+          className="logout"
+          onClick={() => {
+            (onLogout, navigate("/login"));
+          }}
+        >
           Logout
         </button>
 
@@ -74,10 +84,18 @@ const NavBar = ({ user, onLogout }) => {
             exit="exit"
             variants={menuVariants}
           >
-            <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
-            <Link to="/dashboard" onClick={() => setMenuOpen(false)}>Dashboard</Link>
-            <Link to="/create" onClick={() => setMenuOpen(false)}>Create Note</Link>
-            <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
+            <Link to="/" onClick={() => setMenuOpen(false)}>
+              Home
+            </Link>
+            <Link to="/dashboard" onClick={() => setMenuOpen(false)}>
+              Dashboard
+            </Link>
+            <Link to="/create" onClick={() => setMenuOpen(false)}>
+              Create Note
+            </Link>
+            <Link to="/about" onClick={() => setMenuOpen(false)}>
+              About
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>

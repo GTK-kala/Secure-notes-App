@@ -1,5 +1,5 @@
 import { ThemeContext } from "../../context/ThemeContext";
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import {
   FaHome,
@@ -8,11 +8,10 @@ import {
   FaCog,
   FaSignOutAlt,
 } from "react-icons/fa";
-import "./SideBar.css";
 
 const SideBar = () => {
   const navigate = useNavigate();
-  const { isOpen , theme , HandleToggleFun } = useContext(ThemeContext);
+  const { isOpen, theme, HandleToggleFun } = useContext(ThemeContext);
   return (
     <>
       {/* Sidebar Container */}
@@ -22,15 +21,27 @@ const SideBar = () => {
         </div> */}
 
         <ul className="sidebar-menu">
-          <li onClick={() => {navigate('/'), HandleToggleFun()}}>
+          <li
+            onClick={() => {
+              (navigate("/"), HandleToggleFun());
+            }}
+          >
             <FaHome className="icon" />
             <span>Home</span>
           </li>
-          <li onClick={() => {navigate('/notes'), HandleToggleFun()}}>
+          <li
+            onClick={() => {
+              (navigate("/notes"), HandleToggleFun());
+            }}
+          >
             <FaStickyNote className="icon" />
             <span>My Notes</span>
           </li>
-          <li onClick={() =>{navigate('/user'), HandleToggleFun()}}>
+          <li
+            onClick={() => {
+              (navigate("/user"), HandleToggleFun());
+            }}
+          >
             <FaUser className="icon" />
             <span>Profile</span>
           </li>

@@ -1,8 +1,7 @@
 import { ThemeContext } from "../../context/ThemeContext";
-import { FaUser, FaLock , } from "react-icons/fa";
-import { useState , useContext } from "react";
+import { FaUser, FaLock } from "react-icons/fa";
+import { useState, useContext } from "react";
 import toast from "react-hot-toast";
-import "./EditUser.css";
 
 const EditUser = () => {
   const [username, setUserName] = useState("");

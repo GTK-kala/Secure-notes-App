@@ -1,9 +1,13 @@
-import { FaStickyNote, FaCloudUploadAlt, FaLock, FaSyncAlt } from "react-icons/fa";
+import {
+  FaStickyNote,
+  FaCloudUploadAlt,
+  FaLock,
+  FaSyncAlt,
+} from "react-icons/fa";
 import { ThemeContext } from "../../context/ThemeContext";
 import { useNavigate } from "react-router-dom";
-import { useEffect , useContext } from "react";
+import { useEffect, useContext } from "react";
 import { Image } from "../../assets/Data";
-import "./Home.css";
 
 const Homes = () => {
   const navigate = useNavigate();
@@ -25,32 +29,38 @@ const Homes = () => {
             <br />
             Experience simplicity and speed with our cloud-based note system.
           </p>
-          <button className="cta-btn fade-in-up delay-2" onClick={() => navigate('/create')}>
+          <button
+            className="cta-btn fade-in-up delay-2"
+            onClick={() => navigate("/create")}
+          >
             + Create Your First Note
           </button>
         </div>
         <div className="hero-illustration fade-in-right">
-          <img
-            src={Image.NewNote}
-            alt="Notes Illustration"
-          />
+          <img src={Image.NewNote} alt="Notes Illustration" />
         </div>
       </section>
 
       {/* Feature Section */}
       <section className="features-section fade-in">
-        <h2>Why Choose <span>NoteVault?</span></h2>
+        <h2>
+          Why Choose <span>NoteVault?</span>
+        </h2>
         <div className="features-grid">
           <div className="feature-card slide-up">
             <FaStickyNote className="feature-icon" />
             <h3>Organize Notes</h3>
-            <p>Keep all your notes categorized, tagged, and easily searchable.</p>
+            <p>
+              Keep all your notes categorized, tagged, and easily searchable.
+            </p>
           </div>
 
           <div className="feature-card slide-up delay-1">
             <FaCloudUploadAlt className="feature-icon" />
             <h3>Cloud Backup</h3>
-            <p>Sync your notes securely in real-time across all your devices.</p>
+            <p>
+              Sync your notes securely in real-time across all your devices.
+            </p>
           </div>
 
           <div className="feature-card slide-up delay-2">
