@@ -1,6 +1,5 @@
 import { FaReact, FaNodeJs, FaDatabase, FaUserAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
-import "./About.css";
 
 const About = () => {
   return (

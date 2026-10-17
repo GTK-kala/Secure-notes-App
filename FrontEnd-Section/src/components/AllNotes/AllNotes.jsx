@@ -1,8 +1,7 @@
 import { FaStickyNote, FaThumbtack } from "react-icons/fa";
 import { ThemeContext } from "../../context/ThemeContext";
-import { useEffect, useState , useContext} from "react";
+import { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import "./AllNotes.css";
 
 const AllNotes = () => {
   const { HandleNoteId } = useContext(ThemeContext);
@@ -38,7 +37,10 @@ const AllNotes = () => {
             <div
               key={note.note_id}
               className={`note-card ${note.pinned ? "pinned" : ""}`}
-              onClick={() => { HandleNoteId(note.note_id), navigator(`/edit-note/${note.note_id}`)}}
+              onClick={() => {
+                (HandleNoteId(note.note_id),
+                  navigator(`/edit-note/${note.note_id}`));
+              }}
             >
               <div className="note-header">
                 <h3>{note.title}</h3>

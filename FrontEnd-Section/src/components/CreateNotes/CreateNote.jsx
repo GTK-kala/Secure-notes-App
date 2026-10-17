@@ -1,7 +1,6 @@
 import { FaStickyNote, FaTag, FaSave, FaThumbtack } from "react-icons/fa";
 import toast from "react-hot-toast";
 import { useState } from "react";
-import "./CreateNote.css";
 
 const CreateNote = () => {
   const [user_id, setId] = useState("");
@@ -15,7 +14,7 @@ const CreateNote = () => {
     e.preventDefault();
     const url = "http://localhost:3001/api/notes/add";
     const value = { user_id, body, tags, title, pinned };
-    
+
     try {
       const res = await fetch(url, {
         method: "POST",

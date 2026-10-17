@@ -8,10 +8,9 @@ import {
 import { ThemeContext } from "../../context/ThemeContext";
 import { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import "./User.css";
 
 const User = () => {
-  const { HandleUserId , HandleFetchData } = useContext(ThemeContext);
+  const { HandleUserId, HandleFetchData } = useContext(ThemeContext);
   const [users, setUsers] = useState([]);
   const navigate = useNavigate();
 
@@ -45,12 +44,19 @@ const User = () => {
               <div className="user-header">
                 <h3 className="user-name">{user.username}</h3>
                 <h3 className="user-icons">
-                  <span onClick={() => { HandleUserId(user.id), navigate(`/some-notes/${user.id}`) , HandleFetchData(user.id)}}>
+                  <span
+                    onClick={() => {
+                      (HandleUserId(user.id),
+                        navigate(`/some-notes/${user.id}`),
+                        HandleFetchData(user.id));
+                    }}
+                  >
                     <FaStickyNote className="icon-small note" />
                   </span>
                   <span
                     onClick={() => {
-                      HandleUserId(user.id), navigate(`/edit-user/${user.id}`);
+                      (HandleUserId(user.id),
+                        navigate(`/edit-user/${user.id}`));
                     }}
                   >
                     <FaPen className="icon-small edit" />

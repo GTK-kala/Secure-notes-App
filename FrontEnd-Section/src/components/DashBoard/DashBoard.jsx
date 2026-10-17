@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import toast from "react-hot-toast";
-import "./DashBoard.css";
 import {
   FaStickyNote,
   FaTasks,
@@ -109,7 +108,8 @@ const DashBoard = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h1 className="dashboard-title">
-            <FaTachometerAlt className="icon" /> <span>Dashboard Overview</span>{" "}
+            <FaTachometerAlt className="icon" />{" "}
+            <span>Dashboard Overview</span>{" "}
           </h1>
           <p className="dashboard-subtitle">
             Welcome back! Here’s your quick summary.

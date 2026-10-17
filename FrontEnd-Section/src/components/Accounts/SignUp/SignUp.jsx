@@ -2,7 +2,6 @@ import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useState } from "react";
-import "./SignUp.css";
 
 const SignUp = () => {
   const navigate = useNavigate();
