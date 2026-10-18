@@ -11,85 +11,89 @@ const SignUp = () => {
 
   const HandelSubmit = async (e) => {
     e.preventDefault();
-    const url = "http://localhost:3001/api/auth/register";
-    const value = {
-      username,
-      email,
-      password,
-    };
+    const value = { username, email, password };
     try {
-      const res = await fetch(url, {
+      const res = await fetch("http://localhost:3001/api/auth/register", {
         method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
+        headers: { "content-type": "application/json" },
         body: JSON.stringify(value),
       });
       const data = await res.json();
-      if (!res.ok) {
-        toast.error(data.message);
-      } else {
+      if (!res.ok) toast.error(data.message);
+      else {
         toast.success(data.message);
-        // navigate("/dashboard");
+        navigate("/login");
       }
-    } catch (error) {
+    } catch {
       toast.error("failed to create account !!!");
     }
-    console.log(value);
     setEmail("");
     setName("");
     setPassword("");
   };
+
   return (
-    <div className="auth-containers">
-      <div className="auth-cards">
-        <h2 className="auth-titles">Create Account ✨</h2>
-        <p className="auth-subtitles">
-          Join NoteVault and start organizing smartly
+    <div className="min-h-[70vh] flex justify-center items-center px-4 py-10">
+      <div className="w-full max-w-md bg-bg rounded-[40px] p-7 sm:p-10 shadow-clay-lg border border-white/60 anim-fade-up">
+        <div className="w-16 h-16 mx-auto rounded-3xl bg-tertiary/60 shadow-clay-sm flex items-center justify-center text-2xl mb-4">
+          ✨
+        </div>
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-center text-primary">
+          Create Account
+        </h2>
+        <p className="text-center text-primary/55 text-sm mt-2 mb-8">
+          Join <span className="font-bold text-accent">NoteVault</span> and
+          start organizing smartly
         </p>
 
-        <form className="auth-forms" onSubmit={(e) => HandelSubmit(e)}>
-          <div className="input-groups">
-            <FaUser className="icons" />
+        <form className="space-y-5" onSubmit={HandelSubmit}>
+          <div className="relative">
+            <FaUser className="absolute left-4 top-1/2 -translate-y-1/2 text-secondary text-sm z-10" />
             <input
               type="text"
               placeholder="Full Name"
               required
               value={username}
               onChange={(e) => setName(e.target.value)}
+              className="clay-input w-full pl-11 pr-4 py-3.5 text-sm"
             />
           </div>
 
-          <div className="input-groups">
-            <FaEnvelope className="icons" />
+          <div className="relative">
+            <FaEnvelope className="absolute left-4 top-1/2 -translate-y-1/2 text-secondary text-sm z-10" />
             <input
               type="email"
               placeholder="Email"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              className="clay-input w-full pl-11 pr-4 py-3.5 text-sm"
             />
           </div>
 
-          <div className="input-groups">
-            <FaLock className="icons" />
+          <div className="relative">
+            <FaLock className="absolute left-4 top-1/2 -translate-y-1/2 text-secondary text-sm z-10" />
             <input
               type="password"
               placeholder="Password"
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              className="clay-input w-full pl-11 pr-4 py-3.5 text-sm"
             />
           </div>
 
-          <button type="submit" className="auth-btn">
+          <button
+            type="submit"
+            className="w-full bg-accent hover:bg-accent/95 text-white py-3.5 rounded-2xl font-bold text-sm shadow-clay-accent active:shadow-clay-inset transition-all"
+          >
             Sign Up
           </button>
         </form>
 
-        <p className="auth-footers">
+        <p className="text-center text-primary/55 text-sm mt-7">
           Already have an account?{" "}
-          <Link to="/login" className="auth-links">
+          <Link to="/login" className="text-accent font-bold hover:underline">
             Login
           </Link>
         </p>

@@ -19,77 +19,42 @@ const DashBoard = () => {
   const [countPinned, setCountPinned] = useState(0);
 
   const FetchNotesData = async () => {
-    const url = "http://localhost:3001/api/notes/all";
-    const response = await fetch(url);
-    const data = await response.json();
-    const Data = data.result;
-    if (!Data) {
-      alert("No Notes on Database");
-    }
+    const res = await fetch("http://localhost:3001/api/notes/all");
+    const data = await res.json();
+    const Data = data.result || [];
     setNotes(Data);
-    const value1 = Data.filter((note) => note.pinned === 1).length;
-    const value2 = Data.filter((note) => note.pinned === 0).length;
-    setCountActive(value1);
-    setCountPinned(value2);
+    setCountActive(Data.filter((n) => n.pinned === 1).length);
+    setCountPinned(Data.filter((n) => n.pinned === 0).length);
   };
+
   const FetchUsersData = async () => {
-    const url = "http://localhost:3001/api/auth/register/all";
-    const response = await fetch(url);
-    const data = await response.json();
-    const Data = data.result;
-    if (!Data) {
-      alert("No Notes on Database");
-    }
-    setUsers(Data);
+    const res = await fetch("http://localhost:3001/api/auth/register/all");
+    const data = await res.json();
+    setUsers(data.result || []);
   };
 
   const IsLogIn = async () => {
     try {
-      const url = "http://localhost:3001/api/auth/verify";
-      const res = await fetch(url, {
+      const res = await fetch("http://localhost:3001/api/auth/verify", {
         method: "GET",
-        headers: {
-          "content-type": "application/json",
-        },
+        headers: { "content-type": "application/json" },
         credentials: "include",
       });
-      if (!res.ok) {
-        toast.error("Error");
-      } else {
-        const data = await res.json();
+      if (!res.ok) toast.error("Error");
+      else {
+        await res.json();
         setLogin(true);
-        console.log(data);
       }
-    } catch (error) {
+    } catch {
       toast.error("Error");
     }
   };
 
   const cards = [
-    {
-      icon: <FaStickyNote />,
-      title: "Total Notes",
-      count: notes.length,
-      color: "#38bdf8",
-    },
-    {
-      icon: <FaTasks />,
-      title: "Active Tasks",
-      count: countActive,
-      color: "#22c55e",
-    },
-    {
-      icon: <FaClock />,
-      title: "Pending",
-      count: countPinned,
-      color: "#facc15",
-    },
-    {
-      icon: <FaUser />,
-      title: "Profile Views",
-      count: users.length,
-      color: "#a855f7",
-    },
+    { icon: <FaStickyNote />, title: "Total Notes", count: notes.length },
+    { icon: <FaTasks />, title: "Active Tasks", count: countActive },
+    { icon: <FaClock />, title: "Pending", count: countPinned },
+    { icon: <FaUser />, title: "Profile Views", count: users.length },
   ];
 
   useEffect(() => {
@@ -102,74 +67,85 @@ const DashBoard = () => {
     <>
       {isLogin ? (
         <motion.div
-          className="dashboard-container"
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.7 }}
+          className="py-4"
         >
-          <h1 className="dashboard-title">
-            <FaTachometerAlt className="icon" />{" "}
-            <span>Dashboard Overview</span>{" "}
-          </h1>
-          <p className="dashboard-subtitle">
-            Welcome back! Here’s your quick summary.
+          <div className="flex items-center justify-center gap-3 mb-2">
+            <div className="w-12 h-12 rounded-2xl bg-accent shadow-clay-accent flex items-center justify-center">
+              <FaTachometerAlt className="text-white text-xl" />
+            </div>
+            <h1 className="text-2xl sm:text-3xl font-extrabold text-primary">
+              Dashboard Overview
+            </h1>
+          </div>
+          <p className="text-center text-primary/55 text-sm mb-10">
+            Welcome back! Here's your quick summary.
           </p>
 
-          <div className="dashboard-grid">
-            {cards.map((card, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {cards.map((card, i) => (
               <motion.div
-                key={index}
-                className="dashboard-card"
-                style={{
-                  borderTop: `4px solid ${card.color}`,
-                  boxShadow: `0 6px 25px ${card.color}40`,
-                }}
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
+                key={i}
+                whileHover={{ scale: 1.03, y: -4 }}
+                transition={{ duration: 0.25 }}
+                className="bg-bg rounded-clay p-6 shadow-clay border border-white/60 hover:shadow-clay-lg transition-all"
               >
-                <div className="card-icon" style={{ color: card.color }}>
+                <div className="w-14 h-14 rounded-2xl bg-tertiary/60 shadow-clay-sm flex items-center justify-center text-2xl text-accent mb-4">
                   {card.icon}
                 </div>
-                <h2>{card.title}</h2>
-                <p>{card.count}</p>
+                <h2 className="text-sm text-primary/55 font-semibold">
+                  {card.title}
+                </h2>
+                <p className="text-3xl font-extrabold text-primary mt-1">
+                  {card.count}
+                </p>
               </motion.div>
             ))}
           </div>
 
-          <motion.div
-            className="dashboard-footer"
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
+            transition={{ delay: 0.5 }}
+            className="text-center text-primary/55 text-sm mt-10"
           >
-            <p>✨ Keep up the great work — your notes are well organized!</p>
-          </motion.div>
+            ✨ Keep up the great work — your notes are well organized!
+          </motion.p>
         </motion.div>
       ) : (
-        <div className="loginPromptContainer">
-          <div className="loginMessage">
-            <span className="warningIcon">⚠️</span>
-            <h2 className="title">Please Login First</h2>
-            <p className="description">
-              You need to be logged in to access this content. Please login or
-              create an account to continue.
-            </p>
+        <div className="max-w-lg mx-auto mt-12 bg-bg rounded-[40px] p-8 sm:p-10 text-center shadow-clay-lg border border-white/60 anim-fade-up">
+          <div className="w-20 h-20 mx-auto rounded-3xl bg-tertiary/60 shadow-clay-sm flex items-center justify-center text-4xl mb-4 anim-bob">
+            ⚠️
           </div>
-
-          <div className="actionSection">
-            <button className="loginButton" onClick={() => navigate("/login")}>
-              Login
-            </button>
-
-            <div className="alternativeActions">
-              <a className="signupLink" onClick={() => navigate("/signup")}>
-                Create Account
-              </a>
-              <span className="separator">|</span>
-              <a href="/forgot-password" className="forgotLink">
-                Forgot Password?
-              </a>
-            </div>
+          <h2 className="text-xl sm:text-2xl font-extrabold text-accent mb-2">
+            Please Login First
+          </h2>
+          <p className="text-primary/55 text-sm leading-relaxed mb-8">
+            You need to be logged in to access this content. Please login or
+            create an account to continue.
+          </p>
+          <button
+            onClick={() => navigate("/login")}
+            className="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-accent text-white font-bold shadow-clay-accent active:shadow-clay-inset transition-all"
+          >
+            Login
+          </button>
+          <div className="flex items-center justify-center gap-3 mt-5 text-sm">
+            <a
+              className="text-secondary font-semibold cursor-pointer hover:underline"
+              onClick={() => navigate("/signup")}
+            >
+              Create Account
+            </a>
+            <span className="text-primary/30">|</span>
+            <a
+              href="/forgot-password"
+              className="text-primary/50 hover:underline"
+            >
+              Forgot Password?
+            </a>
           </div>
         </div>
       )}
