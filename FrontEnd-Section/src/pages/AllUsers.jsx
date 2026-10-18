@@ -1,11 +1,7 @@
 import User from "../components/AllUsers/User";
-
-const Users = () => {
-  return (
-    <>
-      <User />
-    </>
-  )
-}
-
-export default Users
+const Users = () => (
+  <>
+    <User />
+  </>
+);
+export default Users;

@@ -1,11 +1,7 @@
-import NotPageFound from '../components/NotFound/NotPageFound'
-
-const NotFound = () => {
-  return (
-    <>
-      <NotPageFound /> 
-    </>
-  )
-}
-
-export default NotFound
+import NotPageFound from "../components/NotFound/NotPageFound";
+const NotFound = () => (
+  <>
+    <NotPageFound />
+  </>
+);
+export default NotFound;

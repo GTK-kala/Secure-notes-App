@@ -1,11 +1,7 @@
-import SomeNote from '../components/SomeNotes/SomeNote'
-
-const SomeNotes = () => {
-  return (
-    <>
-        <SomeNote />
-    </>
-  )
-}
-
-export default SomeNotes
+import SomeNote from "../components/SomeNotes/SomeNote";
+const SomeNotes = () => (
+  <>
+    <SomeNote />
+  </>
+);
+export default SomeNotes;
