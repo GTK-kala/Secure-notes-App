@@ -9,20 +9,17 @@ const CreateNote = () => {
   const [title, setTitle] = useState("");
   const [pinned, setPinned] = useState("");
 
-  // TODO: send to backend
   const handleSubmit = async (e) => {
     e.preventDefault();
     const url = "http://localhost:3001/api/notes/add";
     const value = { user_id, body, tags, title, pinned };
-
     try {
-      const res = await fetch(url, {
+      await fetch(url, {
         method: "POST",
         headers: { "content-Type": "application/json" },
         body: JSON.stringify(value),
       });
       toast.success("Note is created !!!");
-      console.log(value);
     } catch (error) {
       toast.error("ERROR !!!");
       console.log(error);
@@ -35,66 +32,74 @@ const CreateNote = () => {
   };
 
   return (
-    <div className="create-note-container">
-      <div className="create-note-card">
-        <h2 className="page-title">
-          <FaStickyNote className="icon" /> Create New Note
-        </h2>
+    <div className="flex justify-center py-6">
+      <div className="w-full max-w-2xl bg-bg rounded-[40px] p-6 sm:p-10 shadow-clay-lg border border-white/60 anim-fade-up">
+        <div className="flex items-center justify-center gap-3 mb-8">
+          <div className="w-12 h-12 rounded-2xl bg-accent shadow-clay-accent flex items-center justify-center">
+            <FaStickyNote className="text-white text-xl" />
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-primary">
+            Create New Note
+          </h2>
+        </div>
 
-        <form onSubmit={handleSubmit} className="note-form">
-          {/* Title */}
-          <div className="form-group">
-            <label>Title</label>
+        <form onSubmit={handleSubmit} className="space-y-5">
+          <div>
+            <label className="block text-sm font-semibold text-primary mb-2">
+              Title
+            </label>
             <input
               type="text"
-              name="title"
               placeholder="Enter note title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               required
-            />
-          </div>
-          {/* id */}
-          <div className="form-group">
-            <label>ID</label>
-            <input
-              type="number"
-              name="id"
-              placeholder="Enter id..."
-              value={user_id}
-              onChange={(e) => setId(e.target.value)}
-              required
+              className="clay-input w-full px-4 py-3.5 text-sm"
             />
           </div>
 
-          {/* Body */}
-          <div className="form-group">
-            <label>Body</label>
+          <div>
+            <label className="block text-sm font-semibold text-primary mb-2">
+              User ID
+            </label>
+            <input
+              type="number"
+              placeholder="Enter user id..."
+              value={user_id}
+              onChange={(e) => setId(e.target.value)}
+              required
+              className="clay-input w-full px-4 py-3.5 text-sm"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-semibold text-primary mb-2">
+              Body
+            </label>
             <textarea
-              name="body"
               placeholder="Write your note..."
               value={body}
               onChange={(e) => setBody(e.target.value)}
               required
-            ></textarea>
-          </div>
-
-          {/* Tags */}
-          <div className="form-group">
-            <label>
-              <FaTag /> Tags
-            </label>
-            <input
-              type="text"
-              name="tags"
-              placeholder="e.g. work, ideas"
-              value={tags}
-              onChange={(e) => setTags(e.target.value)}
+              rows={5}
+              className="clay-input w-full px-4 py-3.5 text-sm resize-none"
             />
           </div>
 
-          {/* Pinned */}
-          <div className="pinned-toggle">
+          <div>
+            <label className="flex items-center gap-2 text-sm font-semibold text-primary mb-2">
+              <FaTag className="text-secondary text-xs" /> Tags
+            </label>
+            <input
+              type="text"
+              placeholder="e.g. work, ideas"
+              value={tags}
+              onChange={(e) => setTags(e.target.value)}
+              className="clay-input w-full px-4 py-3.5 text-sm"
+            />
+          </div>
+
+          <div className="flex items-center gap-3 px-1">
             <input
               type="checkbox"
               id="pinned"
@@ -102,15 +107,23 @@ const CreateNote = () => {
               onChange={(e) =>
                 setPinned({ ...pinned, pinned: e.target.checked })
               }
+              className="w-5 h-5 rounded-lg accent-accent cursor-pointer"
             />
-            <label htmlFor="pinned">
-              <FaThumbtack className={`pin-icon ${pinned ? "active" : ""}`} />
-              {pinned ? "Pinned" : "Not Pinned"}
+            <label
+              htmlFor="pinned"
+              className="flex items-center gap-2 text-sm font-semibold text-primary cursor-pointer"
+            >
+              <FaThumbtack
+                className={pinned?.pinned ? "text-accent" : "text-primary/30"}
+              />
+              {pinned?.pinned ? "Pinned" : "Not Pinned"}
             </label>
           </div>
 
-          {/* Submit */}
-          <button type="submit" className="save-btn">
+          <button
+            type="submit"
+            className="w-full flex items-center justify-center gap-2 bg-accent hover:bg-accent/95 text-white py-3.5 rounded-2xl font-bold text-sm shadow-clay-accent active:shadow-clay-inset transition-all"
+          >
             <FaSave /> Save Note
           </button>
         </form>
