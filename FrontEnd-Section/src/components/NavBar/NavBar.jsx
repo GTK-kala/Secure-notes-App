@@ -78,8 +78,8 @@ const NavBar = ({ user, onLogout }) => {
             onClick={() => navigate("/signup")}
           >
             <FaUserCircle className="text-2xl text-secondary" />
-            <span className="hidden sm:inline text-sm font-semibold text-primary">
-              {user?.name || "Guest"}
+            <span className="hidden sm:inline text-lg font-semibold text-primary">
+              {user?.name || "Login"}
             </span>
           </div>
 
