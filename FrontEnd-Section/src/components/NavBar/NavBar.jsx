@@ -1,12 +1,19 @@
-import { ThemeContext } from "../../context/ThemeContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate, Link } from "react-router-dom";
-import { useState, useContext } from "react";
-import { FaRegStickyNote, FaUserCircle, FaBars, FaTimes } from "react-icons/fa";
+import { useState } from "react";
+import {
+  FaRegStickyNote,
+  FaUserCircle,
+  FaBars,
+  FaTimes,
+  FaMoon,
+  FaSun,
+} from "react-icons/fa";
 
 const NavBar = ({ user, onLogout }) => {
-  const { HandleToggleFun } = useContext(ThemeContext);
   const [menuOpen, setMenuOpen] = useState(false);
+  // Local theme state for now, replace with ThemeContext if you have it set up
+  const [isDark, setIsDark] = useState(false);
   const navigate = useNavigate();
 
   const links = [
@@ -15,6 +22,12 @@ const NavBar = ({ user, onLogout }) => {
     { label: "Create Note", to: "/create" },
     { label: "About", to: "/about" },
   ];
+
+  const toggleTheme = () => {
+    setIsDark(!isDark);
+    // Add logic to toggle class on document.documentElement if needed
+    // document.documentElement.classList.toggle('dark');
+  };
 
   return (
     <nav className="sticky top-3 z-40 mx-3 sm:mx-4 lg:mx-6">
@@ -45,14 +58,19 @@ const NavBar = ({ user, onLogout }) => {
           ))}
         </div>
 
-        {/* Right */}
+        {/* Right Side */}
         <div className="flex items-center gap-2.5">
+          {/* Dark/Light Mode Icon (Replaces Sidebar Burger) */}
           <button
-            onClick={HandleToggleFun}
-            aria-label="Toggle sidebar"
-            className="hidden md:flex items-center justify-center w-10 h-10 rounded-2xl bg-bg text-secondary shadow-clay-sm active:shadow-clay-inset transition-all"
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            className="flex items-center justify-center w-10 h-10 rounded-2xl bg-bg text-primary shadow-clay-sm active:shadow-clay-inset transition-all"
           >
-            <FaBars />
+            {isDark ? (
+              <FaSun className="text-accent" />
+            ) : (
+              <FaMoon className="text-primary/70" />
+            )}
           </button>
 
           <div
@@ -75,6 +93,7 @@ const NavBar = ({ user, onLogout }) => {
             Logout
           </button>
 
+          {/* Mobile Menu Toggle */}
           <div
             className="lg:hidden w-10 h-10 rounded-2xl bg-bg shadow-clay-sm flex items-center justify-center text-primary text-lg cursor-pointer active:shadow-clay-inset"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -84,7 +103,7 @@ const NavBar = ({ user, onLogout }) => {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu Dropdown */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -92,7 +111,7 @@ const NavBar = ({ user, onLogout }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden mt-3 bg-bg rounded-[28px] shadow-clay border border-white/60 px-4 py-4 flex flex-col gap-1"
+            className="lg:hidden mt-3 bg-bg rounded-[28px] shadow-clay border border-white/60 px-4 py-4 flex flex-col gap-1 absolute top-full left-0 right-0 mx-3 sm:mx-4"
           >
             {links.map((l) => (
               <Link
