@@ -36,7 +36,7 @@ const NavBar = ({ user, onLogout }) => {
           <div className="w-10 h-10 rounded-2xl bg-accent shadow-clay-accent flex items-center justify-center">
             <FaRegStickyNote className="text-white text-lg" />
           </div>
-          <h2 className="text-primary dark:text-bg font-extrabold text-lg tracking-tight hidden sm:block transition-colors duration-300">
+          <h2 className="text-primary dark:text-bg font-extrabold text-lg tracking-tight hidden sm:block">
             NoteVault
           </h2>
         </div>
@@ -47,7 +47,7 @@ const NavBar = ({ user, onLogout }) => {
             <Link
               key={l.to}
               to={l.to}
-              className="px-4 py-2 rounded-2xl text-sm font-semibold text-primary/70 dark:text-bg/70 hover:text-primary dark:hover:text-bg hover:bg-tertiary/50 dark:hover:bg-tertiary/20 hover:shadow-clay-sm transition-all"
+              className="px-4 py-2 rounded-2xl text-sm font-semibold text-primary/70 dark:text-bg/70 hover:text-primary dark:hover:text-bg hover:bg-tertiary/50 dark:hover:bg-tertiary/20 transition-all"
             >
               {l.label}
             </Link>
@@ -59,8 +59,7 @@ const NavBar = ({ user, onLogout }) => {
           {/* Dark/Light Mode Icon */}
           <button
             onClick={toggleTheme}
-            aria-label="Toggle theme"
-            className="flex items-center justify-center w-10 h-10 rounded-2xl bg-bg dark:bg-card-dark text-primary dark:text-bg shadow-clay-sm dark:shadow-[inset_4px_4px_10px_rgba(0,0,0,0.3)] active:shadow-clay-inset transition-all"
+            className="flex items-center justify-center w-10 h-10 rounded-2xl bg-bg dark:bg-bg-dark text-primary dark:text-bg shadow-clay-sm dark:shadow-[inset_4px_4px_10px_rgba(0,0,0,0.3)] active:shadow-clay-inset transition-all"
           >
             {theme === "dark" ? (
               <FaSun className="text-accent" />
@@ -69,7 +68,7 @@ const NavBar = ({ user, onLogout }) => {
             )}
           </button>
 
-          {/* Desktop User Icon & Logout */}
+          {/* Desktop User Icon */}
           <div
             className="hidden sm:flex items-center gap-2 cursor-pointer px-2 py-1.5 rounded-2xl hover:bg-tertiary/40 dark:hover:bg-tertiary/20 transition-colors"
             onClick={() => navigate("/signup")}
@@ -80,6 +79,7 @@ const NavBar = ({ user, onLogout }) => {
             </span>
           </div>
 
+          {/* Desktop Logout */}
           <button
             className="hidden sm:inline-flex px-4 py-2.5 rounded-2xl bg-accent text-white text-sm font-bold shadow-clay-accent active:shadow-clay-inset transition-all"
             onClick={() => {
@@ -92,7 +92,7 @@ const NavBar = ({ user, onLogout }) => {
 
           {/* Mobile Menu Toggle (Burger) */}
           <div
-            className="lg:hidden w-10 h-10 rounded-2xl bg-bg dark:bg-card-dark shadow-clay-sm flex items-center justify-center text-primary dark:text-bg text-lg cursor-pointer active:shadow-clay-inset"
+            className="lg:hidden w-10 h-10 rounded-2xl bg-bg dark:bg-bg-dark shadow-clay-sm flex items-center justify-center text-primary dark:text-bg text-lg cursor-pointer active:shadow-clay-inset"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? <FaTimes /> : <FaBars />}
@@ -110,7 +110,6 @@ const NavBar = ({ user, onLogout }) => {
             transition={{ duration: 0.2 }}
             className="lg:hidden mt-3 bg-bg dark:bg-card-dark rounded-[28px] shadow-clay dark:shadow-[8px_8px_20px_rgba(0,0,0,0.4)] border border-white/60 dark:border-white/5 px-4 py-4 flex flex-col gap-1 absolute top-full left-0 right-0 mx-3 sm:mx-4 transition-colors duration-300"
           >
-            {/* Nav Links */}
             {links.map((l) => (
               <Link
                 key={l.to}
@@ -122,7 +121,6 @@ const NavBar = ({ user, onLogout }) => {
               </Link>
             ))}
 
-            {/* Mobile Auth Actions */}
             <div className="h-px w-full bg-tertiary/50 dark:bg-tertiary/20 my-2"></div>
 
             <Link

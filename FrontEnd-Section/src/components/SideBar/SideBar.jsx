@@ -46,9 +46,7 @@ const SideBar = () => {
 
       {/* Sidebar Container */}
       <aside
-        className={`fixed left-3 top-24 bottom-4 z-50 flex flex-col justify-between bg-bg dark:bg-card-dark rounded-[32px] shadow-clay dark:shadow-[8px_8px_20px_rgba(0,0,0,0.4)] border border-white/60 dark:border-white/5 p-3 transition-all duration-300
-          ${isMobileOpen ? "translate-x-0 w-56" : "-translate-x-[120%] w-56"} 
-          md:translate-x-0 md:w-60`}
+        className={`fixed left-3 top-24 bottom-4 z-50 flex flex-col justify-between bg-bg dark:bg-card-dark rounded-[32px] shadow-clay dark:shadow-[8px_8px_20px_rgba(0,0,0,0.4)] border border-white/60 dark:border-white/5 p-3 transition-all duration-300 ${isMobileOpen ? "translate-x-0 w-56" : "-translate-x-[120%] w-56"} md:translate-x-0 md:w-60`}
       >
         {/* Mobile Close Button */}
         <div className="md:hidden flex justify-end mb-2">
@@ -65,10 +63,7 @@ const SideBar = () => {
             <li
               key={i}
               onClick={() => handleNavigate(it.to)}
-              className="flex items-center gap-3 px-4 py-3 rounded-2xl cursor-pointer
-                text-primary/70 dark:text-bg/70 hover:text-primary dark:hover:text-bg 
-                hover:bg-tertiary/50 dark:hover:bg-tertiary/20 hover:shadow-clay-sm
-                transition-all active:shadow-clay-inset justify-start"
+              className="flex items-center gap-3 px-4 py-3 rounded-2xl cursor-pointer text-primary/70 dark:text-bg/70 hover:text-primary dark:hover:text-bg hover:bg-tertiary/50 dark:hover:bg-tertiary/20 hover:shadow-clay-sm transition-all active:shadow-clay-inset justify-start"
             >
               <span className="text-lg text-accent">{it.icon}</span>
               <span className="text-sm font-semibold">{it.label}</span>
@@ -78,9 +73,7 @@ const SideBar = () => {
 
         <button
           onClick={() => handleNavigate("/login")}
-          className="flex items-center gap-3 justify-center px-3 py-3 rounded-2xl
-            bg-accent/95 text-white text-sm font-bold shadow-clay-accent
-            active:shadow-clay-inset transition-all"
+          className="flex items-center gap-3 justify-center px-3 py-3 rounded-2xl bg-accent/95 text-white text-sm font-bold shadow-clay-accent active:shadow-clay-inset transition-all"
         >
           <FaSignOutAlt />
           <span>Logout</span>
