@@ -23,12 +23,12 @@ const SideBar = () => {
 
   const handleNavigate = (to) => {
     if (to) navigate(to);
-    setIsMobileOpen(false); // Close mobile menu on click
+    setIsMobileOpen(false);
   };
 
   return (
     <>
-      {/* Mobile Floating Toggle Button (Only visible on small screens) */}
+      {/* Mobile Floating Toggle Button */}
       <button
         onClick={() => setIsMobileOpen(true)}
         className="md:hidden fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center text-xl shadow-clay-accent active:shadow-clay-inset transition-all"
@@ -36,17 +36,17 @@ const SideBar = () => {
         <FaBars />
       </button>
 
-      {/* Mobile Backdrop Overlay */}
+      {/* Mobile Backdrop */}
       {isMobileOpen && (
         <div
-          className="md:hidden fixed inset-0 bg-primary/40 backdrop-blur-sm z-40"
+          className="md:hidden fixed inset-0 bg-primary/40 dark:bg-black/60 backdrop-blur-sm z-40 transition-colors duration-300"
           onClick={() => setIsMobileOpen(false)}
         />
       )}
 
       {/* Sidebar Container */}
       <aside
-        className={`fixed left-3 top-24 bottom-4 z-50 flex flex-col justify-between bg-bg rounded-[32px] shadow-clay border border-white/60 p-3 transition-all duration-300
+        className={`fixed left-3 top-24 bottom-4 z-50 flex flex-col justify-between bg-bg dark:bg-card-dark rounded-[32px] shadow-clay dark:shadow-[8px_8px_20px_rgba(0,0,0,0.4)] border border-white/60 dark:border-white/5 p-3 transition-all duration-300
           ${isMobileOpen ? "translate-x-0 w-56" : "-translate-x-[120%] w-56"} 
           md:translate-x-0 md:w-60`}
       >
@@ -54,7 +54,7 @@ const SideBar = () => {
         <div className="md:hidden flex justify-end mb-2">
           <button
             onClick={() => setIsMobileOpen(false)}
-            className="w-8 h-8 rounded-xl bg-tertiary/50 flex items-center justify-center text-primary shadow-clay-sm active:shadow-clay-inset"
+            className="w-8 h-8 rounded-xl bg-tertiary/50 dark:bg-tertiary/20 flex items-center justify-center text-primary dark:text-bg shadow-clay-sm active:shadow-clay-inset"
           >
             <FaTimes />
           </button>
@@ -66,7 +66,8 @@ const SideBar = () => {
               key={i}
               onClick={() => handleNavigate(it.to)}
               className="flex items-center gap-3 px-4 py-3 rounded-2xl cursor-pointer
-                text-primary/70 hover:text-primary hover:bg-tertiary/50 hover:shadow-clay-sm
+                text-primary/70 dark:text-bg/70 hover:text-primary dark:hover:text-bg 
+                hover:bg-tertiary/50 dark:hover:bg-tertiary/20 hover:shadow-clay-sm
                 transition-all active:shadow-clay-inset justify-start"
             >
               <span className="text-lg text-accent">{it.icon}</span>

@@ -16,11 +16,9 @@ import Home from "./pages/Home";
 
 const App = () => {
   return (
-    <div className="min-h-screen bg-bg">
+    <div className="min-h-screen transition-colors duration-300">
       <NavBar />
       <SideBar />
-
-      {/* Main Content Area */}
       <main className="transition-all duration-300 md:ml-64 pt-6 pb-16 px-4 sm:px-6 lg:px-10">
         <div className="max-w-7xl mx-auto">
           <Routes>

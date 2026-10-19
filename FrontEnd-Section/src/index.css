@@ -7,41 +7,42 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-bg text-primary font-sans antialiased;
+    @apply bg-bg text-primary dark:bg-bg-dark dark:text-bg font-sans antialiased transition-colors duration-300;
     margin: 0;
   }
   * {
     box-sizing: border-box;
   }
   ::selection {
-    @apply bg-tertiary text-primary;
+    @apply bg-tertiary text-primary dark:bg-secondary dark:text-bg;
   }
   ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #f8f6ee;
+    @apply bg-bg dark:bg-bg-dark;
   }
   ::-webkit-scrollbar-thumb {
-    background: #d9c9b2;
+    @apply bg-tertiary dark:bg-secondary;
     border-radius: 10px;
-    border: 2px solid #f8f6ee;
+    border: 2px solid;
+    @apply border-bg dark:border-bg-dark;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #6b7f5b;
+    @apply bg-secondary dark:bg-tertiary;
   }
 }
 
 @layer components {
   .clay-card {
-    @apply bg-bg rounded-clay shadow-clay border border-white/60;
+    @apply bg-bg dark:bg-card-dark rounded-clay shadow-clay dark:shadow-[8px_8px_20px_rgba(0,0,0,0.4),-8px_-8px_20px_rgba(255,255,255,0.05)] border border-white/60 dark:border-white/5 transition-colors duration-300;
   }
   .clay-btn {
-    @apply rounded-2xl shadow-clay-sm active:shadow-clay-inset transition-all duration-200;
+    @apply rounded-2xl shadow-clay-sm dark:shadow-[5px_5px_12px_rgba(0,0,0,0.4),-5px_-5px_12px_rgba(255,255,255,0.05)] active:shadow-clay-inset dark:active:shadow-[inset_6px_6px_14px_rgba(0,0,0,0.6),inset_-6px_-6px_14px_rgba(255,255,255,0.05)] transition-all duration-200;
   }
   .clay-input {
-    @apply rounded-2xl bg-bg shadow-clay-inset border border-white/40 outline-none text-primary placeholder-primary/40;
+    @apply rounded-2xl bg-bg dark:bg-bg-dark shadow-clay-inset dark:shadow-[inset_6px_6px_14px_rgba(0,0,0,0.6),inset_-6px_-6px_14px_rgba(255,255,255,0.05)] border border-white/40 dark:border-white/5 outline-none text-primary dark:text-bg placeholder-primary/40 dark:placeholder-bg/40 transition-colors duration-300;
   }
 }
 

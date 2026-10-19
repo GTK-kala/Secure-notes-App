@@ -8,29 +8,28 @@ export const ThemeProvider = (props) => {
   const [user_id, setUserId] = useState(null);
   const [note_id, setNoteId] = useState(null);
 
-  // Theme state
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  // Initialize theme
+  const [theme, setTheme] = useState(() => {
+    const saved = localStorage.getItem("theme");
+    return saved ? saved : "light";
+  });
 
   const HandleToggleFun = () => setIsOpen(!isOpen);
   const HandleUserId = (id) => setUserId(id);
   const HandleNoteId = (id) => setNoteId(id);
 
-  // Sync theme with DOM and LocalStorage
+  // Apply theme
   useEffect(() => {
-    const root = window.document.documentElement;
     if (theme === "dark") {
-      root.classList.add("dark");
-      document.body.style.backgroundColor = "#1a1c19"; // Fallback for body
+      document.documentElement.classList.add("dark");
     } else {
-      root.classList.remove("dark");
-      document.body.style.backgroundColor = "#F8F6EE";
+      document.documentElement.classList.remove("dark");
     }
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-  const toggleTheme = () => {
+  const toggleTheme = () =>
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
-  };
 
   const HandleFetchData = async (id) => {
     const url = `http://localhost:3001/api/notes/some/${id}`;
