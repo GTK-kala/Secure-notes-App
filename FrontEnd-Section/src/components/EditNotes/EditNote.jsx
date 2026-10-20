@@ -34,26 +34,26 @@ const EditNote = () => {
 
   return (
     <div className="flex justify-center py-6">
-      <div className="w-full max-w-2xl bg-bg rounded-[40px] p-6 sm:p-10 shadow-clay-lg border border-white/60 anim-fade-up">
+      <div className="w-full max-w-2xl bg-bg dark:bg-card-dark rounded-[40px] p-6 sm:p-10 shadow-clay-lg dark:shadow-[14px_14px_32px_rgba(0,0,0,0.4)] border border-white/60 dark:border-white/5 anim-fade-up transition-colors duration-300">
         <div className="flex items-center justify-center gap-3 mb-3">
           <div className="w-12 h-12 rounded-2xl bg-accent shadow-clay-accent flex items-center justify-center">
             <FaStickyNote className="text-white text-xl" />
           </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-primary">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-primary dark:text-bg">
             Edit Note
           </h1>
         </div>
-        <p className="text-center text-primary/55 text-sm mb-8">
+        <p className="text-center text-primary/55 dark:text-bg/55 text-sm mb-8">
           Update title, content, tags or pin status
         </p>
 
         <form className="space-y-5" onSubmit={HandleChange}>
           <div>
-            <label className="block text-sm font-semibold text-primary mb-2">
+            <label className="block text-sm font-semibold text-primary dark:text-bg mb-2">
               Title
             </label>
             <div className="relative">
-              <FaStickyNote className="absolute left-4 top-1/2 -translate-y-1/2 text-secondary text-sm z-10" />
+              <FaStickyNote className="absolute left-4 top-1/2 -translate-y-1/2 text-secondary dark:text-tertiary text-sm z-10" />
               <input
                 type="text"
                 placeholder="Enter note title"
@@ -65,7 +65,7 @@ const EditNote = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-primary mb-2">
+            <label className="block text-sm font-semibold text-primary dark:text-bg mb-2">
               Body
             </label>
             <textarea
@@ -79,11 +79,12 @@ const EditNote = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 items-stretch">
             <div className="flex-1">
-              <label className="flex items-center gap-2 text-sm font-semibold text-primary mb-2">
-                <FaTag className="text-secondary text-xs" /> Tags
+              <label className="flex items-center gap-2 text-sm font-semibold text-primary dark:text-bg mb-2">
+                <FaTag className="text-secondary dark:text-tertiary text-xs" />{" "}
+                Tags
               </label>
               <div className="relative">
-                <FaTag className="absolute left-4 top-1/2 -translate-y-1/2 text-secondary text-sm z-10" />
+                <FaTag className="absolute left-4 top-1/2 -translate-y-1/2 text-secondary dark:text-tertiary text-sm z-10" />
                 <input
                   type="text"
                   placeholder="e.g. work, ideas"
@@ -95,10 +96,10 @@ const EditNote = () => {
             </div>
 
             <div className="sm:w-40">
-              <label className="block text-sm font-semibold text-primary mb-2">
+              <label className="block text-sm font-semibold text-primary dark:text-bg mb-2">
                 Pinned
               </label>
-              <div className="flex items-center gap-2 px-4 py-3.5 rounded-2xl bg-bg shadow-clay-inset border border-white/40">
+              <div className="flex items-center gap-2 px-4 py-3.5 rounded-2xl bg-bg dark:bg-bg-dark shadow-clay-inset dark:shadow-[inset_6px_6px_14px_rgba(0,0,0,0.6)] border border-white/40 dark:border-white/5 transition-colors duration-300">
                 <input
                   id="edit_pinned"
                   type="checkbox"
@@ -108,10 +109,12 @@ const EditNote = () => {
                 />
                 <label
                   htmlFor="edit_pinned"
-                  className="flex items-center gap-1.5 text-sm font-semibold text-primary cursor-pointer"
+                  className="flex items-center gap-1.5 text-sm font-semibold text-primary dark:text-bg cursor-pointer"
                 >
                   <FaThumbtack
-                    className={pinned ? "text-accent" : "text-primary/30"}
+                    className={
+                      pinned ? "text-accent" : "text-primary/30 dark:text-bg/30"
+                    }
                   />
                   {pinned ? "Pinned" : "Pin"}
                 </label>

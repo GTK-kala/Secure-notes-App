@@ -28,20 +28,20 @@ const EditUser = () => {
 
   return (
     <div className="min-h-[70vh] flex justify-center items-center px-4 py-10">
-      <div className="w-full max-w-md bg-bg rounded-[40px] p-7 sm:p-10 shadow-clay-lg border border-white/60 anim-fade-up">
-        <div className="w-16 h-16 mx-auto rounded-3xl bg-tertiary/60 shadow-clay-sm flex items-center justify-center text-2xl mb-4">
+      <div className="w-full max-w-md bg-bg dark:bg-card-dark rounded-[40px] p-7 sm:p-10 shadow-clay-lg dark:shadow-[14px_14px_32px_rgba(0,0,0,0.4)] border border-white/60 dark:border-white/5 anim-fade-up transition-colors duration-300">
+        <div className="w-16 h-16 mx-auto rounded-3xl bg-tertiary/60 dark:bg-tertiary/20 shadow-clay-sm flex items-center justify-center text-2xl mb-4">
           👤
         </div>
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-center text-primary">
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-center text-primary dark:text-bg">
           Edit Profile
         </h2>
-        <p className="text-center text-primary/55 text-sm mt-2 mb-8">
+        <p className="text-center text-primary/55 dark:text-bg/55 text-sm mt-2 mb-8">
           Update your personal information
         </p>
 
         <form className="space-y-5" onSubmit={handleUpdate}>
           <div className="relative">
-            <FaUser className="absolute left-4 top-1/2 -translate-y-1/2 text-secondary text-sm z-10" />
+            <FaUser className="absolute left-4 top-1/2 -translate-y-1/2 text-secondary dark:text-tertiary text-sm z-10" />
             <input
               type="text"
               placeholder="Full Name"
@@ -52,7 +52,7 @@ const EditUser = () => {
           </div>
 
           <div className="relative">
-            <FaUser className="absolute left-4 top-1/2 -translate-y-1/2 text-secondary text-sm z-10" />
+            <FaUser className="absolute left-4 top-1/2 -translate-y-1/2 text-secondary dark:text-tertiary text-sm z-10" />
             <input
               type="number"
               placeholder="User-id"
@@ -63,7 +63,7 @@ const EditUser = () => {
           </div>
 
           <div className="relative">
-            <FaLock className="absolute left-4 top-1/2 -translate-y-1/2 text-secondary text-sm z-10" />
+            <FaLock className="absolute left-4 top-1/2 -translate-y-1/2 text-secondary dark:text-tertiary text-sm z-10" />
             <input
               type="password"
               placeholder="New Password"
@@ -81,7 +81,7 @@ const EditUser = () => {
           </button>
         </form>
 
-        <p className="text-center text-primary/55 text-sm mt-7">
+        <p className="text-center text-primary/55 dark:text-bg/55 text-sm mt-7">
           Go back to{" "}
           <a
             href="/dashboard"
