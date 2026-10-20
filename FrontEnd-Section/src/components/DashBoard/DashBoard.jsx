@@ -76,11 +76,11 @@ const DashBoard = () => {
             <div className="w-12 h-12 rounded-2xl bg-accent shadow-clay-accent flex items-center justify-center">
               <FaTachometerAlt className="text-white text-xl" />
             </div>
-            <h1 className="text-2xl sm:text-3xl font-extrabold text-primary">
+            <h1 className="text-2xl sm:text-3xl font-extrabold text-primary dark:text-bg">
               Dashboard Overview
             </h1>
           </div>
-          <p className="text-center text-primary/55 text-sm mb-10">
+          <p className="text-center text-primary/55 dark:text-bg/55 text-sm mb-10">
             Welcome back! Here's your quick summary.
           </p>
 
@@ -90,15 +90,15 @@ const DashBoard = () => {
                 key={i}
                 whileHover={{ scale: 1.03, y: -4 }}
                 transition={{ duration: 0.25 }}
-                className="bg-bg rounded-clay p-6 shadow-clay border border-white/60 hover:shadow-clay-lg transition-all"
+                className="bg-bg dark:bg-card-dark rounded-clay p-6 shadow-clay dark:shadow-[8px_8px_20px_rgba(0,0,0,0.4)] border border-white/60 dark:border-white/5 hover:shadow-clay-lg transition-all"
               >
-                <div className="w-14 h-14 rounded-2xl bg-tertiary/60 shadow-clay-sm flex items-center justify-center text-2xl text-accent mb-4">
+                <div className="w-14 h-14 rounded-2xl bg-tertiary/60 dark:bg-tertiary/20 shadow-clay-sm flex items-center justify-center text-2xl text-accent mb-4">
                   {card.icon}
                 </div>
-                <h2 className="text-sm text-primary/55 font-semibold">
+                <h2 className="text-sm text-primary/55 dark:text-bg/55 font-semibold">
                   {card.title}
                 </h2>
-                <p className="text-3xl font-extrabold text-primary mt-1">
+                <p className="text-3xl font-extrabold text-primary dark:text-bg mt-1">
                   {card.count}
                 </p>
               </motion.div>
@@ -109,20 +109,20 @@ const DashBoard = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="text-center text-primary/55 text-sm mt-10"
+            className="text-center text-primary/55 dark:text-bg/55 text-sm mt-10"
           >
             ✨ Keep up the great work — your notes are well organized!
           </motion.p>
         </motion.div>
       ) : (
-        <div className="max-w-lg mx-auto mt-12 bg-bg rounded-[40px] p-8 sm:p-10 text-center shadow-clay-lg border border-white/60 anim-fade-up">
-          <div className="w-20 h-20 mx-auto rounded-3xl bg-tertiary/60 shadow-clay-sm flex items-center justify-center text-4xl mb-4 anim-bob">
+        <div className="max-w-lg mx-auto mt-12 bg-bg dark:bg-card-dark rounded-[40px] p-8 sm:p-10 text-center shadow-clay-lg dark:shadow-[14px_14px_32px_rgba(0,0,0,0.4)] border border-white/60 dark:border-white/5 anim-fade-up transition-colors duration-300">
+          <div className="w-20 h-20 mx-auto rounded-3xl bg-tertiary/60 dark:bg-tertiary/20 shadow-clay-sm flex items-center justify-center text-4xl mb-4 anim-bob">
             ⚠️
           </div>
           <h2 className="text-xl sm:text-2xl font-extrabold text-accent mb-2">
             Please Login First
           </h2>
-          <p className="text-primary/55 text-sm leading-relaxed mb-8">
+          <p className="text-primary/55 dark:text-bg/55 text-sm leading-relaxed mb-8">
             You need to be logged in to access this content. Please login or
             create an account to continue.
           </p>
@@ -134,15 +134,15 @@ const DashBoard = () => {
           </button>
           <div className="flex items-center justify-center gap-3 mt-5 text-sm">
             <a
-              className="text-secondary font-semibold cursor-pointer hover:underline"
+              className="text-secondary dark:text-tertiary font-semibold cursor-pointer hover:underline"
               onClick={() => navigate("/signup")}
             >
               Create Account
             </a>
-            <span className="text-primary/30">|</span>
+            <span className="text-primary/30 dark:text-bg/30">|</span>
             <a
               href="/forgot-password"
-              className="text-primary/50 hover:underline"
+              className="text-primary/50 dark:text-bg/50 hover:underline"
             >
               Forgot Password?
             </a>

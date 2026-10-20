@@ -33,19 +33,19 @@ const CreateNote = () => {
 
   return (
     <div className="flex justify-center py-6">
-      <div className="w-full max-w-2xl bg-bg rounded-[40px] p-6 sm:p-10 shadow-clay-lg border border-white/60 anim-fade-up">
+      <div className="w-full max-w-2xl bg-bg dark:bg-card-dark rounded-[40px] p-6 sm:p-10 shadow-clay-lg dark:shadow-[14px_14px_32px_rgba(0,0,0,0.4)] border border-white/60 dark:border-white/5 anim-fade-up transition-colors duration-300">
         <div className="flex items-center justify-center gap-3 mb-8">
           <div className="w-12 h-12 rounded-2xl bg-accent shadow-clay-accent flex items-center justify-center">
             <FaStickyNote className="text-white text-xl" />
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-primary">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-primary dark:text-bg">
             Create New Note
           </h2>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label className="block text-sm font-semibold text-primary mb-2">
+            <label className="block text-sm font-semibold text-primary dark:text-bg mb-2">
               Title
             </label>
             <input
@@ -59,7 +59,7 @@ const CreateNote = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-primary mb-2">
+            <label className="block text-sm font-semibold text-primary dark:text-bg mb-2">
               User ID
             </label>
             <input
@@ -73,7 +73,7 @@ const CreateNote = () => {
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-primary mb-2">
+            <label className="block text-sm font-semibold text-primary dark:text-bg mb-2">
               Body
             </label>
             <textarea
@@ -87,8 +87,9 @@ const CreateNote = () => {
           </div>
 
           <div>
-            <label className="flex items-center gap-2 text-sm font-semibold text-primary mb-2">
-              <FaTag className="text-secondary text-xs" /> Tags
+            <label className="flex items-center gap-2 text-sm font-semibold text-primary dark:text-bg mb-2">
+              <FaTag className="text-secondary dark:text-tertiary text-xs" />{" "}
+              Tags
             </label>
             <input
               type="text"
@@ -111,10 +112,14 @@ const CreateNote = () => {
             />
             <label
               htmlFor="pinned"
-              className="flex items-center gap-2 text-sm font-semibold text-primary cursor-pointer"
+              className="flex items-center gap-2 text-sm font-semibold text-primary dark:text-bg cursor-pointer"
             >
               <FaThumbtack
-                className={pinned?.pinned ? "text-accent" : "text-primary/30"}
+                className={
+                  pinned?.pinned
+                    ? "text-accent"
+                    : "text-primary/30 dark:text-bg/30"
+                }
               />
               {pinned?.pinned ? "Pinned" : "Not Pinned"}
             </label>

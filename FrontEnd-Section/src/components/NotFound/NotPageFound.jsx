@@ -6,14 +6,14 @@ const NotPageFound = () => {
 
   return (
     <div className="min-h-[75vh] flex justify-center items-center px-4">
-      <div className="bg-bg rounded-[40px] p-8 sm:p-12 max-w-md w-full text-center shadow-clay-lg border border-white/60 anim-fade-up">
-        <div className="w-24 h-24 mx-auto rounded-3xl bg-tertiary/60 shadow-clay-sm flex items-center justify-center mb-5">
+      <div className="bg-bg dark:bg-card-dark rounded-[40px] p-8 sm:p-12 max-w-md w-full text-center shadow-clay-lg dark:shadow-[14px_14px_32px_rgba(0,0,0,0.4)] border border-white/60 dark:border-white/5 anim-fade-up transition-colors duration-300">
+        <div className="w-24 h-24 mx-auto rounded-3xl bg-tertiary/60 dark:bg-tertiary/20 shadow-clay-sm flex items-center justify-center mb-5">
           <FaExclamationTriangle className="text-accent text-4xl anim-bob" />
         </div>
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-primary mb-3">
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-primary dark:text-bg mb-3">
           404 — Page Not Found
         </h1>
-        <p className="text-primary/55 text-sm sm:text-base mb-8 leading-relaxed">
+        <p className="text-primary/55 dark:text-bg/55 text-sm sm:text-base mb-8 leading-relaxed">
           Oops! The page you're looking for doesn't exist or may have been
           moved.
         </p>

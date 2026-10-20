@@ -51,12 +51,12 @@ const About = () => {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="w-full max-w-5xl bg-bg rounded-[40px] p-6 sm:p-12 shadow-clay-lg border border-white/60"
+        className="w-full max-w-5xl bg-bg dark:bg-card-dark rounded-[40px] p-6 sm:p-12 shadow-clay-lg dark:shadow-[14px_14px_32px_rgba(0,0,0,0.4)] border border-white/60 dark:border-white/5 transition-colors duration-300"
       >
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-primary">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-primary dark:text-bg">
           About <span className="text-accent">Secure Notes</span>
         </h1>
-        <p className="text-center text-primary/55 mt-3 mb-10 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+        <p className="text-center text-primary/55 dark:text-bg/55 mt-3 mb-10 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
           A modern, fast, and secure note-taking web app designed to keep your
           ideas safe and accessible — anytime, anywhere.
         </p>
@@ -67,13 +67,15 @@ const About = () => {
               key={i}
               whileHover={{ scale: 1.04, y: -4 }}
               transition={{ type: "spring", stiffness: 200 }}
-              className="bg-bg rounded-clay border border-white/60 p-6 text-center shadow-clay hover:shadow-clay-lg transition-all"
+              className="bg-bg dark:bg-bg-dark rounded-clay border border-white/60 dark:border-white/5 p-6 text-center shadow-clay dark:shadow-[8px_8px_20px_rgba(0,0,0,0.4)] hover:shadow-clay-lg transition-all"
             >
-              <div className="w-16 h-16 mx-auto rounded-2xl bg-tertiary/60 shadow-clay-sm flex items-center justify-center text-3xl text-accent mb-4">
+              <div className="w-16 h-16 mx-auto rounded-2xl bg-tertiary/60 dark:bg-tertiary/20 shadow-clay-sm flex items-center justify-center text-3xl text-accent mb-4">
                 {b.icon}
               </div>
-              <h3 className="font-bold text-primary mb-1.5">{b.title}</h3>
-              <p className="text-sm text-primary/55 leading-relaxed">
+              <h3 className="font-bold text-primary dark:text-bg mb-1.5">
+                {b.title}
+              </h3>
+              <p className="text-sm text-primary/55 dark:text-bg/55 leading-relaxed">
                 {b.desc}
               </p>
             </motion.div>
