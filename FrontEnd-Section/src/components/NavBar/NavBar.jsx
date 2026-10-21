@@ -19,7 +19,6 @@ const NavBar = ({ user, onLogout }) => {
   const navigate = useNavigate();
 
   const links = [
-    { label: "Home", to: "/" },
     { label: "Dashboard", to: "/dashboard" },
     { label: "Create Note", to: "/create" },
     { label: "About", to: "/about" },
@@ -75,7 +74,7 @@ const NavBar = ({ user, onLogout }) => {
           >
             <FaUserCircle className="text-2xl text-secondary" />
             <span className="text-sm font-semibold text-primary dark:text-bg">
-              {user?.name || "Guest"}
+              {user?.name || "Login"}
             </span>
           </div>
 

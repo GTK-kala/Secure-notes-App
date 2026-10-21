@@ -6,6 +6,7 @@ import {
   FaUser,
   FaCog,
   FaSignOutAlt,
+  FaPlus,
   FaBars,
   FaTimes,
 } from "react-icons/fa";
@@ -15,7 +16,7 @@ const SideBar = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   const items = [
-    { icon: <FaHome />, label: "Home", to: "/" },
+    { icon: <FaPlus />, label: "Create Note", to: "/create" },
     { icon: <FaStickyNote />, label: "My Notes", to: "/notes" },
     { icon: <FaUser />, label: "Profile", to: "/user" },
     { icon: <FaCog />, label: "Settings", to: null },
